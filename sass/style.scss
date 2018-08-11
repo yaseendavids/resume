@@ -1,19 +1,25 @@
+// This is the sass stylesheet
 *{
     margin: 0;
 }
 
+// *********************** This is the VARIABLES used ***********************
+// This is the header color for sections
 $headerColor: #54ba4e;
+// This is the text color
 $textColor:#343b42;
-
-// $borderSettings: 1px solid black;
+// This is the border settings
 $borderSettings: none;
 
+// *********************** This is the MIXINS used ***********************
+// This is the default button settings
 @mixin defaultBtn {
     font-family: 'Montserrat', sans-serif;
     border: none;
     outline: none;
 }
 
+// This is the text for the content
 @mixin contentText {
     h2{
         margin-top: 10px;
@@ -33,6 +39,8 @@ $borderSettings: none;
     }
 }
 
+// *********************** This is the STYLING ***********************
+// This is the main grid container
 #grid-container{
     display: grid;
     grid-template-areas: 'introSection'
@@ -43,11 +51,13 @@ $borderSettings: none;
     background: #DAE3E7;
 }
 
+// This is the wrapper that positions the margin
 .margin-wrapper{
     margin-left: 100px;
     margin-right: 100px;
 }
 
+// This is the intro section
 #introSection{
     grid-area: introSection;
     margin-top: 20px;
