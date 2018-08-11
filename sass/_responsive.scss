@@ -1,0 +1,316 @@
+// This is the responsive media queries
+
+// Media query for mobile devices
+@media (min-width:1px)
+and (max-width: 500px) {
+
+    @mixin defaultBtn {
+        font-family: 'Montserrat', sans-serif;
+        border: none;
+        outline: none;
+    }
+    
+    @mixin contentText {
+        h2{
+            margin-top: 10px;
+            color:$headerColor;
+            letter-spacing: 1px;
+            font-size: 1.3em;
+            text-align: center;
+            font-weight: bolder;
+        }
+        p{
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 30px;
+            word-spacing: 1px;
+            font-size: 0.9em;
+            line-height: 20px;
+            color:#3b4249;
+        }
+    }
+
+    // This is the margin wrapper
+    .margin-wrapper{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #introSection{
+        margin-top: 20px;
+        height: 200px;
+    
+        #intro-main{
+            padding: 2px;
+            display: grid;
+            grid-template-areas: 'myImg myIntro'
+            'myContact myContact';
+            grid-template-columns: 35% 1fr;
+            grid-gap: 0px;
+    
+            #myImg{
+                grid-area: myImg;
+                height: 230px;
+    
+                img{
+                    height: 50%;
+                    width: 100%;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 43%;
+                    top: 40%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+            
+            #myIntro{
+                grid-area: myIntro;
+                height: 230px;
+    
+                h1{
+                    margin-top: 40px;
+                    font-size: 1.1em;
+                }
+                h2{
+                    margin-top: 10px;
+                    font-size: 1em;
+                }
+                #social-links{
+                    margin-top: 20px;
+    
+                    .fab{
+                        padding: 8px;
+                        font-size: 1.5em;
+                        border-radius: 50%;
+                        margin-right: 5px;
+                        transition: all 1s;
+    
+                        &:hover{
+                            background: #586069;
+                        }
+                    }
+                }
+            }
+        
+            #myContact{
+                grid-area: myContact;
+                border: $borderSettings;
+                height: 230px;
+    
+                .contact-me{
+                    @include defaultBtn();
+                    background: #54ba4e;
+                    border: 1px solid #54ba4e;
+                    color: #fff;
+                    padding: 10px;
+                    font-size: 1.1em;
+                    margin-top: 70px;
+                    border-radius: 5px;
+                    transition: all 0.5s;
+                    cursor: pointer;
+    
+                    .fab{
+                        color: rgb(255, 255, 255);
+                        margin-right: 10px;
+                    }
+    
+                    &:hover{
+                        background: #268021;
+                    }
+                }
+            }
+        }
+    }
+
+    #content-section{
+        grid-area: content-section;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-family: 'Montserrat', sans-serif;
+    
+        #content-main{
+            display: grid;
+            grid-template-areas: 'about-section'
+            'contact-section'
+            'latest-projects'
+            'other-projects'
+            'education'
+            'skills'
+            'experience'
+            'hobbies'
+            ;
+            grid-template-columns: 1fr;
+            grid-gap: 0px;
+    
+            #about-section{
+                grid-area: about-section;
+                height: 440px;
+                @include contentText();
+    
+            }
+    
+            #contact-section{
+                grid-area: contact-section;
+                margin-top: 20px;
+                height: 200px;
+    
+                p{
+                    margin-left: 25px;
+                    margin-right: 25px;
+                    margin-top: 30px;
+                    font-size: 0.9em;
+                    color: #49515a;
+    
+                    .fas{
+                        margin-right: 10px;
+                        font-size: 1em;
+                        color: #ccd1d6;
+                    }
+                }
+            }
+    
+            #latest-projects{
+                grid-area: latest-projects;
+                height: 940px;
+                margin-top: 20px;
+                @include contentText();
+    
+                #projects-main{
+                    margin-top: 20px;
+                    display: grid;
+                    grid-template-areas: 'tech-talk'
+                    'stance-nation'
+                    'code4ct'
+                    'outdoor-adventures'
+                    ;
+                    grid-area: 1fr;
+                    grid-gap: 20px;
+                    padding: 10px;
+                    height: 500px;
+
+    
+                    #tech-talk{
+                        grid-area: tech-talk;
+                        height: 200px;
+                    }
+    
+                    #stance-nation{
+                        grid-area: stance-nation;
+                        height: 200px;
+                    }
+    
+                    #code4ct{
+                        grid-area: code4ct;
+                        height: 200px;
+                    }
+    
+                    #outdoor-adventures{
+                        grid-area: outdoor-adventures;
+                        height: 200px;
+                    }
+    
+                }
+            }
+    
+            #other-projects{
+                grid-area: other-projects;
+                height: 270px;
+                margin-top: 20px;
+                @include contentText();
+            }
+    
+            #education{
+                grid-area: education;
+                height: 870px;
+                margin-top: 20px;
+                @include contentText();
+                h2{
+                    margin-bottom: 20px;
+                }
+                h3{
+                    margin-left: 30px;
+                    margin-bottom: 10px;
+                    word-spacing: 1px;
+                    font-size: 1.1em;
+                    font-weight: bolder;
+                }
+                p{
+                    margin-top: 10px;
+                    font-size: 0.9em;
+                }
+                .tertiary-edu{
+                    margin-top: 30px;
+                }
+                .pro-lang{
+                    font-weight: bolder;
+                }
+            }
+    
+            #skills{
+                grid-area: skills;
+                background: rgba(255, 255, 255, 0.932);
+                margin-top: 20px;
+                height: 400px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 20px;
+                }
+            }
+    
+            #experience{
+                grid-area: experience;
+                background: rgba(255, 255, 255, 0.932);
+                height: 860px;
+                margin-top: 20px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                h3{
+                    margin-left: 30px;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    word-spacing: 1px;
+                    font-size: 1.1em;
+                    color: $headerColor;
+                    font-weight: bolder;
+                }
+                h4{
+                    margin-left: 30px;
+                    margin-top: 40px;
+                    margin-bottom: 0px;
+                    word-spacing: 1px;
+                    color: $headerColor;
+                    font-weight: bolder;
+                }
+                p{
+                    margin-top: 10px;
+                }
+            }
+    
+            #hobbies{
+                grid-area: hobbies;
+                background: rgba(255, 255, 255, 0.932);
+                margin-top: 20px;
+                height: 450px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+
+    #footer{
+        grid-area: footer;
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+}
