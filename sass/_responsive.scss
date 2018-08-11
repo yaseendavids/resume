@@ -38,7 +38,7 @@ and (max-width: 500px) {
 
     #introSection{
         margin-top: 20px;
-        height: 200px;
+        height: 250px;
     
         #intro-main{
             padding: 2px;
@@ -50,22 +50,22 @@ and (max-width: 500px) {
     
             #myImg{
                 grid-area: myImg;
-                height: 230px;
+                height: 180px;
     
                 img{
-                    height: 50%;
+                    height: 60%;
                     width: 100%;
                     border-radius: 50%;
                     position: absolute;
                     left: 43%;
-                    top: 40%;
+                    top: 50%;
                     transform: translate(-50%,-50%);
                 }
             }
             
             #myIntro{
                 grid-area: myIntro;
-                height: 230px;
+                height: 180px;
     
                 h1{
                     margin-top: 40px;
@@ -95,7 +95,7 @@ and (max-width: 500px) {
             #myContact{
                 grid-area: myContact;
                 border: $borderSettings;
-                height: 230px;
+                height: 50px;
     
                 .contact-me{
                     @include defaultBtn();
@@ -104,7 +104,7 @@ and (max-width: 500px) {
                     color: #fff;
                     padding: 10px;
                     font-size: 1.1em;
-                    margin-top: 70px;
+                    margin-top: 0px;
                     border-radius: 5px;
                     transition: all 0.5s;
                     cursor: pointer;
@@ -124,8 +124,8 @@ and (max-width: 500px) {
 
     #content-section{
         grid-area: content-section;
-        margin-top: 50px;
-        margin-bottom: 50px;
+        margin-top: 20px;
+        margin-bottom: 20px;
         font-family: 'Montserrat', sans-serif;
     
         #content-main{
@@ -146,13 +146,12 @@ and (max-width: 500px) {
                 grid-area: about-section;
                 height: 440px;
                 @include contentText();
-    
             }
     
             #contact-section{
                 grid-area: contact-section;
                 margin-top: 20px;
-                height: 200px;
+                height: 170px;
     
                 p{
                     margin-left: 25px;
@@ -250,7 +249,7 @@ and (max-width: 500px) {
                 grid-area: skills;
                 background: rgba(255, 255, 255, 0.932);
                 margin-top: 20px;
-                height: 400px;
+                height: 430px;
                 @include contentText();
                 h2{
                     margin-bottom: 30px;
