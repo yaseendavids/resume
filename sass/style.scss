@@ -151,9 +151,9 @@ $borderSettings: none;
     #content-main{
         display: grid;
         grid-template-areas: 'about-section contact-section'
-        'latest-projects other-projects'
+        'experience other-projects'
         'education skills'
-        'experience hobbies'
+        'latest-projects hobbies'
         ;
         grid-template-columns: 1fr 30%;
         grid-gap: 30px;
@@ -310,7 +310,7 @@ $borderSettings: none;
             grid-area: other-projects;
             background: rgba(255, 255, 255, 0.932);
             height: 240px;
-            margin-top: -70px;
+            margin-top: -80px;
             @include contentText();
             h2{
                 margin-bottom: 30px;
@@ -353,8 +353,8 @@ $borderSettings: none;
         #skills{
             grid-area: skills;
             background: rgba(255, 255, 255, 0.932);
-            margin-top: -420px;
-            height: 450px;
+            margin-top: -560px;
+            height: 460px;
             @include contentText();
             h2{
                 margin-bottom: 30px;
@@ -367,7 +367,7 @@ $borderSettings: none;
         #experience{
             grid-area: experience;
             background: rgba(255, 255, 255, 0.932);
-            height: 800px;
+            height: 720px;
             @include contentText();
             h2{
                 margin-bottom: 30px;
@@ -397,7 +397,7 @@ $borderSettings: none;
         #hobbies{
             grid-area: hobbies;
             background: rgba(255, 255, 255, 0.932);
-            margin-top: -570px;
+            margin-top: -700px;
             height: 500px;
             @include contentText();
             h2{

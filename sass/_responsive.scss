@@ -564,7 +564,7 @@ and (max-width: 499px){
 
 // ********************** TABLET DEVICES **********************
 @media (min-width: 501px)
-and (max-width: 600px){
+and (max-width: 700px){
     @mixin defaultBtn {
         font-family: 'Montserrat', sans-serif;
         border: none;
@@ -869,5 +869,2366 @@ and (max-width: 600px){
         grid-area: footer;
         padding: 10px;
         font-size: 1.2em;
+    }
+}
+
+// ********************** LARGER TABLET DEVICES **********************
+@media (min-width: 701px)
+and (max-width: 800px) {
+    @mixin contentText {
+        h2{
+            font-size: 1.2em;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+        p{
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 30px;
+            word-spacing: 1px;
+            font-size: 0.9em;
+            line-height: 20px;
+        }
+    }
+    
+    #grid-container{
+        display: grid;
+        grid-template-areas: 'introSection'
+        'content-section'
+        'footer'
+        ;
+        grid-template-columns: 1fr;
+    }
+    
+    .margin-wrapper{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    #introSection{
+        grid-area: introSection;
+        margin-top: 20px;
+        height: 250px;
+    
+        #intro-main{
+            padding: 10px;
+            display: grid;
+            grid-template-areas: 'myImg myIntro myContact';
+            grid-template-columns: 1fr 50% 20%;
+            grid-gap: 0px;
+    
+            #myImg{
+                grid-area: myImg;
+                border: $borderSettings;
+                height: 230px;
+                position: relative;
+    
+                img{
+                    height: 90%;
+                    width: 80%;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 40%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+            
+            #myIntro{
+                grid-area: myIntro;
+                height: 230px;
+    
+                h1{
+                    margin-top: 50px;
+                }
+                h2{
+                    margin-top: 10px;
+                }
+                #social-links{
+                    margin-top: 20px;
+    
+                    .fab{
+                        padding: 8px;
+                        font-size: 1.5em;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        
+            #myContact{
+                grid-area: myContact;
+                height: 230px;
+    
+                .contact-me{
+                    @include defaultBtn();
+                    padding: 10px;
+                    font-size: 1.1em;
+                    margin-top: 70px;
+                    border-radius: 5px;
+    
+                    .fas{
+                        color: rgb(255, 255, 255);
+                    }
+                }
+            }
+        }
+    }
+    
+    #content-section{
+        grid-area: content-section;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    
+        #content-main{
+            display: grid;
+            grid-template-areas: 'about-section contact-section'
+            'experience other-projects'
+            'education skills'
+            'latest-projects hobbies'
+            ;
+            grid-template-columns: 1fr 35%;
+            grid-gap: 20px;
+    
+            #about-section{
+                grid-area: about-section;
+                height: 300px;
+                @include contentText();
+    
+            }
+    
+            #contact-section{
+                grid-area: contact-section;
+                height: 160px;
+    
+                p{
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    margin-top: 30px;
+                    font-size: 0.85em;
+    
+                    .fas{
+                        margin-right: 10px;
+                        font-size: 1em;
+                    }
+                }
+            }
+    
+            #latest-projects{
+                grid-area: latest-projects;
+                height: 550px;
+                @include contentText();
+    
+                #projects-main{
+                    margin-top: 20px;
+                    display: grid;
+                    grid-template-areas: 'tech-talk stance-nation'
+                    'code4ct outdoor-adventures'
+                    ;
+                    grid-area: 1fr 1fr;
+                    grid-gap: 10px;
+                    padding: 10px;
+                    height: 450px;
+    
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+    
+                    .overlay-tech{
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        z-index: 1;
+                        top: 250px;
+    
+                        h4{
+                            margin-top: 50px;
+                            color: white;
+                        }
+                        p{
+                            color: white;
+                        }
+                    }
+    
+                    #tech-talk{
+                        grid-area: tech-talk;
+    
+                        #tech-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #stance-nation{
+                        grid-area: stance-nation;
+    
+                        #stance-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #code4ct{
+                        grid-area: code4ct;
+    
+                        #code-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #outdoor-adventures{
+                        grid-area: outdoor-adventures;
+    
+                        #outdoor-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                }
+            }
+    
+            #other-projects{
+                grid-area: other-projects;
+                height: 200px;
+                margin-top: -140px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+            }
+    
+            #education{
+                grid-area: education;
+                height: 650px;
+                @include contentText();
+                h2{
+                    font-size: 1.3em;
+                }
+                h3{
+                    font-size: 1.1em;
+                    margin-left: 30px;
+                    margin-bottom: 10px;
+                    margin-top: 20px;
+                    word-spacing: 1px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+                .tertiary-edu{
+                    margin-top: 30px;
+                }
+            }
+    
+            #skills{
+                grid-area: skills;
+                margin-top: -620px;
+                height: 420px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 20px;
+                }
+            }
+    
+            #experience{
+                grid-area: experience;
+                height: 680px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                    font-size: 1.3em;
+                }
+                h3{
+                    margin-left: 30px;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    word-spacing: 1px;
+                    font-size: 1.2em;
+                }
+                h4{
+                    margin-left: 30px;
+                    margin-top: 40px;
+                    margin-bottom: 0px;
+                    word-spacing: 1px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+            }
+    
+            #hobbies{
+                grid-area: hobbies;
+                margin-top: -850px;
+                height: 470px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    
+    #footer{
+        grid-area: footer;
+        padding: 15px;
+        font-size: 1.1em;
+    
+        .slogan{
+            font-size: 0.8em;
+        }
+    }
+}
+
+
+// ********************** LARGER TABLET DEVICES **********************
+@media (min-width: 801px)
+and (max-width: 1000px) {
+    @mixin contentText {
+        h2{
+            font-size: 1.3em;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+        p{
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 30px;
+            word-spacing: 1px;
+            font-size: 1em;
+            line-height: 21px;
+        }
+    }
+    
+    #grid-container{
+        display: grid;
+        grid-template-areas: 'introSection'
+        'content-section'
+        'footer'
+        ;
+        grid-template-columns: 1fr;
+    }
+    
+    .margin-wrapper{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    #introSection{
+        grid-area: introSection;
+        margin-top: 20px;
+        height: 250px;
+    
+        #intro-main{
+            padding: 10px;
+            display: grid;
+            grid-template-areas: 'myImg myIntro myContact';
+            grid-template-columns: 1fr 50% 20%;
+            grid-gap: 0px;
+    
+            #myImg{
+                grid-area: myImg;
+                border: $borderSettings;
+                height: 230px;
+                position: relative;
+    
+                img{
+                    height: 90%;
+                    width: 80%;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 40%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+            
+            #myIntro{
+                grid-area: myIntro;
+                height: 230px;
+    
+                h1{
+                    margin-top: 50px;
+                }
+                h2{
+                    margin-top: 10px;
+                }
+                #social-links{
+                    margin-top: 20px;
+    
+                    .fab{
+                        padding: 8px;
+                        font-size: 1.5em;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        
+            #myContact{
+                grid-area: myContact;
+                height: 230px;
+    
+                .contact-me{
+                    @include defaultBtn();
+                    padding: 10px;
+                    font-size: 1.1em;
+                    margin-top: 70px;
+                    border-radius: 5px;
+    
+                    .fas{
+                        color: rgb(255, 255, 255);
+                    }
+                }
+            }
+        }
+    }
+    
+    #content-section{
+        grid-area: content-section;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    
+        #content-main{
+            display: grid;
+            grid-template-areas: 'about-section contact-section'
+            'experience other-projects'
+            'education skills'
+            'latest-projects hobbies'
+            ;
+            grid-template-columns: 1fr 35%;
+            grid-gap: 20px;
+    
+            #about-section{
+                grid-area: about-section;
+                height: 300px;
+                @include contentText();
+            }
+    
+            #contact-section{
+                grid-area: contact-section;
+                height: 160px;
+    
+                p{
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    margin-top: 30px;
+                    font-size: 0.85em;
+    
+                    .fas{
+                        margin-right: 10px;
+                        font-size: 1em;
+                    }
+                }
+            }
+    
+            #latest-projects{
+                grid-area: latest-projects;
+                height: 550px;
+                @include contentText();
+    
+                #projects-main{
+                    margin-top: 20px;
+                    display: grid;
+                    grid-template-areas: 'tech-talk stance-nation'
+                    'code4ct outdoor-adventures'
+                    ;
+                    grid-area: 1fr 1fr;
+                    grid-gap: 10px;
+                    padding: 10px;
+                    height: 450px;
+    
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+    
+                    .overlay-tech{
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        z-index: 1;
+                        top: 250px;
+    
+                        h4{
+                            margin-top: 50px;
+                            color: white;
+                        }
+                        p{
+                            color: white;
+                        }
+                    }
+    
+                    #tech-talk{
+                        grid-area: tech-talk;
+    
+                        #tech-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #stance-nation{
+                        grid-area: stance-nation;
+    
+                        #stance-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #code4ct{
+                        grid-area: code4ct;
+    
+                        #code-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #outdoor-adventures{
+                        grid-area: outdoor-adventures;
+    
+                        #outdoor-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                }
+            }
+    
+            #other-projects{
+                grid-area: other-projects;
+                height: 200px;
+                margin-top: -140px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+            }
+    
+            #education{
+                grid-area: education;
+                height: 650px;
+                @include contentText();
+                h2{
+                    font-size: 1.3em;
+                }
+                h3{
+                    font-size: 1.1em;
+                    margin-left: 30px;
+                    margin-bottom: 10px;
+                    margin-top: 20px;
+                    word-spacing: 1px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+                .tertiary-edu{
+                    margin-top: 30px;
+                }
+            }
+    
+            #skills{
+                grid-area: skills;
+                margin-top: -620px;
+                height: 420px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 20px;
+                }
+            }
+    
+            #experience{
+                grid-area: experience;
+                height: 720px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                    font-size: 1.3em;
+                }
+                h3{
+                    margin-left: 30px;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    word-spacing: 1px;
+                    font-size: 1.2em;
+                }
+                h4{
+                    margin-left: 30px;
+                    margin-top: 40px;
+                    margin-bottom: 0px;
+                    word-spacing: 1px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+            }
+    
+            #hobbies{
+                grid-area: hobbies;
+                margin-top: -850px;
+                height: 470px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    
+    #footer{
+        grid-area: footer;
+        padding: 15px;
+        font-size: 1.1em;
+    
+        .slogan{
+            font-size: 0.8em;
+        }
+    }
+}
+
+// ********************** LAPTOP / SMALL SCREENS **********************
+@media (min-width:1001px)
+and (max-width: 1100px){
+    @mixin contentText {
+        h2{
+            font-size: 1.3em;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+        p{
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 30px;
+            word-spacing: 1px;
+            font-size: 1em;
+            line-height: 25px;
+        }
+    }
+    
+    #grid-container{
+        display: grid;
+        grid-template-areas: 'introSection'
+        'content-section'
+        'footer'
+        ;
+        grid-template-columns: 1fr;
+    }
+    
+    .margin-wrapper{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    #introSection{
+        grid-area: introSection;
+        margin-top: 20px;
+        height: 250px;
+    
+        #intro-main{
+            padding: 10px;
+            display: grid;
+            grid-template-areas: 'myImg myIntro myContact';
+            grid-template-columns: 1fr 50% 20%;
+            grid-gap: 0px;
+    
+            #myImg{
+                grid-area: myImg;
+                border: $borderSettings;
+                height: 230px;
+                position: relative;
+    
+                img{
+                    height: 90%;
+                    width: 80%;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 40%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+            
+            #myIntro{
+                grid-area: myIntro;
+                height: 230px;
+    
+                h1{
+                    margin-top: 50px;
+                }
+                h2{
+                    margin-top: 10px;
+                }
+                #social-links{
+                    margin-top: 20px;
+    
+                    .fab{
+                        padding: 8px;
+                        font-size: 1.5em;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        
+            #myContact{
+                grid-area: myContact;
+                height: 230px;
+    
+                .contact-me{
+                    @include defaultBtn();
+                    padding: 10px;
+                    font-size: 1.1em;
+                    margin-top: 70px;
+                    border-radius: 5px;
+    
+                    .fas{
+                        color: rgb(255, 255, 255);
+                    }
+                }
+            }
+        }
+    }
+    
+    #content-section{
+        grid-area: content-section;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    
+        #content-main{
+            display: grid;
+            grid-template-areas: 'about-section contact-section'
+            'experience other-projects'
+            'education skills'
+            'latest-projects hobbies'
+            ;
+            grid-template-columns: 1fr 35%;
+            grid-gap: 20px;
+    
+            #about-section{
+                grid-area: about-section;
+                height: 300px;
+                @include contentText();
+            }
+    
+            #contact-section{
+                grid-area: contact-section;
+                height: 160px;
+    
+                p{
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    margin-top: 30px;
+                    font-size: 0.85em;
+    
+                    .fas{
+                        margin-right: 10px;
+                        font-size: 1em;
+                    }
+                }
+            }
+    
+            #latest-projects{
+                grid-area: latest-projects;
+                height: 550px;
+                @include contentText();
+    
+                #projects-main{
+                    margin-top: 20px;
+                    display: grid;
+                    grid-template-areas: 'tech-talk stance-nation'
+                    'code4ct outdoor-adventures'
+                    ;
+                    grid-area: 1fr 1fr;
+                    grid-gap: 10px;
+                    padding: 10px;
+                    height: 450px;
+    
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+    
+                    .overlay-tech{
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        z-index: 1;
+                        top: 250px;
+    
+                        h4{
+                            margin-top: 50px;
+                            color: white;
+                        }
+                        p{
+                            color: white;
+                        }
+                    }
+    
+                    #tech-talk{
+                        grid-area: tech-talk;
+    
+                        #tech-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #stance-nation{
+                        grid-area: stance-nation;
+    
+                        #stance-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #code4ct{
+                        grid-area: code4ct;
+    
+                        #code-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #outdoor-adventures{
+                        grid-area: outdoor-adventures;
+    
+                        #outdoor-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                }
+            }
+    
+            #other-projects{
+                grid-area: other-projects;
+                height: 220px;
+                margin-top: -140px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+            }
+    
+            #education{
+                grid-area: education;
+                height: 690px;
+                @include contentText();
+                h2{
+                    font-size: 1.3em;
+                }
+                h3{
+                    font-size: 1.1em;
+                    margin-left: 30px;
+                    margin-bottom: 10px;
+                    margin-top: 20px;
+                    word-spacing: 1px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+                .tertiary-edu{
+                    margin-top: 30px;
+                }
+            }
+    
+            #skills{
+                grid-area: skills;
+                margin-top: -630px;
+                height: 470px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 20px;
+                }
+            }
+    
+            #experience{
+                grid-area: experience;
+                height: 720px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                    font-size: 1.3em;
+                }
+                h3{
+                    margin-left: 30px;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    word-spacing: 1px;
+                    font-size: 1.2em;
+                }
+                h4{
+                    margin-left: 30px;
+                    margin-top: 40px;
+                    margin-bottom: 0px;
+                    word-spacing: 1px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+            }
+    
+            #hobbies{
+                grid-area: hobbies;
+                margin-top: -810px;
+                height: 490px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    
+    #footer{
+        grid-area: footer;
+        padding: 15px;
+        font-size: 1.1em;
+    
+        .slogan{
+            font-size: 0.8em;
+        }
+    }
+}
+// ********************** LAPTOP SCREENS **********************
+@media (min-width:1101px)
+and (max-width: 1200px){
+    @mixin contentText {
+        h2{
+            font-size: 1.3em;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+        p{
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 30px;
+            word-spacing: 1px;
+            font-size: 1em;
+            line-height: 25px;
+        }
+    }
+    
+    #grid-container{
+        display: grid;
+        grid-template-areas: 'introSection'
+        'content-section'
+        'footer'
+        ;
+        grid-template-columns: 1fr;
+    }
+    
+    .margin-wrapper{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    #introSection{
+        grid-area: introSection;
+        margin-top: 20px;
+        height: 250px;
+    
+        #intro-main{
+            padding: 10px;
+            display: grid;
+            grid-template-areas: 'myImg myIntro myContact';
+            grid-template-columns: 1fr 50% 20%;
+            grid-gap: 0px;
+    
+            #myImg{
+                grid-area: myImg;
+                border: $borderSettings;
+                height: 230px;
+                position: relative;
+    
+                img{
+                    height: 90%;
+                    width: 80%;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 40%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+            
+            #myIntro{
+                grid-area: myIntro;
+                height: 230px;
+    
+                h1{
+                    margin-top: 50px;
+                }
+                h2{
+                    margin-top: 10px;
+                }
+                #social-links{
+                    margin-top: 20px;
+    
+                    .fab{
+                        padding: 8px;
+                        font-size: 1.5em;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        
+            #myContact{
+                grid-area: myContact;
+                height: 230px;
+    
+                .contact-me{
+                    @include defaultBtn();
+                    padding: 10px;
+                    font-size: 1.1em;
+                    margin-top: 70px;
+                    border-radius: 5px;
+    
+                    .fas{
+                        color: rgb(255, 255, 255);
+                    }
+                }
+            }
+        }
+    }
+    
+    #content-section{
+        grid-area: content-section;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    
+        #content-main{
+            display: grid;
+            grid-template-areas: 'about-section contact-section'
+            'experience other-projects'
+            'education skills'
+            'latest-projects hobbies'
+            ;
+            grid-template-columns: 1fr 35%;
+            grid-gap: 20px;
+    
+            #about-section{
+                grid-area: about-section;
+                height: 300px;
+                @include contentText();
+            }
+    
+            #contact-section{
+                grid-area: contact-section;
+                height: 160px;
+    
+                p{
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    margin-top: 30px;
+                    font-size: 0.85em;
+    
+                    .fas{
+                        margin-right: 10px;
+                        font-size: 1em;
+                    }
+                }
+            }
+    
+            #latest-projects{
+                grid-area: latest-projects;
+                height: 550px;
+                @include contentText();
+    
+                #projects-main{
+                    margin-top: 20px;
+                    display: grid;
+                    grid-template-areas: 'tech-talk stance-nation'
+                    'code4ct outdoor-adventures'
+                    ;
+                    grid-area: 1fr 1fr;
+                    grid-gap: 10px;
+                    padding: 10px;
+                    height: 450px;
+    
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+    
+                    .overlay-tech{
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        z-index: 1;
+                        top: 250px;
+    
+                        h4{
+                            margin-top: 50px;
+                            color: white;
+                        }
+                        p{
+                            color: white;
+                        }
+                    }
+    
+                    #tech-talk{
+                        grid-area: tech-talk;
+    
+                        #tech-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #stance-nation{
+                        grid-area: stance-nation;
+    
+                        #stance-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #code4ct{
+                        grid-area: code4ct;
+    
+                        #code-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #outdoor-adventures{
+                        grid-area: outdoor-adventures;
+    
+                        #outdoor-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                }
+            }
+    
+            #other-projects{
+                grid-area: other-projects;
+                height: 220px;
+                margin-top: -140px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+            }
+    
+            #education{
+                grid-area: education;
+                height: 640px;
+                @include contentText();
+                h2{
+                    font-size: 1.3em;
+                }
+                h3{
+                    font-size: 1.1em;
+                    margin-left: 30px;
+                    margin-bottom: 10px;
+                    margin-top: 20px;
+                    word-spacing: 1px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+                .tertiary-edu{
+                    margin-top: 30px;
+                }
+            }
+    
+            #skills{
+                grid-area: skills;
+                margin-top: -630px;
+                height: 470px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 20px;
+                }
+            }
+    
+            #experience{
+                grid-area: experience;
+                height: 720px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                    font-size: 1.3em;
+                }
+                h3{
+                    margin-left: 30px;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    word-spacing: 1px;
+                    font-size: 1.2em;
+                }
+                h4{
+                    margin-left: 30px;
+                    margin-top: 40px;
+                    margin-bottom: 0px;
+                    word-spacing: 1px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+            }
+    
+            #hobbies{
+                grid-area: hobbies;
+                margin-top: -800px;
+                height: 470px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    
+    #footer{
+        grid-area: footer;
+        padding: 15px;
+        font-size: 1.1em;
+    
+        .slogan{
+            font-size: 0.8em;
+        }
+    }
+}
+
+// ********************** LAPTOP SCREENS **********************
+@media (min-width:1201px)
+and (max-width: 1300px){
+    @mixin contentText {
+        h2{
+            font-size: 1.3em;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+        p{
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 30px;
+            word-spacing: 1px;
+            font-size: 1.05em;
+            line-height: 25px;
+        }
+    }
+    
+    #grid-container{
+        display: grid;
+        grid-template-areas: 'introSection'
+        'content-section'
+        'footer'
+        ;
+        grid-template-columns: 1fr;
+    }
+    
+    .margin-wrapper{
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    
+    #introSection{
+        grid-area: introSection;
+        margin-top: 20px;
+        height: 250px;
+    
+        #intro-main{
+            padding: 10px;
+            display: grid;
+            grid-template-areas: 'myImg myIntro myContact';
+            grid-template-columns: 1fr 55% 20%;
+            grid-gap: 0px;
+    
+            #myImg{
+                grid-area: myImg;
+                border: $borderSettings;
+                height: 230px;
+                position: relative;
+    
+                img{
+                    height: 90%;
+                    width: 80%;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 40%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+            
+            #myIntro{
+                grid-area: myIntro;
+                height: 230px;
+    
+                h1{
+                    margin-top: 50px;
+                }
+                h2{
+                    margin-top: 10px;
+                }
+                #social-links{
+                    margin-top: 20px;
+    
+                    .fab{
+                        padding: 8px;
+                        font-size: 1.5em;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        
+            #myContact{
+                grid-area: myContact;
+                height: 230px;
+    
+                .contact-me{
+                    @include defaultBtn();
+                    padding: 10px;
+                    font-size: 1.1em;
+                    margin-top: 70px;
+                    border-radius: 5px;
+    
+                    .fas{
+                        color: rgb(255, 255, 255);
+                    }
+                }
+            }
+        }
+    }
+    
+    #content-section{
+        grid-area: content-section;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    
+        #content-main{
+            display: grid;
+            grid-template-areas: 'about-section contact-section'
+            'experience other-projects'
+            'education skills'
+            'latest-projects hobbies'
+            ;
+            grid-template-columns: 1fr 35%;
+            grid-gap: 20px;
+    
+            #about-section{
+                grid-area: about-section;
+                height: 300px;
+                @include contentText();
+            }
+    
+            #contact-section{
+                grid-area: contact-section;
+                height: 160px;
+    
+                p{
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    margin-top: 30px;
+                    font-size: 1em;
+    
+                    .fas{
+                        margin-right: 10px;
+                        font-size: 1em;
+                    }
+                }
+            }
+    
+            #latest-projects{
+                grid-area: latest-projects;
+                height: 550px;
+                @include contentText();
+    
+                #projects-main{
+                    margin-top: 20px;
+                    display: grid;
+                    grid-template-areas: 'tech-talk stance-nation'
+                    'code4ct outdoor-adventures'
+                    ;
+                    grid-area: 1fr 1fr;
+                    grid-gap: 10px;
+                    padding: 10px;
+                    height: 450px;
+    
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+    
+                    .overlay-tech{
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        z-index: 1;
+                        top: 250px;
+    
+                        h4{
+                            margin-top: 50px;
+                            color: white;
+                        }
+                        p{
+                            color: white;
+                        }
+                    }
+    
+                    #tech-talk{
+                        grid-area: tech-talk;
+    
+                        #tech-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #stance-nation{
+                        grid-area: stance-nation;
+    
+                        #stance-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #code4ct{
+                        grid-area: code4ct;
+    
+                        #code-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #outdoor-adventures{
+                        grid-area: outdoor-adventures;
+    
+                        #outdoor-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                }
+            }
+    
+            #other-projects{
+                grid-area: other-projects;
+                height: 220px;
+                margin-top: -140px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+            }
+    
+            #education{
+                grid-area: education;
+                height: 640px;
+                @include contentText();
+                h2{
+                    font-size: 1.3em;
+                }
+                h3{
+                    font-size: 1.1em;
+                    margin-left: 30px;
+                    margin-bottom: 10px;
+                    margin-top: 20px;
+                    word-spacing: 1px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+                .tertiary-edu{
+                    margin-top: 30px;
+                }
+            }
+    
+            #skills{
+                grid-area: skills;
+                margin-top: -630px;
+                height: 470px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 20px;
+                }
+            }
+    
+            #experience{
+                grid-area: experience;
+                height: 720px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                    font-size: 1.3em;
+                }
+                h3{
+                    margin-left: 30px;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    word-spacing: 1px;
+                    font-size: 1.2em;
+                }
+                h4{
+                    margin-left: 30px;
+                    margin-top: 40px;
+                    margin-bottom: 0px;
+                    word-spacing: 1px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+            }
+    
+            #hobbies{
+                grid-area: hobbies;
+                margin-top: -800px;
+                height: 470px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    
+    #footer{
+        grid-area: footer;
+        padding: 15px;
+        font-size: 1.1em;
+    
+        .slogan{
+            font-size: 0.8em;
+        }
+    }
+}
+
+
+// ********************** LAPTOP SCREENS **********************
+@media (min-width:1301px)
+and (max-width: 1400px){
+    @mixin contentText {
+        h2{
+            font-size: 1.3em;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+        p{
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 30px;
+            word-spacing: 1px;
+            font-size: 1.1em;
+            line-height: 25px;
+        }
+    }
+    
+    #grid-container{
+        display: grid;
+        grid-template-areas: 'introSection'
+        'content-section'
+        'footer'
+        ;
+        grid-template-columns: 1fr;
+    }
+    
+    .margin-wrapper{
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    
+    #introSection{
+        grid-area: introSection;
+        margin-top: 20px;
+        height: 250px;
+    
+        #intro-main{
+            padding: 10px;
+            display: grid;
+            grid-template-areas: 'myImg myIntro myContact';
+            grid-template-columns: 1fr 55% 20%;
+            grid-gap: 0px;
+    
+            #myImg{
+                grid-area: myImg;
+                border: $borderSettings;
+                height: 230px;
+                position: relative;
+    
+                img{
+                    height: 90%;
+                    width: 80%;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 40%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+            
+            #myIntro{
+                grid-area: myIntro;
+                height: 230px;
+    
+                h1{
+                    margin-top: 50px;
+                }
+                h2{
+                    margin-top: 10px;
+                }
+                #social-links{
+                    margin-top: 20px;
+    
+                    .fab{
+                        padding: 8px;
+                        font-size: 1.5em;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        
+            #myContact{
+                grid-area: myContact;
+                height: 230px;
+    
+                .contact-me{
+                    @include defaultBtn();
+                    padding: 10px;
+                    font-size: 1.1em;
+                    margin-top: 70px;
+                    border-radius: 5px;
+    
+                    .fas{
+                        color: rgb(255, 255, 255);
+                    }
+                }
+            }
+        }
+    }
+    
+    #content-section{
+        grid-area: content-section;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    
+        #content-main{
+            display: grid;
+            grid-template-areas: 'about-section contact-section'
+            'experience other-projects'
+            'education skills'
+            'latest-projects hobbies'
+            ;
+            grid-template-columns: 1fr 35%;
+            grid-gap: 20px;
+    
+            #about-section{
+                grid-area: about-section;
+                height: 300px;
+                @include contentText();
+            }
+    
+            #contact-section{
+                grid-area: contact-section;
+                height: 160px;
+    
+                p{
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    margin-top: 30px;
+                    font-size: 1em;
+    
+                    .fas{
+                        margin-right: 10px;
+                        font-size: 1em;
+                    }
+                }
+            }
+    
+            #latest-projects{
+                grid-area: latest-projects;
+                height: 550px;
+                @include contentText();
+    
+                #projects-main{
+                    margin-top: 20px;
+                    display: grid;
+                    grid-template-areas: 'tech-talk stance-nation'
+                    'code4ct outdoor-adventures'
+                    ;
+                    grid-area: 1fr 1fr;
+                    grid-gap: 10px;
+                    padding: 10px;
+                    height: 450px;
+    
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+    
+                    .overlay-tech{
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        z-index: 1;
+                        top: 250px;
+    
+                        h4{
+                            margin-top: 50px;
+                            color: white;
+                        }
+                        p{
+                            color: white;
+                        }
+                    }
+    
+                    #tech-talk{
+                        grid-area: tech-talk;
+    
+                        #tech-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #stance-nation{
+                        grid-area: stance-nation;
+    
+                        #stance-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #code4ct{
+                        grid-area: code4ct;
+    
+                        #code-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #outdoor-adventures{
+                        grid-area: outdoor-adventures;
+    
+                        #outdoor-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                }
+            }
+    
+            #other-projects{
+                grid-area: other-projects;
+                height: 220px;
+                margin-top: -140px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+            }
+    
+            #education{
+                grid-area: education;
+                height: 640px;
+                @include contentText();
+                h2{
+                    font-size: 1.3em;
+                }
+                h3{
+                    font-size: 1.1em;
+                    margin-left: 30px;
+                    margin-bottom: 10px;
+                    margin-top: 20px;
+                    word-spacing: 1px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+                .tertiary-edu{
+                    margin-top: 30px;
+                }
+            }
+    
+            #skills{
+                grid-area: skills;
+                margin-top: -630px;
+                height: 470px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 20px;
+                }
+            }
+    
+            #experience{
+                grid-area: experience;
+                height: 720px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                    font-size: 1.3em;
+                }
+                h3{
+                    margin-left: 30px;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    word-spacing: 1px;
+                    font-size: 1.2em;
+                }
+                h4{
+                    margin-left: 30px;
+                    margin-top: 40px;
+                    margin-bottom: 0px;
+                    word-spacing: 1px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+            }
+    
+            #hobbies{
+                grid-area: hobbies;
+                margin-top: -800px;
+                height: 470px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    
+    #footer{
+        grid-area: footer;
+        padding: 15px;
+        font-size: 1.1em;
+    
+        .slogan{
+            font-size: 0.8em;
+        }
+    }
+}
+// ********************** LAPTOP SCREENS **********************
+@media (min-width:1401px)
+and (max-width: 1500px){
+    @mixin contentText {
+        h2{
+            font-size: 1.4em;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+        p{
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 30px;
+            word-spacing: 1px;
+            font-size: 1.3em;
+            line-height: 25px;
+        }
+    }
+    
+    #grid-container{
+        display: grid;
+        grid-template-areas: 'introSection'
+        'content-section'
+        'footer'
+        ;
+        grid-template-columns: 1fr;
+    }
+    
+    .margin-wrapper{
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    
+    #introSection{
+        grid-area: introSection;
+        margin-top: 20px;
+        height: 250px;
+    
+        #intro-main{
+            padding: 10px;
+            display: grid;
+            grid-template-areas: 'myImg myIntro myContact';
+            grid-template-columns: 1fr 55% 20%;
+            grid-gap: 0px;
+    
+            #myImg{
+                grid-area: myImg;
+                border: $borderSettings;
+                height: 230px;
+                position: relative;
+    
+                img{
+                    height: 90%;
+                    width: 80%;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 40%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+            
+            #myIntro{
+                grid-area: myIntro;
+                height: 230px;
+    
+                h1{
+                    margin-top: 50px;
+                }
+                h2{
+                    margin-top: 10px;
+                }
+                #social-links{
+                    margin-top: 20px;
+    
+                    .fab{
+                        padding: 8px;
+                        font-size: 1.5em;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        
+            #myContact{
+                grid-area: myContact;
+                height: 230px;
+    
+                .contact-me{
+                    @include defaultBtn();
+                    padding: 10px;
+                    font-size: 1.1em;
+                    margin-top: 70px;
+                    border-radius: 5px;
+    
+                    .fas{
+                        color: rgb(255, 255, 255);
+                    }
+                }
+            }
+        }
+    }
+    
+    #content-section{
+        grid-area: content-section;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    
+        #content-main{
+            display: grid;
+            grid-template-areas: 'about-section contact-section'
+            'experience other-projects'
+            'education skills'
+            'latest-projects hobbies'
+            ;
+            grid-template-columns: 1fr 35%;
+            grid-gap: 20px;
+    
+            #about-section{
+                grid-area: about-section;
+                height: 300px;
+                @include contentText();
+            }
+    
+            #contact-section{
+                grid-area: contact-section;
+                height: 160px;
+    
+                p{
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    margin-top: 30px;
+                    font-size: 1em;
+    
+                    .fas{
+                        margin-right: 10px;
+                        font-size: 1em;
+                    }
+                }
+            }
+    
+            #latest-projects{
+                grid-area: latest-projects;
+                height: 550px;
+                @include contentText();
+    
+                #projects-main{
+                    margin-top: 20px;
+                    display: grid;
+                    grid-template-areas: 'tech-talk stance-nation'
+                    'code4ct outdoor-adventures'
+                    ;
+                    grid-area: 1fr 1fr;
+                    grid-gap: 10px;
+                    padding: 10px;
+                    height: 450px;
+    
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+    
+                    .overlay-tech{
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        z-index: 1;
+                        top: 250px;
+    
+                        h4{
+                            margin-top: 50px;
+                            color: white;
+                        }
+                        p{
+                            color: white;
+                        }
+                    }
+    
+                    #tech-talk{
+                        grid-area: tech-talk;
+    
+                        #tech-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #stance-nation{
+                        grid-area: stance-nation;
+    
+                        #stance-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #code4ct{
+                        grid-area: code4ct;
+    
+                        #code-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                    #outdoor-adventures{
+                        grid-area: outdoor-adventures;
+    
+                        #outdoor-img{
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            .overlay-tech{
+                                top: 0%;
+                            }
+                        }
+                    }
+    
+                }
+            }
+    
+            #other-projects{
+                grid-area: other-projects;
+                height: 220px;
+                margin-top: -140px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+            }
+    
+            #education{
+                grid-area: education;
+                height: 640px;
+                @include contentText();
+                h2{
+                    font-size: 1.3em;
+                }
+                h3{
+                    font-size: 1.1em;
+                    margin-left: 30px;
+                    margin-bottom: 10px;
+                    margin-top: 20px;
+                    word-spacing: 1px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+                .tertiary-edu{
+                    margin-top: 30px;
+                }
+            }
+    
+            #skills{
+                grid-area: skills;
+                margin-top: -630px;
+                height: 470px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 20px;
+                }
+            }
+    
+            #experience{
+                grid-area: experience;
+                height: 720px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                    font-size: 1.5em;
+                }
+                h3{
+                    margin-left: 30px;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    word-spacing: 1px;
+                    font-size: 1.4em;
+                }
+                h4{
+                    margin-left: 30px;
+                    margin-top: 40px;
+                    margin-bottom: 0px;
+                    word-spacing: 1px;
+                    font-size: 1.3em;
+                }
+                p{
+                    margin-top: 10px;
+                }
+            }
+    
+            #hobbies{
+                grid-area: hobbies;
+                margin-top: -800px;
+                height: 470px;
+                @include contentText();
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    
+    #footer{
+        grid-area: footer;
+        padding: 15px;
+        font-size: 1.4em;
+    
+        .slogan{
+            font-size: 0.8em;
+        }
     }
 }
