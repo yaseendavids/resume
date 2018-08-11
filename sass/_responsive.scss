@@ -132,11 +132,11 @@ and (max-width: 500px) {
             display: grid;
             grid-template-areas: 'about-section'
             'contact-section'
+            'experience'
             'latest-projects'
             'other-projects'
             'education'
             'skills'
-            'experience'
             'hobbies'
             ;
             grid-template-columns: 1fr;
@@ -311,5 +311,319 @@ and (max-width: 500px) {
         padding: 10px;
         font-size: 0.9em;
     }
+}
 
+@media (min-width: 335px)
+and (max-width: 400px){
+
+    #introSection{
+        margin-top: 20px;
+        height: 250px;
+    
+        #intro-main{
+            padding: 2px;
+            display: grid;
+            grid-template-areas: 'myImg myIntro'
+            'myContact myContact';
+            grid-template-columns: 35% 1fr;
+            grid-gap: 10px;
+
+        }
+    }
+
+    #content-section{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    
+        #content-main{
+    
+            #about-section{
+                height: 400px;
+            }
+    
+            #contact-section{
+                height: 170px;
+            }
+    
+            #latest-projects{
+                grid-area: latest-projects;
+                height: 950px;
+                margin-top: 20px;
+            }
+    
+            #other-projects{
+                grid-area: other-projects;
+                height: 270px;
+                margin-top: 20px;
+            }
+    
+            #education{
+                grid-area: education;
+                height: 830px;
+                margin-top: 20px;
+            }
+    
+            #skills{
+                grid-area: skills;
+                background: rgba(255, 255, 255, 0.932);
+                margin-top: 20px;
+                height: 440px;
+            }
+    
+            #experience{
+                grid-area: experience;
+                height: 790px;
+            }
+    
+            #hobbies{
+                grid-area: hobbies;
+                height: 420px;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 341px)
+and (max-width: 360px){
+
+    #introSection{
+        margin-top: 20px;
+        height: 250px;
+    
+        #intro-main{
+            padding: 2px;
+            display: grid;
+            grid-template-areas: 'myImg myIntro'
+            'myContact myContact';
+            grid-template-columns: 35% 1fr;
+            grid-gap: 10px;
+
+        }
+    }
+
+    #content-section{
+        #content-main{
+            #about-section{
+                height: 370px;
+            }
+    
+            #contact-section{
+                height: 170px;
+            }
+    
+            #latest-projects{
+                grid-area: latest-projects;
+                height: 950px;
+            }
+    
+            #other-projects{
+                grid-area: other-projects;
+                height: 270px;
+            }
+    
+            #education{
+                grid-area: education;
+                height: 780px;
+            }
+    
+            #skills{
+                grid-area: skills;
+                height: 440px;
+            }
+    
+            #experience{
+                grid-area: experience;
+                height: 780px;
+            }
+    
+            #hobbies{
+                grid-area: hobbies;
+                height: 420px;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 361px)
+and (max-width: 400px){
+    #introSection{
+        margin-top: 20px;
+        height: 250px;
+    
+        #intro-main{
+            padding: 2px;
+            display: grid;
+            grid-template-areas: 'myImg myIntro'
+            'myContact myContact';
+            grid-template-columns: 35% 1fr;
+            grid-gap: 20px;
+        }
+    }
+
+    #content-section{
+        #content-main{
+            #about-section{
+                height: 380px;
+            }
+    
+            #contact-section{
+                height: 170px;
+            }
+    
+            #latest-projects{
+                grid-area: latest-projects;
+                height: 950px;
+            }
+    
+            #other-projects{
+                grid-area: other-projects;
+                height: 270px;
+            }
+    
+            #education{
+                grid-area: education;
+                height: 740px;
+            }
+    
+            #skills{
+                grid-area: skills;
+                height: 440px;
+            }
+    
+            #experience{
+                grid-area: experience;
+                height: 750px;
+            }
+    
+            #hobbies{
+                grid-area: hobbies;
+                height: 420px;
+            }
+        }
+    }
+}
+
+@media (min-width: 401px)
+and (max-width: 450px){
+    #introSection{
+        margin-top: 20px;
+        height: 250px;
+    
+        #intro-main{
+            padding: 2px;
+            display: grid;
+            grid-template-areas: 'myImg myIntro'
+            'myContact myContact';
+            grid-template-columns: 30% 1fr;
+            grid-gap: 10px;
+        }
+        #myIntro{
+            margin-left: 20px;
+        }
+    }
+    #content-section{
+        #content-main{
+            #about-section{
+                height: 320px;
+            }
+    
+            #contact-section{
+                height: 160px;
+            }
+    
+            #latest-projects{
+                grid-area: latest-projects;
+                height: 950px;
+            }
+    
+            #other-projects{
+                grid-area: other-projects;
+                height: 270px;
+            }
+    
+            #education{
+                grid-area: education;
+                height: 680px;
+            }
+    
+            #skills{
+                grid-area: skills;
+                height: 440px;
+            }
+    
+            #experience{
+                grid-area: experience;
+                height: 730px;
+            }
+    
+            #hobbies{
+                grid-area: hobbies;
+                height: 420px;
+            }
+        }
+    }
+}
+
+@media (min-width: 451px)
+and (max-width: 499px){
+    #introSection{
+        margin-top: 20px;
+        height: 250px;
+    
+        #intro-main{
+            padding: 2px;
+            display: grid;
+            grid-template-areas: 'myImg myIntro'
+            'myContact myContact';
+            grid-template-columns: 27% 1fr;
+            grid-gap: 10px;
+        }
+        #myIntro{
+            margin-left: 20px;
+        }
+    }
+
+    #content-section{
+        #content-main{
+            #about-section{
+                height: 300px;
+            }
+    
+            #contact-section{
+                height: 160px;
+            }
+    
+            #latest-projects{
+                grid-area: latest-projects;
+                height: 950px;
+            }
+    
+            #other-projects{
+                grid-area: other-projects;
+                height: 270px;
+            }
+    
+            #education{
+                grid-area: education;
+                height: 640px;
+            }
+    
+            #skills{
+                grid-area: skills;
+                height: 440px;
+            }
+    
+            #experience{
+                grid-area: experience;
+                height: 710px;
+            }
+    
+            #hobbies{
+                grid-area: hobbies;
+                height: 420px;
+            }
+        }
+    }
 }
