@@ -1,3234 +1,1877 @@
-// This is the responsive media queries
+// ############################ MOBILE DEVICES ############################
+// WIDTH 1px - 500px
+@media (min-width: 1px)
+and (max-width:900px){
 
-// Media query for mobile devices
-// ********************** MOBILE DEVICES **********************
-@media (min-width:1px)
-and (max-width: 500px) {
-
-    @mixin defaultBtn {
-        font-family: 'Montserrat', sans-serif;
-        border: none;
-        outline: none;
-    }
-    
-    @mixin contentText {
+    // SECTION HEADER
+    @mixin sectionHeader{
         h2{
-            margin-top: 10px;
-            color:$headerColor;
-            letter-spacing: 1px;
-            font-size: 1.3em;
             text-align: center;
-            font-weight: bolder;
+            color: $textColor;
+            font-size: 2em;
         }
+    }
+
+    // EXPERIENCE BOX IMG
+    @mixin expBoxImg {
+        // border: $borderSettings;
+        img{
+            margin-left: 0px;
+            height: 40px;
+            width: 100px;
+        }
+    }
+    // EXPERIENCE BOX TEXT
+    @mixin expBoxText{
+        // border: $borderSettings;
         p{
-            margin-left: 30px;
-            margin-right: 30px;
-            margin-top: 30px;
-            word-spacing: 1px;
-            font-size: 0.9em;
-            line-height: 20px;
-            color:#3b4249;
-        }
-    }
-
-    // This is the margin wrapper
-    .margin-wrapper{
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    #introSection{
-        margin-top: 20px;
-        height: 250px;
-    
-        #intro-main{
-            padding: 2px;
-            display: grid;
-            grid-template-areas: 'myImg myIntro'
-            'myContact myContact';
-            grid-template-columns: 35% 1fr;
-            grid-gap: 0px;
-    
-            #myImg{
-                grid-area: myImg;
-                height: 180px;
-    
-                img{
-                    height: 60%;
-                    width: 100%;
-                    border-radius: 50%;
-                    position: absolute;
-                    left: 43%;
-                    top: 50%;
-                    transform: translate(-50%,-50%);
-                }
-            }
-            
-            #myIntro{
-                grid-area: myIntro;
-                height: 180px;
-    
-                h1{
-                    margin-top: 40px;
-                    font-size: 1.1em;
-                }
-                h2{
-                    margin-top: 10px;
-                    font-size: 1em;
-                }
-                #social-links{
-                    margin-top: 20px;
-    
-                    .fab{
-                        padding: 8px;
-                        font-size: 1.5em;
-                        border-radius: 50%;
-                        margin-right: 5px;
-                        transition: all 1s;
-    
-                        &:hover{
-                            background: #586069;
-                        }
-                    }
-                }
-            }
-        
-            #myContact{
-                grid-area: myContact;
-                border: $borderSettings;
-                height: 50px;
-    
-                .contact-me{
-                    @include defaultBtn();
-                    background: #54ba4e;
-                    border: 1px solid #54ba4e;
-                    color: #fff;
-                    padding: 10px;
-                    font-size: 1.1em;
-                    margin-top: 0px;
-                    border-radius: 5px;
-                    transition: all 0.5s;
-                    cursor: pointer;
-    
-                    .fab{
-                        color: rgb(255, 255, 255);
-                        margin-right: 10px;
-                    }
-    
-                    &:hover{
-                        background: #268021;
-                    }
-                }
-            }
-        }
-    }
-
-    #content-section{
-        grid-area: content-section;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        font-family: 'Montserrat', sans-serif;
-    
-        #content-main{
-            display: grid;
-            grid-template-areas: 'about-section'
-            'contact-section'
-            'experience'
-            'latest-projects'
-            'other-projects'
-            'education'
-            'skills'
-            'hobbies'
-            ;
-            grid-template-columns: 1fr;
-            grid-gap: 0px;
-    
-            #about-section{
-                grid-area: about-section;
-                height: 440px;
-                @include contentText();
-            }
-    
-            #contact-section{
-                grid-area: contact-section;
-                margin-top: 20px;
-                height: 170px;
-    
-                p{
-                    margin-left: 25px;
-                    margin-right: 25px;
-                    margin-top: 30px;
-                    font-size: 0.9em;
-                    color: #49515a;
-    
-                    .fas{
-                        margin-right: 10px;
-                        font-size: 1em;
-                        color: #ccd1d6;
-                    }
-                }
-            }
-    
-            #latest-projects{
-                grid-area: latest-projects;
-                height: 940px;
-                margin-top: 20px;
-                @include contentText();
-    
-                #projects-main{
-                    margin-top: 20px;
-                    display: grid;
-                    grid-template-areas: 'tech-talk'
-                    'stance-nation'
-                    'code4ct'
-                    'outdoor-adventures'
-                    ;
-                    grid-area: 1fr;
-                    grid-gap: 20px;
-                    padding: 10px;
-                    height: 500px;
-
-    
-                    #tech-talk{
-                        grid-area: tech-talk;
-                        height: 200px;
-                    }
-    
-                    #stance-nation{
-                        grid-area: stance-nation;
-                        height: 200px;
-                    }
-    
-                    #code4ct{
-                        grid-area: code4ct;
-                        height: 200px;
-                    }
-    
-                    #outdoor-adventures{
-                        grid-area: outdoor-adventures;
-                        height: 200px;
-                    }
-    
-                }
-            }
-    
-            #other-projects{
-                grid-area: other-projects;
-                height: 270px;
-                margin-top: 20px;
-                @include contentText();
-            }
-    
-            #education{
-                grid-area: education;
-                height: 870px;
-                margin-top: 20px;
-                @include contentText();
-                h2{
-                    margin-bottom: 20px;
-                }
-                h3{
-                    margin-left: 30px;
-                    margin-bottom: 10px;
-                    word-spacing: 1px;
-                    font-size: 1.1em;
-                    font-weight: bolder;
-                }
-                p{
-                    margin-top: 10px;
-                    font-size: 0.9em;
-                }
-                .tertiary-edu{
-                    margin-top: 30px;
-                }
-                .pro-lang{
-                    font-weight: bolder;
-                }
-            }
-    
-            #skills{
-                grid-area: skills;
-                background: rgba(255, 255, 255, 0.932);
-                margin-top: 20px;
-                height: 430px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 20px;
-                }
-            }
-    
-            #experience{
-                grid-area: experience;
-                background: rgba(255, 255, 255, 0.932);
-                height: 860px;
-                margin-top: 20px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                h3{
-                    margin-left: 30px;
-                    margin-top: 10px;
-                    margin-bottom: 20px;
-                    word-spacing: 1px;
-                    font-size: 1.1em;
-                    color: $headerColor;
-                    font-weight: bolder;
-                }
-                h4{
-                    margin-left: 30px;
-                    margin-top: 40px;
-                    margin-bottom: 0px;
-                    word-spacing: 1px;
-                    color: $headerColor;
-                    font-weight: bolder;
-                }
-                p{
-                    margin-top: 10px;
-                }
-            }
-    
-            #hobbies{
-                grid-area: hobbies;
-                background: rgba(255, 255, 255, 0.932);
-                margin-top: 20px;
-                height: 450px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 20px;
-                }
-            }
-        }
-    }
-
-    #footer{
-        grid-area: footer;
-        padding: 10px;
-        font-size: 0.9em;
-    }
-}
-
-// ********************** MOBILE DEVICES **********************
-@media (min-width: 335px)
-and (max-width: 400px){
-
-    #introSection{
-        margin-top: 20px;
-        height: 250px;
-    
-        #intro-main{
-            padding: 2px;
-            display: grid;
-            grid-template-areas: 'myImg myIntro'
-            'myContact myContact';
-            grid-template-columns: 35% 1fr;
-            grid-gap: 10px;
-
-        }
-    }
-
-    #content-section{
-        margin-top: 20px;
-        margin-bottom: 20px;
-    
-        #content-main{
-    
-            #about-section{
-                height: 400px;
-            }
-            #contact-section{
-                height: 170px;
-            }
-            #latest-projects{
-                height: 950px;
-            }
-            #other-projects{
-                height: 270px;
-            }
-            #education{
-                height: 830px;
-            }
-            #skills{
-                height: 440px;
-            }
-            #experience{
-                height: 790px;
-            }
-            #hobbies{
-                height: 420px;
-            }
-        }
-    }
-}
-
-// ********************** MOBILE DEVICES **********************
-@media (min-width: 341px)
-and (max-width: 360px){
-
-    #introSection{
-        margin-top: 20px;
-        height: 250px;
-    
-        #intro-main{
-            padding: 2px;
-            display: grid;
-            grid-template-areas: 'myImg myIntro'
-            'myContact myContact';
-            grid-template-columns: 35% 1fr;
-            grid-gap: 10px;
-
-        }
-    }
-
-    #content-section{
-        #content-main{
-            #about-section{
-                height: 370px;
-            }
-            #contact-section{
-                height: 170px;
-            }
-            #latest-projects{
-                height: 950px;
-            }
-            #other-projects{
-                height: 270px;
-            }
-            #education{
-                height: 780px;
-            }
-            #skills{
-                height: 440px;
-            }
-            #experience{
-                height: 780px;
-            }
-            #hobbies{
-                height: 420px;
-            }
-        }
-    }
-}
-
-// ********************** MOBILE DEVICES **********************
-@media (min-width: 361px)
-and (max-width: 400px){
-    #introSection{
-        margin-top: 20px;
-        height: 250px;
-    
-        #intro-main{
-            padding: 2px;
-            display: grid;
-            grid-template-areas: 'myImg myIntro'
-            'myContact myContact';
-            grid-template-columns: 35% 1fr;
-            grid-gap: 20px;
-        }
-    }
-
-    #content-section{
-        #content-main{
-            #about-section{
-                height: 380px;
-            }
-            #contact-section{
-                height: 170px;
-            }
-            #latest-projects{
-                height: 950px;
-            }
-            #other-projects{
-                height: 270px;
-            }
-            #education{
-                height: 740px;
-            }
-            #skills{
-                height: 440px;
-            }
-            #experience{
-                height: 750px;
-            }
-            #hobbies{
-                height: 420px;
-            }
-        }
-    }
-}
-
-// ********************** MOBILE DEVICES **********************
-@media (min-width: 401px)
-and (max-width: 450px){
-    #introSection{
-        margin-top: 20px;
-        height: 250px;
-    
-        #intro-main{
-            padding: 2px;
-            display: grid;
-            grid-template-areas: 'myImg myIntro'
-            'myContact myContact';
-            grid-template-columns: 30% 1fr;
-            grid-gap: 10px;
-        }
-        #myIntro{
+            margin-top: 10px;
             margin-left: 20px;
-        }
-    }
-    #content-section{
-        #content-main{
-            #about-section{
-                height: 320px;
-            }
-            #contact-section{
-                height: 160px;
-            }
-            #latest-projects{
-                height: 950px;
-            }
-            #other-projects{
-                height: 270px;
-            }
-            #education{
-                height: 680px;
-            }
-            #skills{
-                height: 440px;
-            }
-            #experience{
-                height: 730px;
-            }
-            #hobbies{
-                height: 420px;
-            }
-        }
-    }
-}
-
-// ********************** MOBILE DEVICES **********************
-@media (min-width: 451px)
-and (max-width: 499px){
-    #introSection{
-        margin-top: 20px;
-        height: 250px;
-    
-        #intro-main{
-            padding: 2px;
-            display: grid;
-            grid-template-areas: 'myImg myIntro'
-            'myContact myContact';
-            grid-template-columns: 27% 1fr;
-            grid-gap: 10px;
-        }
-        #myIntro{
-            margin-left: 20px;
-        }
-    }
-
-    #content-section{
-        #content-main{
-            #about-section{
-                height: 300px;
-            }
-            #contact-section{
-                height: 160px;
-            }
-            #latest-projects{
-                height: 950px;
-            }
-            #other-projects{
-                height: 270px;
-            }
-            #education{
-                height: 640px;
-            }
-            #skills{
-                height: 440px;
-            }
-            #experience{
-                height: 710px;
-            }
-            #hobbies{
-                height: 420px;
-            }
-        }
-    }
-}
-
-// ********************** TABLET DEVICES **********************
-@media (min-width: 501px)
-and (max-width: 700px){
-    @mixin defaultBtn {
-        font-family: 'Montserrat', sans-serif;
-        border: none;
-        outline: none;
-    }
-    
-    @mixin contentText {
-        h2{
-            margin-top: 10px;
-            color:$headerColor;
-            letter-spacing: 1px;
-            font-size: 1.4em;
-            text-align: center;
-            font-weight: bolder;
-        }
-        p{
-            margin-left: 30px;
-            margin-right: 30px;
-            margin-top: 30px;
-            word-spacing: 1px;
-            font-size: 1.2em;
-            line-height: 27px;
-            color:#3b4249;
-        }
-    }
-
-    // This is the margin wrapper
-    .margin-wrapper{
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    #introSection{
-        margin-top: 20px;
-        height: 190px;
-    
-        #intro-main{
-            padding: 2px;
-            display: grid;
-            grid-template-areas: 'myImg myIntro myContact';
-            grid-template-columns: 20% 1fr 30%;
-            grid-gap: 30px;
-    
-            #myImg{
-                grid-area: myImg;
-                height: 180px;
-    
-                img{
-                    height: 60%;
-                    width: 100%;
-                    border-radius: 50%;
-                    position: absolute;
-                    left: 43%;
-                    top: 50%;
-                    transform: translate(-50%,-50%);
-                }
-            }
-            
-            #myIntro{
-                grid-area: myIntro;
-                height: 180px;
-    
-                h1{
-                    margin-top: 40px;
-                    font-size: 1.1em;
-                }
-                h2{
-                    margin-top: 10px;
-                    font-size: 1em;
-                }
-                #social-links{
-                    margin-top: 20px;
-    
-                    .fab{
-                        padding: 8px;
-                        font-size: 1.5em;
-                        border-radius: 50%;
-                        margin-right: 5px;
-                        transition: all 1s;
-    
-                        &:hover{
-                            background: #586069;
-                        }
-                    }
-                }
-            }
-        
-            #myContact{
-                grid-area: myContact;
-                border: $borderSettings;
-                height: 50px;
-    
-                .contact-me{
-                    @include defaultBtn();
-                    background: #54ba4e;
-                    border: 1px solid #54ba4e;
-                    color: #fff;
-                    padding: 5px;
-                    font-size: 1em;
-                    margin-top: 50px;
-                    border-radius: 5px;
-                    transition: all 0.5s;
-                    cursor: pointer;
-    
-                    .fab{
-                        color: rgb(255, 255, 255);
-                        margin-right: 10px;
-                    }
-    
-                    &:hover{
-                        background: #268021;
-                    }
-                }
-            }
-        }
-    }
-
-    #content-section{
-        grid-area: content-section;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        font-family: 'Montserrat', sans-serif;
-    
-        #content-main{
-            display: grid;
-            grid-template-areas: 'about-section'
-            'contact-section'
-            'experience'
-            'latest-projects'
-            'other-projects'
-            'education'
-            'skills'
-            'hobbies'
-            ;
-            grid-template-columns: 1fr;
-            grid-gap: 0px;
-    
-            #about-section{
-                grid-area: about-section;
-                height: 420px;
-                @include contentText();
-            }
-    
-            #contact-section{
-                grid-area: contact-section;
-                margin-top: 20px;
-                height: 170px;
-    
-                p{
-                    margin-left: 25px;
-                    margin-right: 25px;
-                    margin-top: 30px;
-                    font-size: 0.9em;
-                    color: #49515a;
-    
-                    .fas{
-                        margin-right: 10px;
-                        font-size: 1em;
-                        color: #ccd1d6;
-                    }
-                }
-            }
-    
-            #latest-projects{
-                grid-area: latest-projects;
-                height: 1100px;
-                margin-top: 20px;
-                @include contentText();
-    
-                #projects-main{
-                    margin-top: 20px;
-                    display: grid;
-                    grid-template-areas: 'tech-talk'
-                    'stance-nation'
-                    'code4ct'
-                    'outdoor-adventures'
-                    ;
-                    grid-area: 1fr;
-                    grid-gap: 20px;
-                    padding: 10px;
-                    height: 600px;
-
-    
-                    #tech-talk{
-                        grid-area: tech-talk;
-                        height: 240px;
-                    }
-    
-                    #stance-nation{
-                        grid-area: stance-nation;
-                        height: 240px;
-                    }
-    
-                    #code4ct{
-                        grid-area: code4ct;
-                        height: 240px;
-                    }
-    
-                    #outdoor-adventures{
-                        grid-area: outdoor-adventures;
-                        height: 240px;
-                    }
-    
-                }
-            }
-    
-            #other-projects{
-                grid-area: other-projects;
-                height: 280px;
-                margin-top: 20px;
-                @include contentText();
-            }
-    
-            #education{
-                grid-area: education;
-                height: 820px;
-                margin-top: 20px;
-                @include contentText();
-                h2{
-                    margin-bottom: 20px;
-                }
-                h3{
-                    margin-left: 30px;
-                    margin-bottom: 10px;
-                    word-spacing: 1px;
-                    font-size: 1.1em;
-                    font-weight: bolder;
-                }
-                p{
-                    margin-top: 10px;
-                    font-size: 1.1em;
-                }
-                .tertiary-edu{
-                    margin-top: 30px;
-                }
-                .pro-lang{
-                    font-weight: bolder;
-                }
-            }
-    
-            #skills{
-                grid-area: skills;
-                background: rgba(255, 255, 255, 0.932);
-                margin-top: 20px;
-                height: 480px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 20px;
-                }
-            }
-    
-            #experience{
-                grid-area: experience;
-                background: rgba(255, 255, 255, 0.932);
-                height: 860px;
-                margin-top: 20px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                h3{
-                    margin-left: 30px;
-                    margin-top: 10px;
-                    margin-bottom: 20px;
-                    word-spacing: 1px;
-                    font-size: 1.1em;
-                    color: $headerColor;
-                    font-weight: bolder;
-                }
-                h4{
-                    margin-left: 30px;
-                    margin-top: 40px;
-                    margin-bottom: 0px;
-                    word-spacing: 1px;
-                    color: $headerColor;
-                    font-weight: bolder;
-                }
-                p{
-                    margin-top: 10px;
-                }
-            }
-    
-            #hobbies{
-                grid-area: hobbies;
-                margin-top: 20px;
-                height: 480px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 20px;
-                }
-            }
-        }
-    }
-
-    #footer{
-        grid-area: footer;
-        padding: 10px;
-        font-size: 1.2em;
-    }
-}
-
-// ********************** LARGER TABLET DEVICES **********************
-@media (min-width: 701px)
-and (max-width: 800px) {
-    @mixin contentText {
-        h2{
-            font-size: 1.2em;
-            margin-top: 10px;
-            letter-spacing: 1px;
-        }
-        p{
-            margin-left: 30px;
-            margin-right: 30px;
-            margin-top: 30px;
-            word-spacing: 1px;
             font-size: 0.9em;
-            line-height: 20px;
         }
     }
-    
-    #grid-container{
-        display: grid;
-        grid-template-areas: 'introSection'
-        'content-section'
-        'footer'
-        ;
-        grid-template-columns: 1fr;
+    @mixin educBoxContent {
+        // border: $borderSettings;
+        h3{
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+        p{
+            margin-left: 0px;
+            font-size: 0.9em;
+            margin-top: 3px;
+            line-height: 25px;
+            word-spacing: 2px;
+        }
     }
-    
+
+    // MARGIN WRAPPER
     .margin-wrapper{
         margin-left: 10px;
         margin-right: 10px;
     }
-    
-    #introSection{
-        grid-area: introSection;
-        margin-top: 20px;
-        height: 250px;
-    
-        #intro-main{
-            padding: 10px;
-            display: grid;
-            grid-template-areas: 'myImg myIntro myContact';
-            grid-template-columns: 1fr 50% 20%;
-            grid-gap: 0px;
-    
-            #myImg{
-                grid-area: myImg;
-                border: $borderSettings;
-                height: 230px;
-                position: relative;
-    
-                img{
-                    height: 90%;
-                    width: 80%;
-                    border-radius: 50%;
-                    position: absolute;
-                    left: 40%;
-                    top: 50%;
-                    transform: translate(-50%,-50%);
-                }
-            }
-            
-            #myIntro{
-                grid-area: myIntro;
-                height: 230px;
-    
-                h1{
-                    margin-top: 50px;
-                }
-                h2{
-                    margin-top: 10px;
-                }
-                #social-links{
-                    margin-top: 20px;
-    
-                    .fab{
-                        padding: 8px;
-                        font-size: 1.5em;
-                        border-radius: 50%;
-                        margin-right: 10px;
-                    }
-                }
-            }
-        
-            #myContact{
-                grid-area: myContact;
-                height: 230px;
-    
-                .contact-me{
-                    @include defaultBtn();
-                    padding: 10px;
-                    font-size: 1.1em;
-                    margin-top: 70px;
-                    border-radius: 5px;
-    
-                    .fas{
-                        color: rgb(255, 255, 255);
-                    }
-                }
-            }
-        }
-    }
-    
-    #content-section{
-        grid-area: content-section;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    
-        #content-main{
-            display: grid;
-            grid-template-areas: 'about-section contact-section'
-            'experience other-projects'
-            'education skills'
-            'latest-projects hobbies'
-            ;
-            grid-template-columns: 1fr 35%;
-            grid-gap: 20px;
-    
-            #about-section{
-                grid-area: about-section;
-                height: 300px;
-                @include contentText();
-    
-            }
-    
-            #contact-section{
-                grid-area: contact-section;
-                height: 160px;
-    
-                p{
-                    margin-left: 5px;
-                    margin-right: 5px;
-                    margin-top: 30px;
-                    font-size: 0.85em;
-    
-                    .fas{
-                        margin-right: 10px;
-                        font-size: 1em;
-                    }
-                }
-            }
-    
-            #latest-projects{
-                grid-area: latest-projects;
-                height: 550px;
-                @include contentText();
-    
-                #projects-main{
-                    margin-top: 20px;
-                    display: grid;
-                    grid-template-areas: 'tech-talk stance-nation'
-                    'code4ct outdoor-adventures'
-                    ;
-                    grid-area: 1fr 1fr;
-                    grid-gap: 10px;
-                    padding: 10px;
-                    height: 450px;
-    
-                    img{
-                        height: 100%;
-                        width: 100%;
-                    }
-    
-                    .overlay-tech{
-                        height: 100%;
-                        width: 100%;
-                        position: absolute;
-                        z-index: 1;
-                        top: 250px;
-    
-                        h4{
-                            margin-top: 50px;
-                            color: white;
-                        }
-                        p{
-                            color: white;
-                        }
-                    }
-    
-                    #tech-talk{
-                        grid-area: tech-talk;
-    
-                        #tech-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #stance-nation{
-                        grid-area: stance-nation;
-    
-                        #stance-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #code4ct{
-                        grid-area: code4ct;
-    
-                        #code-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #outdoor-adventures{
-                        grid-area: outdoor-adventures;
-    
-                        #outdoor-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                }
-            }
-    
-            #other-projects{
-                grid-area: other-projects;
-                height: 200px;
-                margin-top: -140px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-            }
-    
-            #education{
-                grid-area: education;
-                height: 650px;
-                @include contentText();
-                h2{
-                    font-size: 1.3em;
-                }
-                h3{
-                    font-size: 1.1em;
-                    margin-left: 30px;
-                    margin-bottom: 10px;
-                    margin-top: 20px;
-                    word-spacing: 1px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-                .tertiary-edu{
-                    margin-top: 30px;
-                }
-            }
-    
-            #skills{
-                grid-area: skills;
-                margin-top: -620px;
-                height: 420px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 20px;
-                }
-            }
-    
-            #experience{
-                grid-area: experience;
-                height: 680px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                    font-size: 1.3em;
-                }
-                h3{
-                    margin-left: 30px;
-                    margin-top: 10px;
-                    margin-bottom: 20px;
-                    word-spacing: 1px;
-                    font-size: 1.2em;
-                }
-                h4{
-                    margin-left: 30px;
-                    margin-top: 40px;
-                    margin-bottom: 0px;
-                    word-spacing: 1px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-            }
-    
-            #hobbies{
-                grid-area: hobbies;
-                margin-top: -850px;
-                height: 470px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 20px;
-                }
-            }
-        }
-    }
-    
-    #footer{
-        grid-area: footer;
-        padding: 15px;
-        font-size: 1.1em;
-    
-        .slogan{
-            font-size: 0.8em;
-        }
-    }
-}
 
+    // ############## HOME SECTION ##############
+    #home-section {
+        grid-area: home-section;
+        height: 550px;
+        position: relative;
+        overflow: hidden;
 
-// ********************** LARGER TABLET DEVICES **********************
-@media (min-width: 801px)
-and (max-width: 1000px) {
-    @mixin contentText {
-        h2{
-            font-size: 1.3em;
-            margin-top: 10px;
-            letter-spacing: 1px;
+        img{
+            z-index: -10;
+            position: absolute;
+            height: 550px;
+            width: 100%;
         }
-        p{
-            margin-left: 30px;
-            margin-right: 30px;
-            margin-top: 30px;
-            word-spacing: 1px;
-            font-size: 1em;
-            line-height: 21px;
-        }
-    }
-    
-    #grid-container{
-        display: grid;
-        grid-template-areas: 'introSection'
-        'content-section'
-        'footer'
-        ;
-        grid-template-columns: 1fr;
-    }
-    
-    .margin-wrapper{
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-    
-    #introSection{
-        grid-area: introSection;
-        margin-top: 20px;
-        height: 250px;
-    
-        #intro-main{
-            padding: 10px;
-            display: grid;
-            grid-template-areas: 'myImg myIntro myContact';
-            grid-template-columns: 1fr 50% 20%;
-            grid-gap: 0px;
-    
-            #myImg{
-                grid-area: myImg;
-                border: $borderSettings;
-                height: 230px;
-                position: relative;
-    
-                img{
-                    height: 90%;
-                    width: 80%;
-                    border-radius: 50%;
-                    position: absolute;
-                    left: 40%;
-                    top: 50%;
-                    transform: translate(-50%,-50%);
-                }
-            }
-            
-            #myIntro{
-                grid-area: myIntro;
-                height: 230px;
-    
-                h1{
-                    margin-top: 50px;
-                }
-                h2{
-                    margin-top: 10px;
-                }
-                #social-links{
-                    margin-top: 20px;
-    
-                    .fab{
-                        padding: 8px;
-                        font-size: 1.5em;
-                        border-radius: 50%;
-                        margin-right: 10px;
-                    }
-                }
-            }
         
-            #myContact{
-                grid-area: myContact;
-                height: 230px;
-    
-                .contact-me{
-                    @include defaultBtn();
-                    padding: 10px;
-                    font-size: 1.1em;
-                    margin-top: 70px;
-                    border-radius: 5px;
-    
-                    .fas{
-                        color: rgb(255, 255, 255);
-                    }
-                }
-            }
-        }
-    }
-    
-    #content-section{
-        grid-area: content-section;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    
-        #content-main{
-            display: grid;
-            grid-template-areas: 'about-section contact-section'
-            'experience other-projects'
-            'education skills'
-            'latest-projects hobbies'
-            ;
-            grid-template-columns: 1fr 35%;
-            grid-gap: 20px;
-    
-            #about-section{
-                grid-area: about-section;
-                height: 300px;
-                @include contentText();
-            }
-    
-            #contact-section{
-                grid-area: contact-section;
-                height: 160px;
-    
-                p{
-                    margin-left: 5px;
-                    margin-right: 5px;
-                    margin-top: 30px;
-                    font-size: 0.85em;
-    
-                    .fas{
-                        margin-right: 10px;
-                        font-size: 1em;
-                    }
-                }
-            }
-    
-            #latest-projects{
-                grid-area: latest-projects;
-                height: 550px;
-                @include contentText();
-    
-                #projects-main{
-                    margin-top: 20px;
-                    display: grid;
-                    grid-template-areas: 'tech-talk stance-nation'
-                    'code4ct outdoor-adventures'
-                    ;
-                    grid-area: 1fr 1fr;
-                    grid-gap: 10px;
-                    padding: 10px;
-                    height: 450px;
-    
-                    img{
-                        height: 100%;
-                        width: 100%;
-                    }
-    
-                    .overlay-tech{
-                        height: 100%;
-                        width: 100%;
-                        position: absolute;
-                        z-index: 1;
-                        top: 250px;
-    
-                        h4{
-                            margin-top: 50px;
-                            color: white;
-                        }
-                        p{
-                            color: white;
-                        }
-                    }
-    
-                    #tech-talk{
-                        grid-area: tech-talk;
-    
-                        #tech-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #stance-nation{
-                        grid-area: stance-nation;
-    
-                        #stance-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #code4ct{
-                        grid-area: code4ct;
-    
-                        #code-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #outdoor-adventures{
-                        grid-area: outdoor-adventures;
-    
-                        #outdoor-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                }
-            }
-    
-            #other-projects{
-                grid-area: other-projects;
-                height: 200px;
-                margin-top: -140px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-            }
-    
-            #education{
-                grid-area: education;
-                height: 650px;
-                @include contentText();
-                h2{
-                    font-size: 1.3em;
-                }
-                h3{
-                    font-size: 1.1em;
-                    margin-left: 30px;
-                    margin-bottom: 10px;
-                    margin-top: 20px;
-                    word-spacing: 1px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-                .tertiary-edu{
-                    margin-top: 30px;
-                }
-            }
-    
-            #skills{
-                grid-area: skills;
-                margin-top: -620px;
-                height: 420px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 20px;
-                }
-            }
-    
-            #experience{
-                grid-area: experience;
-                height: 720px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                    font-size: 1.3em;
-                }
-                h3{
-                    margin-left: 30px;
-                    margin-top: 10px;
-                    margin-bottom: 20px;
-                    word-spacing: 1px;
-                    font-size: 1.2em;
-                }
-                h4{
-                    margin-left: 30px;
-                    margin-top: 40px;
-                    margin-bottom: 0px;
-                    word-spacing: 1px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-            }
-    
-            #hobbies{
-                grid-area: hobbies;
-                margin-top: -850px;
-                height: 470px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 20px;
-                }
-            }
-        }
-    }
-    
-    #footer{
-        grid-area: footer;
-        padding: 15px;
-        font-size: 1.1em;
-    
-        .slogan{
-            font-size: 0.8em;
-        }
-    }
-}
+        // ############## NAVBAR ##############
+        #navbar{
+            position: fixed;
+            z-index: 10000;
+            height: 60px;
+            width: 100%;
+            transition: all 0.2s;
 
-// ********************** LAPTOP / SMALL SCREENS **********************
-@media (min-width:1001px)
-and (max-width: 1100px){
-    @mixin contentText {
-        h2{
-            font-size: 1.3em;
-            margin-top: 10px;
-            letter-spacing: 1px;
-        }
-        p{
-            margin-left: 30px;
-            margin-right: 30px;
-            margin-top: 30px;
-            word-spacing: 1px;
-            font-size: 1em;
-            line-height: 25px;
-        }
-    }
-    
-    #grid-container{
-        display: grid;
-        grid-template-areas: 'introSection'
-        'content-section'
-        'footer'
-        ;
-        grid-template-columns: 1fr;
-    }
-    
-    .margin-wrapper{
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-    
-    #introSection{
-        grid-area: introSection;
-        margin-top: 20px;
-        height: 250px;
-    
-        #intro-main{
-            padding: 10px;
-            display: grid;
-            grid-template-areas: 'myImg myIntro myContact';
-            grid-template-columns: 1fr 50% 20%;
-            grid-gap: 0px;
-    
-            #myImg{
-                grid-area: myImg;
-                border: $borderSettings;
-                height: 230px;
-                position: relative;
-    
-                img{
-                    height: 90%;
-                    width: 80%;
-                    border-radius: 50%;
-                    position: absolute;
-                    left: 40%;
-                    top: 50%;
-                    transform: translate(-50%,-50%);
-                }
-            }
-            
-            #myIntro{
-                grid-area: myIntro;
-                height: 230px;
-    
-                h1{
-                    margin-top: 50px;
-                }
-                h2{
-                    margin-top: 10px;
-                }
-                #social-links{
-                    margin-top: 20px;
-    
-                    .fab{
-                        padding: 8px;
-                        font-size: 1.5em;
-                        border-radius: 50%;
-                        margin-right: 10px;
-                    }
-                }
-            }
-        
-            #myContact{
-                grid-area: myContact;
-                height: 230px;
-    
-                .contact-me{
-                    @include defaultBtn();
-                    padding: 10px;
-                    font-size: 1.1em;
-                    margin-top: 70px;
-                    border-radius: 5px;
-    
-                    .fas{
-                        color: rgb(255, 255, 255);
-                    }
-                }
-            }
-        }
-    }
-    
-    #content-section{
-        grid-area: content-section;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    
-        #content-main{
-            display: grid;
-            grid-template-areas: 'about-section contact-section'
-            'experience other-projects'
-            'education skills'
-            'latest-projects hobbies'
-            ;
-            grid-template-columns: 1fr 35%;
-            grid-gap: 20px;
-    
-            #about-section{
-                grid-area: about-section;
-                height: 300px;
-                @include contentText();
-            }
-    
-            #contact-section{
-                grid-area: contact-section;
-                height: 160px;
-    
-                p{
-                    margin-left: 20px;
-                    margin-right: 20px;
-                    margin-top: 30px;
-                    font-size: 0.85em;
-    
-                    .fas{
-                        margin-right: 10px;
-                        font-size: 1em;
-                    }
-                }
-            }
-    
-            #latest-projects{
-                grid-area: latest-projects;
-                height: 550px;
-                @include contentText();
-    
-                #projects-main{
-                    margin-top: 20px;
-                    display: grid;
-                    grid-template-areas: 'tech-talk stance-nation'
-                    'code4ct outdoor-adventures'
-                    ;
-                    grid-area: 1fr 1fr;
-                    grid-gap: 10px;
-                    padding: 10px;
-                    height: 450px;
-    
-                    img{
-                        height: 100%;
-                        width: 100%;
-                    }
-    
-                    .overlay-tech{
-                        height: 100%;
-                        width: 100%;
-                        position: absolute;
-                        z-index: 1;
-                        top: 250px;
-    
-                        h4{
-                            margin-top: 50px;
-                            color: white;
-                        }
-                        p{
-                            color: white;
-                        }
-                    }
-    
-                    #tech-talk{
-                        grid-area: tech-talk;
-    
-                        #tech-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #stance-nation{
-                        grid-area: stance-nation;
-    
-                        #stance-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #code4ct{
-                        grid-area: code4ct;
-    
-                        #code-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #outdoor-adventures{
-                        grid-area: outdoor-adventures;
-    
-                        #outdoor-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                }
-            }
-    
-            #other-projects{
-                grid-area: other-projects;
-                height: 220px;
-                margin-top: -140px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-            }
-    
-            #education{
-                grid-area: education;
-                height: 690px;
-                @include contentText();
-                h2{
-                    font-size: 1.3em;
-                }
-                h3{
-                    font-size: 1.1em;
-                    margin-left: 30px;
-                    margin-bottom: 10px;
-                    margin-top: 20px;
-                    word-spacing: 1px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-                .tertiary-edu{
-                    margin-top: 30px;
-                }
-            }
-    
-            #skills{
-                grid-area: skills;
-                margin-top: -630px;
-                height: 470px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 20px;
-                }
-            }
-    
-            #experience{
-                grid-area: experience;
-                height: 720px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                    font-size: 1.3em;
-                }
-                h3{
-                    margin-left: 30px;
-                    margin-top: 10px;
-                    margin-bottom: 20px;
-                    word-spacing: 1px;
-                    font-size: 1.2em;
-                }
-                h4{
-                    margin-left: 30px;
-                    margin-top: 40px;
-                    margin-bottom: 0px;
-                    word-spacing: 1px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-            }
-    
-            #hobbies{
-                grid-area: hobbies;
-                margin-top: -810px;
-                height: 490px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 20px;
-                }
-            }
-        }
-    }
-    
-    #footer{
-        grid-area: footer;
-        padding: 15px;
-        font-size: 1.1em;
-    
-        .slogan{
-            font-size: 0.8em;
-        }
-    }
-}
-// ********************** LAPTOP SCREENS **********************
-@media (min-width:1101px)
-and (max-width: 1200px){
-    @mixin contentText {
-        h2{
-            font-size: 1.3em;
-            margin-top: 10px;
-            letter-spacing: 1px;
-        }
-        p{
-            margin-left: 30px;
-            margin-right: 30px;
-            margin-top: 30px;
-            word-spacing: 1px;
-            font-size: 1em;
-            line-height: 25px;
-        }
-    }
-    
-    #grid-container{
-        display: grid;
-        grid-template-areas: 'introSection'
-        'content-section'
-        'footer'
-        ;
-        grid-template-columns: 1fr;
-    }
-    
-    .margin-wrapper{
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-    
-    #introSection{
-        grid-area: introSection;
-        margin-top: 20px;
-        height: 250px;
-    
-        #intro-main{
-            padding: 10px;
-            display: grid;
-            grid-template-areas: 'myImg myIntro myContact';
-            grid-template-columns: 1fr 50% 20%;
-            grid-gap: 0px;
-    
-            #myImg{
-                grid-area: myImg;
-                border: $borderSettings;
-                height: 230px;
-                position: relative;
-    
-                img{
-                    height: 90%;
-                    width: 80%;
-                    border-radius: 50%;
-                    position: absolute;
-                    left: 40%;
-                    top: 50%;
-                    transform: translate(-50%,-50%);
-                }
-            }
-            
-            #myIntro{
-                grid-area: myIntro;
-                height: 230px;
-    
-                h1{
-                    margin-top: 50px;
-                }
-                h2{
-                    margin-top: 10px;
-                }
-                #social-links{
-                    margin-top: 20px;
-    
-                    .fab{
-                        padding: 8px;
-                        font-size: 1.5em;
-                        border-radius: 50%;
-                        margin-right: 10px;
-                    }
-                }
-            }
-        
-            #myContact{
-                grid-area: myContact;
-                height: 230px;
-    
-                .contact-me{
-                    @include defaultBtn();
-                    padding: 10px;
-                    font-size: 1.1em;
-                    margin-top: 70px;
-                    border-radius: 5px;
-    
-                    .fas{
-                        color: rgb(255, 255, 255);
-                    }
-                }
-            }
-        }
-    }
-    
-    #content-section{
-        grid-area: content-section;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    
-        #content-main{
-            display: grid;
-            grid-template-areas: 'about-section contact-section'
-            'experience other-projects'
-            'education skills'
-            'latest-projects hobbies'
-            ;
-            grid-template-columns: 1fr 35%;
-            grid-gap: 20px;
-    
-            #about-section{
-                grid-area: about-section;
-                height: 300px;
-                @include contentText();
-            }
-    
-            #contact-section{
-                grid-area: contact-section;
-                height: 160px;
-    
-                p{
-                    margin-left: 20px;
-                    margin-right: 20px;
-                    margin-top: 30px;
-                    font-size: 0.85em;
-    
-                    .fas{
-                        margin-right: 10px;
-                        font-size: 1em;
-                    }
-                }
-            }
-    
-            #latest-projects{
-                grid-area: latest-projects;
-                height: 550px;
-                @include contentText();
-    
-                #projects-main{
-                    margin-top: 20px;
-                    display: grid;
-                    grid-template-areas: 'tech-talk stance-nation'
-                    'code4ct outdoor-adventures'
-                    ;
-                    grid-area: 1fr 1fr;
-                    grid-gap: 10px;
-                    padding: 10px;
-                    height: 450px;
-    
-                    img{
-                        height: 100%;
-                        width: 100%;
-                    }
-    
-                    .overlay-tech{
-                        height: 100%;
-                        width: 100%;
-                        position: absolute;
-                        z-index: 1;
-                        top: 250px;
-    
-                        h4{
-                            margin-top: 50px;
-                            color: white;
-                        }
-                        p{
-                            color: white;
-                        }
-                    }
-    
-                    #tech-talk{
-                        grid-area: tech-talk;
-    
-                        #tech-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #stance-nation{
-                        grid-area: stance-nation;
-    
-                        #stance-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #code4ct{
-                        grid-area: code4ct;
-    
-                        #code-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #outdoor-adventures{
-                        grid-area: outdoor-adventures;
-    
-                        #outdoor-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                }
-            }
-    
-            #other-projects{
-                grid-area: other-projects;
-                height: 220px;
-                margin-top: -140px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-            }
-    
-            #education{
-                grid-area: education;
-                height: 640px;
-                @include contentText();
-                h2{
-                    font-size: 1.3em;
-                }
-                h3{
-                    font-size: 1.1em;
-                    margin-left: 30px;
-                    margin-bottom: 10px;
-                    margin-top: 20px;
-                    word-spacing: 1px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-                .tertiary-edu{
-                    margin-top: 30px;
-                }
-            }
-    
-            #skills{
-                grid-area: skills;
-                margin-top: -630px;
-                height: 470px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 20px;
-                }
-            }
-    
-            #experience{
-                grid-area: experience;
-                height: 720px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                    font-size: 1.3em;
-                }
-                h3{
-                    margin-left: 30px;
-                    margin-top: 10px;
-                    margin-bottom: 20px;
-                    word-spacing: 1px;
-                    font-size: 1.2em;
-                }
-                h4{
-                    margin-left: 30px;
-                    margin-top: 40px;
-                    margin-bottom: 0px;
-                    word-spacing: 1px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-            }
-    
-            #hobbies{
-                grid-area: hobbies;
-                margin-top: -800px;
-                height: 470px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 20px;
-                }
-            }
-        }
-    }
-    
-    #footer{
-        grid-area: footer;
-        padding: 15px;
-        font-size: 1.1em;
-    
-        .slogan{
-            font-size: 0.8em;
-        }
-    }
-}
+            // ############## NAVBAR LOGO ##############
+            #navbar_logo{
+                float: left;
+                width: 70%;
+                margin-top: 14px;
 
-// ********************** LAPTOP SCREENS **********************
-@media (min-width:1201px)
-and (max-width: 1300px){
-    @mixin contentText {
-        h2{
-            font-size: 1.3em;
-            margin-top: 10px;
-            letter-spacing: 1px;
-        }
-        p{
-            margin-left: 30px;
-            margin-right: 30px;
-            margin-top: 30px;
-            word-spacing: 1px;
-            font-size: 1.05em;
-            line-height: 25px;
-        }
-    }
-    
-    #grid-container{
-        display: grid;
-        grid-template-areas: 'introSection'
-        'content-section'
-        'footer'
-        ;
-        grid-template-columns: 1fr;
-    }
-    
-    .margin-wrapper{
-        margin-left: 100px;
-        margin-right: 100px;
-    }
-    
-    #introSection{
-        grid-area: introSection;
-        margin-top: 20px;
-        height: 250px;
-    
-        #intro-main{
-            padding: 10px;
-            display: grid;
-            grid-template-areas: 'myImg myIntro myContact';
-            grid-template-columns: 1fr 55% 20%;
-            grid-gap: 0px;
-    
-            #myImg{
-                grid-area: myImg;
-                border: $borderSettings;
-                height: 230px;
-                position: relative;
-    
-                img{
-                    height: 90%;
-                    width: 80%;
-                    border-radius: 50%;
-                    position: absolute;
-                    left: 40%;
-                    top: 50%;
-                    transform: translate(-50%,-50%);
-                }
-            }
-            
-            #myIntro{
-                grid-area: myIntro;
-                height: 230px;
-    
-                h1{
-                    margin-top: 50px;
-                }
-                h2{
-                    margin-top: 10px;
-                }
-                #social-links{
-                    margin-top: 20px;
-    
-                    .fab{
-                        padding: 8px;
-                        font-size: 1.5em;
-                        border-radius: 50%;
-                        margin-right: 10px;
-                    }
-                }
-            }
-        
-            #myContact{
-                grid-area: myContact;
-                height: 230px;
-    
-                .contact-me{
-                    @include defaultBtn();
-                    padding: 10px;
-                    font-size: 1.1em;
-                    margin-top: 70px;
-                    border-radius: 5px;
-    
-                    .fas{
-                        color: rgb(255, 255, 255);
-                    }
-                }
-            }
-        }
-    }
-    
-    #content-section{
-        grid-area: content-section;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    
-        #content-main{
-            display: grid;
-            grid-template-areas: 'about-section contact-section'
-            'experience other-projects'
-            'education skills'
-            'latest-projects hobbies'
-            ;
-            grid-template-columns: 1fr 35%;
-            grid-gap: 20px;
-    
-            #about-section{
-                grid-area: about-section;
-                height: 300px;
-                @include contentText();
-            }
-    
-            #contact-section{
-                grid-area: contact-section;
-                height: 160px;
-    
-                p{
-                    margin-left: 20px;
-                    margin-right: 20px;
-                    margin-top: 30px;
-                    font-size: 1em;
-    
-                    .fas{
-                        margin-right: 10px;
-                        font-size: 1em;
-                    }
-                }
-            }
-    
-            #latest-projects{
-                grid-area: latest-projects;
-                height: 550px;
-                @include contentText();
-    
-                #projects-main{
-                    margin-top: 20px;
-                    display: grid;
-                    grid-template-areas: 'tech-talk stance-nation'
-                    'code4ct outdoor-adventures'
-                    ;
-                    grid-area: 1fr 1fr;
-                    grid-gap: 10px;
-                    padding: 10px;
-                    height: 450px;
-    
-                    img{
-                        height: 100%;
-                        width: 100%;
-                    }
-    
-                    .overlay-tech{
-                        height: 100%;
-                        width: 100%;
-                        position: absolute;
-                        z-index: 1;
-                        top: 250px;
-    
-                        h4{
-                            margin-top: 50px;
-                            color: white;
-                        }
-                        p{
-                            color: white;
-                        }
-                    }
-    
-                    #tech-talk{
-                        grid-area: tech-talk;
-    
-                        #tech-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #stance-nation{
-                        grid-area: stance-nation;
-    
-                        #stance-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #code4ct{
-                        grid-area: code4ct;
-    
-                        #code-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #outdoor-adventures{
-                        grid-area: outdoor-adventures;
-    
-                        #outdoor-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                }
-            }
-    
-            #other-projects{
-                grid-area: other-projects;
-                height: 220px;
-                margin-top: -140px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-            }
-    
-            #education{
-                grid-area: education;
-                height: 640px;
-                @include contentText();
-                h2{
-                    font-size: 1.3em;
-                }
                 h3{
-                    font-size: 1.1em;
-                    margin-left: 30px;
-                    margin-bottom: 10px;
-                    margin-top: 20px;
-                    word-spacing: 1px;
+                    font-size: 1.5em;
+                    letter-spacing: 1px;
+                    cursor: pointer;
+                    transition: all 0.3s;
                 }
-                p{
-                    margin-top: 10px;
-                }
-                .tertiary-edu{
-                    margin-top: 30px;
+                i{
+                    margin-left: 10px;
                 }
             }
-    
-            #skills{
-                grid-area: skills;
-                margin-top: -630px;
-                height: 470px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 20px;
-                }
-            }
-    
-            #experience{
-                grid-area: experience;
-                height: 720px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                    font-size: 1.3em;
-                }
-                h3{
-                    margin-left: 30px;
-                    margin-top: 10px;
-                    margin-bottom: 20px;
-                    word-spacing: 1px;
-                    font-size: 1.2em;
-                }
-                h4{
-                    margin-left: 30px;
-                    margin-top: 40px;
-                    margin-bottom: 0px;
-                    word-spacing: 1px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-            }
-    
-            #hobbies{
-                grid-area: hobbies;
-                margin-top: -800px;
-                height: 470px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 20px;
-                }
-            }
-        }
-    }
-    
-    #footer{
-        grid-area: footer;
-        padding: 15px;
-        font-size: 1.1em;
-    
-        .slogan{
-            font-size: 0.8em;
-        }
-    }
-}
+            // ############## NAVBAR LINKS ##############
+            #navbar_links{
+                float: right;
+                width: 25%;
+                margin-top: 16px;
+                text-align: right;
 
+                #hamburger_menu{
+                    display: block;
 
-// ********************** LAPTOP SCREENS **********************
-@media (min-width:1301px)
-and (max-width: 1400px){
-    @mixin contentText {
-        h2{
-            font-size: 1.3em;
-            margin-top: 10px;
-            letter-spacing: 1px;
-        }
-        p{
-            margin-left: 30px;
-            margin-right: 30px;
-            margin-top: 30px;
-            word-spacing: 1px;
-            font-size: 1.1em;
-            line-height: 25px;
-        }
-    }
-    
-    #grid-container{
-        display: grid;
-        grid-template-areas: 'introSection'
-        'content-section'
-        'footer'
-        ;
-        grid-template-columns: 1fr;
-    }
-    
-    .margin-wrapper{
-        margin-left: 100px;
-        margin-right: 100px;
-    }
-    
-    #introSection{
-        grid-area: introSection;
-        margin-top: 20px;
-        height: 250px;
-    
-        #intro-main{
-            padding: 10px;
-            display: grid;
-            grid-template-areas: 'myImg myIntro myContact';
-            grid-template-columns: 1fr 55% 20%;
-            grid-gap: 0px;
-    
-            #myImg{
-                grid-area: myImg;
-                border: $borderSettings;
-                height: 230px;
-                position: relative;
-    
-                img{
-                    height: 90%;
-                    width: 80%;
-                    border-radius: 50%;
-                    position: absolute;
-                    left: 40%;
-                    top: 50%;
-                    transform: translate(-50%,-50%);
-                }
-            }
-            
-            #myIntro{
-                grid-area: myIntro;
-                height: 230px;
-    
-                h1{
-                    margin-top: 50px;
-                }
-                h2{
-                    margin-top: 10px;
-                }
-                #social-links{
-                    margin-top: 20px;
-    
-                    .fab{
-                        padding: 8px;
+                    i{
                         font-size: 1.5em;
-                        border-radius: 50%;
-                        margin-right: 10px;
+                        color: #B9C1D0;
                     }
                 }
-            }
-        
-            #myContact{
-                grid-area: myContact;
-                height: 230px;
-    
-                .contact-me{
-                    @include defaultBtn();
-                    padding: 10px;
-                    font-size: 1.1em;
-                    margin-top: 70px;
-                    border-radius: 5px;
-    
-                    .fas{
-                        color: rgb(255, 255, 255);
-                    }
-                }
-            }
-        }
-    }
-    
-    #content-section{
-        grid-area: content-section;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    
-        #content-main{
-            display: grid;
-            grid-template-areas: 'about-section contact-section'
-            'experience other-projects'
-            'education skills'
-            'latest-projects hobbies'
-            ;
-            grid-template-columns: 1fr 35%;
-            grid-gap: 20px;
-    
-            #about-section{
-                grid-area: about-section;
-                height: 300px;
-                @include contentText();
-            }
-    
-            #contact-section{
-                grid-area: contact-section;
-                height: 160px;
-    
-                p{
-                    margin-left: 20px;
-                    margin-right: 20px;
-                    margin-top: 30px;
-                    font-size: 1em;
-    
-                    .fas{
-                        margin-right: 10px;
-                        font-size: 1em;
-                    }
-                }
-            }
-    
-            #latest-projects{
-                grid-area: latest-projects;
-                height: 550px;
-                @include contentText();
-    
-                #projects-main{
-                    margin-top: 20px;
-                    display: grid;
-                    grid-template-areas: 'tech-talk stance-nation'
-                    'code4ct outdoor-adventures'
-                    ;
-                    grid-area: 1fr 1fr;
-                    grid-gap: 10px;
-                    padding: 10px;
-                    height: 450px;
-    
-                    img{
-                        height: 100%;
-                        width: 100%;
-                    }
-    
-                    .overlay-tech{
-                        height: 100%;
-                        width: 100%;
-                        position: absolute;
-                        z-index: 1;
-                        top: 250px;
-    
-                        h4{
-                            margin-top: 50px;
-                            color: white;
-                        }
-                        p{
-                            color: white;
-                        }
-                    }
-    
-                    #tech-talk{
-                        grid-area: tech-talk;
-    
-                        #tech-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #stance-nation{
-                        grid-area: stance-nation;
-    
-                        #stance-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #code4ct{
-                        grid-area: code4ct;
-    
-                        #code-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #outdoor-adventures{
-                        grid-area: outdoor-adventures;
-    
-                        #outdoor-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                }
-            }
-    
-            #other-projects{
-                grid-area: other-projects;
-                height: 220px;
-                margin-top: -140px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-            }
-    
-            #education{
-                grid-area: education;
-                height: 640px;
-                @include contentText();
-                h2{
-                    font-size: 1.3em;
-                }
-                h3{
-                    font-size: 1.1em;
-                    margin-left: 30px;
-                    margin-bottom: 10px;
-                    margin-top: 20px;
-                    word-spacing: 1px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-                .tertiary-edu{
-                    margin-top: 30px;
-                }
-            }
-    
-            #skills{
-                grid-area: skills;
-                margin-top: -630px;
-                height: 470px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 20px;
-                }
-            }
-    
-            #experience{
-                grid-area: experience;
-                height: 720px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                    font-size: 1.3em;
-                }
-                h3{
-                    margin-left: 30px;
-                    margin-top: 10px;
-                    margin-bottom: 20px;
-                    word-spacing: 1px;
-                    font-size: 1.2em;
-                }
-                h4{
-                    margin-left: 30px;
-                    margin-top: 40px;
-                    margin-bottom: 0px;
-                    word-spacing: 1px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-            }
-    
-            #hobbies{
-                grid-area: hobbies;
-                margin-top: -800px;
-                height: 470px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 20px;
-                }
-            }
-        }
-    }
-    
-    #footer{
-        grid-area: footer;
-        padding: 15px;
-        font-size: 1.1em;
-    
-        .slogan{
-            font-size: 0.8em;
-        }
-    }
-}
-// ********************** LAPTOP SCREENS **********************
-@media (min-width:1401px)
-and (max-width: 1500px){
-    @mixin contentText {
-        h2{
-            font-size: 1.4em;
-            margin-top: 10px;
-            letter-spacing: 1px;
-        }
-        p{
-            margin-left: 30px;
-            margin-right: 30px;
-            margin-top: 30px;
-            word-spacing: 1px;
-            font-size: 1.3em;
-            line-height: 25px;
-        }
-    }
-    
-    #grid-container{
-        display: grid;
-        grid-template-areas: 'introSection'
-        'content-section'
-        'footer'
-        ;
-        grid-template-columns: 1fr;
-    }
-    
-    .margin-wrapper{
-        margin-left: 100px;
-        margin-right: 100px;
-    }
-    
-    #introSection{
-        grid-area: introSection;
-        margin-top: 20px;
-        height: 250px;
-    
-        #intro-main{
-            padding: 10px;
-            display: grid;
-            grid-template-areas: 'myImg myIntro myContact';
-            grid-template-columns: 1fr 55% 20%;
-            grid-gap: 0px;
-    
-            #myImg{
-                grid-area: myImg;
-                border: $borderSettings;
-                height: 230px;
-                position: relative;
-    
-                img{
-                    height: 90%;
-                    width: 80%;
-                    border-radius: 50%;
+
+                a{
+                    display: none;
+                    z-index: 1000000;
                     position: absolute;
-                    left: 40%;
-                    top: 50%;
-                    transform: translate(-50%,-50%);
-                }
-            }
-            
-            #myIntro{
-                grid-area: myIntro;
-                height: 230px;
-    
-                h1{
-                    margin-top: 50px;
-                }
-                h2{
-                    margin-top: 10px;
-                }
-                #social-links{
-                    margin-top: 20px;
-    
-                    .fab{
-                        padding: 8px;
-                        font-size: 1.5em;
-                        border-radius: 50%;
-                        margin-right: 10px;
-                    }
-                }
-            }
-        
-            #myContact{
-                grid-area: myContact;
-                height: 230px;
-    
-                .contact-me{
-                    @include defaultBtn();
-                    padding: 10px;
-                    font-size: 1.1em;
-                    margin-top: 70px;
-                    border-radius: 5px;
-    
-                    .fas{
-                        color: rgb(255, 255, 255);
-                    }
-                }
-            }
-        }
-    }
-    
-    #content-section{
-        grid-area: content-section;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    
-        #content-main{
-            display: grid;
-            grid-template-areas: 'about-section contact-section'
-            'experience other-projects'
-            'education skills'
-            'latest-projects hobbies'
-            ;
-            grid-template-columns: 1fr 35%;
-            grid-gap: 20px;
-    
-            #about-section{
-                grid-area: about-section;
-                height: 300px;
-                @include contentText();
-            }
-    
-            #contact-section{
-                grid-area: contact-section;
-                height: 160px;
-    
-                p{
-                    margin-left: 20px;
-                    margin-right: 20px;
-                    margin-top: 30px;
-                    font-size: 1em;
-    
-                    .fas{
-                        margin-right: 10px;
-                        font-size: 1em;
-                    }
-                }
-            }
-    
-            #latest-projects{
-                grid-area: latest-projects;
-                height: 550px;
-                @include contentText();
-    
-                #projects-main{
-                    margin-top: 20px;
-                    display: grid;
-                    grid-template-areas: 'tech-talk stance-nation'
-                    'code4ct outdoor-adventures'
-                    ;
-                    grid-area: 1fr 1fr;
-                    grid-gap: 10px;
-                    padding: 10px;
-                    height: 450px;
-    
-                    img{
-                        height: 100%;
-                        width: 100%;
-                    }
-    
-                    .overlay-tech{
-                        height: 100%;
-                        width: 100%;
-                        position: absolute;
-                        z-index: 1;
-                        top: 250px;
-    
-                        h4{
-                            margin-top: 50px;
-                            color: white;
-                        }
-                        p{
-                            color: white;
-                        }
-                    }
-    
-                    #tech-talk{
-                        grid-area: tech-talk;
-    
-                        #tech-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #stance-nation{
-                        grid-area: stance-nation;
-    
-                        #stance-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #code4ct{
-                        grid-area: code4ct;
-    
-                        #code-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                    #outdoor-adventures{
-                        grid-area: outdoor-adventures;
-    
-                        #outdoor-img{
-                            height: 100%;
-                        }
-    
-                        &:hover{
-                            .overlay-tech{
-                                top: 0%;
-                            }
-                        }
-                    }
-    
-                }
-            }
-    
-            #other-projects{
-                grid-area: other-projects;
-                height: 220px;
-                margin-top: -140px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-            }
-    
-            #education{
-                grid-area: education;
-                height: 640px;
-                @include contentText();
-                h2{
-                    font-size: 1.3em;
-                }
-                h3{
-                    font-size: 1.1em;
-                    margin-left: 30px;
-                    margin-bottom: 10px;
-                    margin-top: 20px;
-                    word-spacing: 1px;
-                }
-                p{
-                    margin-top: 10px;
-                }
-                .tertiary-edu{
-                    margin-top: 30px;
-                }
-            }
-    
-            #skills{
-                grid-area: skills;
-                margin-top: -630px;
-                height: 470px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
-                }
-                p{
-                    margin-top: 20px;
-                }
-            }
-    
-            #experience{
-                grid-area: experience;
-                height: 720px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
+                    top: 80px;
+                    left: 45%;
+                    transform: translate(-50%);
                     font-size: 1.5em;
                 }
-                h3{
-                    margin-left: 30px;
-                    margin-top: 10px;
-                    margin-bottom: 20px;
-                    word-spacing: 1px;
-                    font-size: 1.4em;
+                .exp_link{
+                    top: 140px;
                 }
-                h4{
-                    margin-left: 30px;
-                    margin-top: 40px;
-                    margin-bottom: 0px;
-                    word-spacing: 1px;
-                    font-size: 1.3em;
+                .edu_link{
+                    top: 200px;
                 }
-                p{
-                    margin-top: 10px;
+                .proj_link{
+                    top: 260px;
+                }
+                .about_link{
+                    top: 320px;
                 }
             }
-    
-            #hobbies{
-                grid-area: hobbies;
-                margin-top: -800px;
-                height: 470px;
-                @include contentText();
-                h2{
-                    margin-bottom: 30px;
+        }
+
+        .show_navlinks{
+            height: 400px;
+            background: rgb(23, 25, 29);
+            #navbar_links{
+                a{
+                    display: block;
                 }
-                p{
-                    margin-top: 20px;
+            }
+        }
+
+        // ############## HOME SECTION TITLE ##############
+        #home-section-title{
+            position: relative;
+            transition: all 1s;
+            z-index: 1000;
+            margin-top: 160px;
+
+            h1{
+                font-size: 2em;
+            }
+
+            p{
+                margin-top: 30px;
+                font-size: 1em;
+            }
+
+            // CONTACT BUTTON
+            button{
+                padding: 4px 8px;
+                margin-top: 40px;
+                font-size: 0.9em;
+                border-radius: 3px;
+
+                i{
+                    margin-right: 10px;
+                }
+            }
+        }
+        h4{
+            left: 50%;
+            bottom: 0px;
+            transform: translate(-50%,0%);
+            font-size: 4em;
+            animation: arrowBounce 1s infinite;
+            transition: all 0.2s;
+
+            @keyframes arrowBounce {
+                0%{
+                    bottom: 0px;
+                }
+                50%{
+                    bottom: 5px;
                 }
             }
         }
     }
+
+    // ############## SKILLS SECTION ##############
+    #skills_section{
+        grid-area: skills_section;
+        height: 750px;
+        margin-top: 30px;
+        // border: $borderSettings;
+
+        // SKILLS SECTION HEADER
+        #skills_header{
+            @include sectionHeader();
+        }
+
+        // SKILLS SECTION DESCRIPTION
+        #skills_description{
+            margin-top: 30px;
+            p{
+                font-size: 0.9em;
+            }
+        }
+
+        // SKILLS SECTION BOXES
+        #skills_boxes{
+            margin-top: 20px;
+            display: grid;
+            grid-template-areas: 'html_box css_box'
+            'sass_box js_box'
+            'responsive_box node_box'
+            'git_box python_box'
+            ;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+
+            // SKILLS CARD
+            .skill_card{
+                border-radius: 6px;
+                height: 130px;
+
+                img{
+                    position: absolute;
+                    left: 50%;
+                    top: 40%;
+                    transform: translate(-50%,-50%);
+                    height: 50px;
+                    width: 50px;
+                }
+                p{
+                    position: absolute;
+                    left: 50%;
+                    top: 75%;
+                    transform: translate(-50%,-50%);
+                    color: $textColor;
+                    font-size: 1em;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    // ############## EXPERIENCE ##############
+    #exp_section{
+        grid-area: exp_section;
+        margin-top: 20px;
+        height: 950px;
+        // border: $borderSettings;
+
+        // EXPERIENCE BOX 1
+        #exp_box_1{
+            margin-top: 40px;
+            height: 250px;
+            display: grid;
+            grid-template-areas: 'exp_img1'
+            'exp_text1'
+            ;
+            grid-template-columns: 1fr;
+            grid-gap: 0px;
+
+            // IMG 1
+            #exp_img1{
+                grid-area: exp_img1;
+                @include expBoxImg();
+            }
+        
+            // TEXT 1
+            #exp_text1{
+                grid-area: exp_text1;
+                @include expBoxText();
+            }
+        }    
+
+        // EXPERIENCE BOX 2
+        #exp_box_2{
+            margin-top: 40px;
+            height: 250px;
+            display: grid;
+            grid-template-areas: 'exp_img2'
+            'exp_text2'
+            ;
+            grid-template-columns: 1fr;
+            grid-gap: 0px;
+
+            // IMG 2
+            #exp_img2{
+                grid-area: exp_img2;
+                @include expBoxImg();
+            }
+        
+            // TEXT 2
+            #exp_text2{
+                grid-area: exp_text2;
+                @include expBoxText();
+            }
+        }
+
+        // EXPERIENCE BOX 3
+        #exp_box_3{
+            margin-top: 40px;
+            height: 250px;
+            display: grid;
+            grid-template-areas: 'exp_img3'
+            'exp_text3'
+            ;
+            grid-template-columns: 1fr;
+            grid-gap: 0px;
+
+            // IMG 3
+            #exp_img3{
+                grid-area: exp_img3;
+                img{
+                    margin-left: 0px;
+                    height: 60px;
+                    width: 200px;
+                }
+            }
+        
+            // TEXT 3
+            #exp_text3{
+                grid-area: exp_text3;
+                @include expBoxText();
+            }
+        }
+
+        // JOB TITLE
+        .exp_title{
+            font-size: 1em;
+            margin-top: 0px;
+        }
+    }
+
+    // ############## EDUCATION SECTION ##############
+    #educ_section{
+        grid-area: educ_section;
+        margin-top: 50px;
+        height: 830px;
+        // border: $borderSettings;
+
+        // EDUCATION HEADER
+        #educ_header{
+            @include sectionHeader();
+        }
+
+        // EDUCATION MAIN CONTENT
+        #educ_main{
+            margin-top: 30px;
+            display: grid;
+            grid-template-areas: 'educ_box1'
+            'educ_box2'
+            ;
+            grid-template-columns: 1fr;
+            grid-gap: 20px;
+            height: 520px;
+            margin-left: 0px;
+            margin-right: 0px;
+
+            // EDUCATION BOX 1
+            #educ_box1{
+                grid-area: educ_box1;
+                // CONTENT BOX
+                #educ_box1_content{
+                    @include educBoxContent();
+                }
+            }
+
+            // EDUCATION BOX 2
+            #educ_box2{
+                grid-area: educ_box2;
+                // CONTENT BOX
+                #educ_box2_content{
+                    @include educBoxContent();
+                }
+            }
+        }
+    }
+
+    // ############## PROJECTS SECTION ##############
+    #projects_section{
+        grid-area: projects_section;
+        margin-top: 30px;
+        height: 1180px;
+        // border: $borderSettings;
+
+        // PROJECTS HEADER
+        #project_header{
+            @include sectionHeader();
+        }
+
+        // PROJECTS DESCRIPTION
+        #project_description{
+            margin-top: 30px;
+            p{
+                font-size: 0.9em;
+            }
+        }
+        // PROJECTS MAIN SECTION
+        #project_main{
+            // border: $borderSettings;
+            margin-top: 20px;
+            display: grid;
+            grid-template-areas: 'project_box1'
+            'project_box2'
+            'project_box3'
+            'project_box4'
+            ;
+            grid-template-columns: 1fr;
+            grid-gap: 10px;
+            height: 1050px;
+
+            .proj_box{
+                border-radius: 6px;
+                height: 250px;
+
+                .over-text{
+                    position: absolute;
+                    background: rgba(0, 0, 0, 0.696);
+                    height: 100%;
+                    width: 100%;
+                    top: -100%;
+
+                    .text_head{
+                        font-size: 1.2em;
+                        letter-spacing: 0.8px;
+                    }
+
+                    p{
+                        line-height: 30px;
+                        margin-top: 40px;
+                    }
+                }
+
+                img{
+                    height: 250px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    // ######################## ABOUT SECTION ########################
+    #about_sect{
+        grid-area: about_sect;
+        margin-top: 50px;
+        height: 580px;
+        // border: 1px solid white;
+
+        // ABOUT MAIN SECT
+        #about_main{
+            display: grid;
+            grid-template-areas: 'about_img'
+            'about_info'
+            ;
+            grid-template-columns: 1fr;
+            grid-gap: 10px;
+            margin-top: 20px;
+            // border: 1px solid white;
+
+            // ABOUT IMAGE
+            #about_img{
+                grid-area: about_img;
+                height: 100px;
+                // border: 1px solid white;
+                position: relative;
+        
+                img{
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(-50%);
+                    border-radius: 50%;
+                    height: 100px;
+                    width: 100px;
+                }
+            }
+
+            // ABOUT INFO
+            #about_info{
+                height: 430px;   
+                grid-area: about_info;
+                // border: 1px solid white;
+
+                h3{
+                    font-size: 1.1em;
+                    letter-spacing: 1px;
+                }
+                .about_contact{
+                    margin-top: 30px;
+                }
+                p{
+                    margin-top: 10px;
+                    line-height: 22px;
+                    font-size: 0.9em;
+                }
+            }
+        }
+    }
+
+    // ######################## FOOTER ########################
+    #footer_main{
+        grid-area: footer_main;
+        height: 400px;
+        position: relative;
+
+        // FOOTER TOP SECTION
+        #footer_top{
+            height: 300px;
+
+            h2{
+                font-size: 2em;
+                letter-spacing: 1px;
+                word-spacing: 3px;
+                margin-top: 50px;
+            }
+            h3{
+                font-size: 1em;
+                margin-top: 20px;
+                line-height: 30px;
+            }
+            // FOOTER SOCIAL MEDIA
+            #footer_social{
+                height: 50px;
+                width: 300px;
+                position: absolute;
+                left: 50%;
+                top: 60%;
+                transform: translate(-50%,-50%);
+
+                i{
+                    width: 30px;
+                    height: 30px;
+                    padding: 8px;
+                    margin-right: 10px;
+                    font-size: 1.8em;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        // FOOTER BOTTOM
+        #footer_bottom{
+            height: 100px;
+
+            h3{
+                font-size: 0.9em;
+                margin-top: 35px;
+            }
+
+            // FOOTER SLOGAN
+            .footer_slogan{
+                font-size: 0.8em;
+            }
+        }
+    }
+
+}
+
+// ############################ MOBILE DEVICES ############################
+@media (min-width:350px)
+and (max-width: 375px){
+
+    // ########### EDUCATION SECTION ###########
+    #educ_section{
+        height: 780px;
+    }
+
+    // ########### ABOUT SECTION ###########
+    #about_sect{
+        height: 540px;
+    }
+
+}
+
+// ############################ MOBILE DEVICES ############################
+@media (min-width:376px)
+and (max-width: 400px){
+
+    // ########### EDUCATION SECTION ###########
+    #educ_section{
+        height: 750px;
+    }
+
+    // ########### ABOUT SECTION ###########
+    #about_sect{
+        height: 530px;
+    }
+
+}
+
+// ############################ MOBILE DEVICES ############################
+@media (min-width:401px)
+and (max-width: 430px){
+
+    // ########### EDUCATION SECTION ###########
+    #educ_section{
+        height: 750px;
+    }
+
+    // ########### ABOUT SECTION ###########
+    #about_sect{
+        height: 520px;
+    }
+
+}
+
+// ############################ MOBILE DEVICES ############################
+@media (min-width: 431px)
+and (max-width: 500px){
+
+    // ########### EDUCATION SECTION ###########
+    #educ_section{
+        height: 700px;
+    }
+
+    // ########### ABOUT SECTION ###########
+    #about_sect{
+        height: 500px;
+    }
+
+}
+
+@media (min-width: 501px)
+and (max-width: 600px){
+
+    // MARGIN WRAPPER
+    .margin-wrapper{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    // ########### EDUCATION SECTION ###########
+     #educ_section{
+        height: 700px;
+    }
+
+    // ########### ABOUT SECTION ###########
+    #about_sect{
+        height: 500px;
+    }
     
-    #footer{
-        grid-area: footer;
-        padding: 15px;
-        font-size: 1.4em;
+}
+
+@media (min-width: 590px)
+and (max-width: 600px){
+
+    @mixin educBoxContent {
+        // border: $borderSettings;
+        h3{
+            margin-top: 10px;
+            font-size: 1.3em;
+        }
+        p{
+            margin-left: 0px;
+            font-size: 0.9em;
+            margin-top: 3px;
+            line-height: 30px;
+            word-spacing: 2px;
+        }
+    }
+
+    // ########### EDUCATION SECTION ###########
+     #educ_section{
+        height: 700px;
+        margin-top: 0;
+
+        // EDUCATION MAIN CONTENT
+        #educ_main{
+            // EDUCATION BOX 1
+            #educ_box1{
+                // CONTENT BOX
+                #educ_box1_content{
+                    @include educBoxContent();
+                }
+            }
+
+            // EDUCATION BOX 2
+            #educ_box2{
+                // CONTENT BOX
+                #educ_box2_content{
+                    @include educBoxContent();
+                }
+            }
+        }
+    }
+
+    // ########### ABOUT SECTION ###########
+    #about_sect{
+        height: 500px;
+        // ABOUT MAIN SECT
+        #about_main{
+
+            // ABOUT IMAGE
+            #about_img{
+                img{
+                    height: 120px;
+                    width: 120px;
+                }
+            }
+
+            // ABOUT INFO
+            #about_info{
+
+                p{
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 601px)
+and (max-width: 700px){
+
+    // ############## HOME SECTION ##############
+    #home-section {
+
+        // ############## HOME SECTION TITLE ##############
+        #home-section-title{
+            position: relative;
+            transition: all 1s;
+            z-index: 1000;
+            margin-top: 160px;
+
+            h1{
+                font-size: 2.5em;
+            }
+
+            p{
+                margin-top: 30px;
+                font-size: 1.3em;
+            }
+
+            // CONTACT BUTTON
+            button{
+                padding: 8px 16px;
+                margin-top: 40px;
+                font-size: 1em;
+                border-radius: 3px;
+            }
+        }
+    }
+
+    @mixin educBoxContent {
+        // border: $borderSettings;
+        h3{
+            margin-top: 10px;
+            font-size: 1.3em;
+        }
+        p{
+            margin-left: 0px;
+            font-size: 1em;
+            margin-top: 3px;
+            line-height: 30px;
+            word-spacing: 2px;
+        }
+    }
+
+    // ############## SKILLS SECTION ##############
+    #skills_section{
+        // SKILLS SECTION DESCRIPTION
+        #skills_description{
+            p{
+                font-size: 1.1em;
+            }
+        }
+    }
+
+    // ############## EXPERIENCE ##############
+     #exp_section{
+        height: 950px;
+
+        // EXPERIENCE BOX 1
+        #exp_box_1{
+            // TEXT 1
+            #exp_text1{
+                grid-area: exp_text1;
+                @include expBoxText();
+            }
+        }    
+        // EXPERIENCE BOX 2
+        #exp_box_2{
+            // TEXT 2
+            #exp_text2{
+                grid-area: exp_text2;
+                @include expBoxText();
+            }
+        }
+        // EXPERIENCE BOX 3
+        #exp_box_3{
+        
+            // TEXT 3
+            #exp_text3{
+                grid-area: exp_text3;
+                @include expBoxText();
+            }
+        }
+
+        // JOB TITLE
+        .exp_title{
+            font-size: 1em;
+            margin-top: 0px;
+        }
+    }
+ 
+    // MARGIN WRAPPER
+    .margin-wrapper{
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+
+    /// ############## EDUCATION SECTION ##############
+    #educ_section{
+        height: 800px;
+
+        // EDUCATION MAIN CONTENT
+        #educ_main{
+
+            // EDUCATION BOX 1
+            #educ_box1{
+                grid-area: educ_box1;
+                // CONTENT BOX
+                #educ_box1_content{
+                    @include educBoxContent();
+                }
+            }
+
+            // EDUCATION BOX 2
+            #educ_box2{
+                grid-area: educ_box2;
+                // CONTENT BOX
+                #educ_box2_content{
+                    @include educBoxContent();
+                }
+            }
+        }
+    }
+    // ############## PROJECTS SECTION ##############
+    #projects_section{
+        // PROJECTS DESCRIPTION
+        #project_description{
+            margin-top: 30px;
+            p{
+                font-size: 1.1em;
+            }
+        }
+    }
+
+    // ########### ABOUT SECTION ###########
+    #about_sect{
+        height: 500px;
+        // ABOUT MAIN SECT
+        #about_main{
+
+            // ABOUT IMAGE
+            #about_img{
+                img{
+                    height: 120px;
+                    width: 120px;
+                }
+            }
+
+            // ABOUT INFO
+            #about_info{
+
+                p{
+                    font-size: 1.1em;
+                }
+            }
+        }
+    }   
+}
+
+@media (min-width: 670px)
+and (max-width: 700px){
+
+    /// ############## EDUCATION SECTION ##############
+    #educ_section{
+        height: 780px;
+    }
+}
+
+@media (min-width: 680px)
+and (max-width: 700px){
+
+    /// ############## EDUCATION SECTION ##############
+    #educ_section{
+        height: 740px;
+    }
+}
+
+// ############################ TABLET VIEW ############################
+@media (min-width: 701px)
+and (max-width: 800px){
+
+    // EXPERIENCE BOX TEXT
+    @mixin expBoxText{
+        // border: $borderSettings;
+        p{
+            margin-top: 10px;
+            margin-left: 20px;
+            font-size: 1em;
+        }
+    }
+
+    @mixin educBoxContent {
+        // border: $borderSettings;
+        h3{
+            margin-top: 10px;
+            font-size: 1.3em;
+        }
+        p{
+            margin-left: 0px;
+            font-size: 1em;
+            margin-top: 3px;
+            line-height: 30px;
+            word-spacing: 2px;
+        }
+    }
+
+     // MARGIN WRAPPER
+     .margin-wrapper{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    // ############## HOME SECTION ##############
+    #home-section {
+        grid-area: home-section;
+        height: 550px;
+        position: relative;
+        overflow: hidden;
+
+        img{
+            z-index: -10;
+            position: absolute;
+            height: 550px;
+            width: 100%;
+        }
+        
+        // ############## NAVBAR ##############
+        #navbar{
+            position: fixed;
+            z-index: 10000;
+            height: 60px;
+            width: 100%;
+            transition: all 0.2s;
+
+            // ############## NAVBAR LOGO ##############
+            #navbar_logo{
+                float: left;
+                width: 70%;
+                margin-top: 14px;
+
+                h3{
+                    font-size: 1.5em;
+                    letter-spacing: 1px;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                }
+                i{
+                    margin-left: 10px;
+                }
+            }
+            // ############## NAVBAR LINKS ##############
+            #navbar_links{
+                float: right;
+                width: 25%;
+                margin-top: 16px;
+                text-align: right;
+
+                a{
+                    display: none;
+                    z-index: 1000000;
+                    position: absolute;
+                    top: 80px;
+                    left: 46%;
+                    transform: translate(-50%);
+                    font-size: 1.5em;
+                }
+                .exp_link{
+                    top: 140px;
+                }
+                .edu_link{
+                    top: 200px;
+                }
+                .proj_link{
+                    top: 260px;
+                }
+                .about_link{
+                    top: 320px;
+                }
+            }
+        }
+
+        // ############## HOME SECTION TITLE ##############
+        #home-section-title{
+            position: relative;
+            transition: all 1s;
+            z-index: 1000;
+            margin-top: 160px;
+
+            h1{
+                font-size: 2.7em;
+            }
+
+            p{
+                margin-top: 30px;
+                font-size: 1.3em;
+            }
+
+            // CONTACT BUTTON
+            button{
+                padding: 8px 16px;
+                margin-top: 40px;
+                font-size: 1.1em;
+            }
+        }
+    }
+
+    // ############## SKILLS SECTION ##############
+    #skills_section{
+        // SKILLS SECTION DESCRIPTION
+        #skills_description{
+            p{
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    // ############## EXPERIENCE ##############
+    #exp_section{
+        height: 950px;
+
+        // EXPERIENCE BOX 1
+        #exp_box_1{
+            // TEXT 1
+            #exp_text1{
+                grid-area: exp_text1;
+                @include expBoxText();
+            }
+        }    
+        // EXPERIENCE BOX 2
+        #exp_box_2{
+            // TEXT 2
+            #exp_text2{
+                grid-area: exp_text2;
+                @include expBoxText();
+            }
+        }
+        // EXPERIENCE BOX 3
+        #exp_box_3{
+        
+            // TEXT 3
+            #exp_text3{
+                grid-area: exp_text3;
+                @include expBoxText();
+            }
+        }
+
+        // JOB TITLE
+        .exp_title{
+            font-size: 1.1em;
+            margin-top: 0px;
+        }
+    }
+
+    /// ############## EDUCATION SECTION ##############
+    #educ_section{
+        height: 720px;
+
+        // EDUCATION MAIN CONTENT
+        #educ_main{
+
+            // EDUCATION BOX 1
+            #educ_box1{
+                grid-area: educ_box1;
+                // CONTENT BOX
+                #educ_box1_content{
+                    @include educBoxContent();
+                }
+            }
+
+            // EDUCATION BOX 2
+            #educ_box2{
+                grid-area: educ_box2;
+                // CONTENT BOX
+                #educ_box2_content{
+                    @include educBoxContent();
+                }
+            }
+        }
+    }
+
+    // ############## PROJECTS SECTION ##############
+    #projects_section{
+        grid-area: projects_section;
+        margin-top: 0px;
+        height: 650px;
+        // border: $borderSettings;
+
+        // PROJECTS HEADER
+        #project_header{
+            @include sectionHeader();
+        }
+
+        // PROJECTS DESCRIPTION
+        #project_description{
+            margin-top: 30px;
+            p{
+                font-size: 1em;
+            }
+        }
+        // PROJECTS MAIN SECTION
+        #project_main{
+            // border: $borderSettings;
+            margin-top: 20px;
+            display: grid;
+            grid-template-areas: 'project_box1 project_box2'
+            'project_box3 project_box4'
+            ;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+            height: 500px;
+
+            .proj_box{
+                border-radius: 6px;
+                height: 250px;
+
+                img{
+                    height: 250px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    // ########### ABOUT SECTION ###########
+    #about_sect{
+        height: 500px;
+        // ABOUT MAIN SECT
+        #about_main{
+            // ABOUT IMAGE
+            #about_img{
+                img{
+                    height: 130px;
+                    width: 130px;
+                }
+            }
+
+            // ABOUT INFO
+            #about_info{
+                margin-top: 40px;
+                p{
+                    font-size: 1.1em;
+                }
+            }
+        }
+    }   
+}
+
+// SMALL MONITOR (LAPTOP)
+@media (min-width: 901px)
+and (max-width: 1279px){
     
-        .slogan{
-            font-size: 0.8em;
+    // SECTION HEADER
+    @mixin sectionHeader{
+        h2{
+            text-align: center;
+            color: $textColor;
+            font-size: 2.2em;
+        }
+    }
+
+    // EXPERIENCE BOX IMG
+    @mixin expBoxImg {
+        // border: $borderSettings;
+        img{
+            margin-left: 0px;
+            height: 50px;
+            width: 60%;
+        }
+    }
+    // EXPERIENCE BOX TEXT
+    @mixin expBoxText{
+        // border: $borderSettings;
+        p{
+            margin-top: 10px;
+            margin-left: 20px;
+            font-size: 1em;
+        }
+    }
+    @mixin educBoxContent {
+        // border: $borderSettings;
+        h3{
+            margin-top: 10px;
+            font-size: 1.3em;
+        }
+        p{
+            margin-left: 0px;
+            font-size: 1em;
+            margin-top: 3px;
+            line-height: 30px;
+            word-spacing: 2px;
+        }
+    }
+
+    // MARGIN WRAPPER
+    .margin-wrapper{
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+
+    // ############## HOME SECTION ##############
+    #home-section {
+        grid-area: home-section;
+        height: 550px;
+        position: relative;
+        overflow: hidden;
+
+        img{
+            z-index: -10;
+            position: absolute;
+            height: 550px;
+            width: 100%;
+        }
+        
+        // ############## NAVBAR ##############
+        #navbar{
+            position: fixed;
+            z-index: 10000;
+            height: 60px;
+            width: 100%;
+            transition: all 0.2s;
+           
+
+            // ############## NAVBAR LOGO ##############
+            #navbar_logo{
+                float: left;
+                width: 30%;
+                margin-top: 14px;
+
+                h3{
+                    font-size: 1.2em;
+                    letter-spacing: 1px;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                }
+                i{
+                    margin-left: 10px;
+                }
+            }
+            // ############## NAVBAR LINKS ##############
+            #navbar_links{
+                float: right;
+                width: 65%;
+                margin-top: 14px;
+                text-align: right;
+
+                #hamburger_menu{
+                    display: none;
+                }
+
+                a{
+                    font-size: 1.2em;
+                }
+            }
+        }
+
+        // ############## HOME SECTION TITLE ##############
+        #home-section-title{
+            position: relative;
+            transition: all 1s;
+            z-index: 1000;
+            margin-top: 160px;
+
+            h1{
+                font-size: 3em;
+            }
+
+            p{
+                margin-top: 30px;
+                font-size: 1.3em;
+            }
+
+            // CONTACT BUTTON
+            button{
+                padding: 8px 16px;
+                margin-top: 40px;
+                font-size: 1em;
+                border-radius: 3px;
+
+                i{
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    // ############## SKILLS SECTION ##############
+    #skills_section{
+        grid-area: skills_section;
+        height: 450px;
+        margin-top: 30px;
+        // border: $borderSettings;
+
+        // SKILLS SECTION HEADER
+        #skills_header{
+            @include sectionHeader();
+        }
+
+        // SKILLS SECTION DESCRIPTION
+        #skills_description{
+            margin-top: 30px;
+            p{
+                font-size: 1.1em;
+            }
+        }
+
+        // SKILLS SECTION BOXES
+        #skills_boxes{
+            margin-top: 20px;
+            display: grid;
+            grid-template-areas: 'html_box css_box sass_box js_box'
+            'responsive_box node_box git_box python_box'
+            ;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 20px;
+
+            // SKILLS CARD
+            .skill_card{
+                border-radius: 6px;
+                height: 130px;
+
+                img{
+                    position: absolute;
+                    left: 50%;
+                    top: 40%;
+                    transform: translate(-50%,-50%);
+                    height: 50px;
+                    width: 50px;
+                }
+                p{
+                    position: absolute;
+                    left: 50%;
+                    top: 75%;
+                    transform: translate(-50%,-50%);
+                    color: $textColor;
+                    font-size: 1em;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    // ############## EXPERIENCE ##############
+    #exp_section{
+        grid-area: exp_section;
+        margin-top: 20px;
+        height: 750px;
+        // border: $borderSettings;
+
+        // EXPERIENCE BOX 1
+        #exp_box_1{
+            margin-top: 40px;
+            height: 180px;
+            display: grid;
+            grid-template-areas: 'exp_img1 exp_text1'
+            ;
+            grid-template-columns: 30% 1fr;
+            grid-gap: 0px;
+            // border: $borderSettings;
+
+            // IMG 1
+            #exp_img1{
+                grid-area: exp_img1;
+                @include expBoxImg();
+                // border: $borderSettings;
+            }
+        
+            // TEXT 1
+            #exp_text1{
+                grid-area: exp_text1;
+                @include expBoxText();
+                // border: $borderSettings;
+            }
+        }    
+
+        // EXPERIENCE BOX 2
+        #exp_box_2{
+            margin-top: 40px;
+            height: 210px;
+            display: grid;
+            grid-template-areas: 'exp_img2 exp_text2'
+            ;
+            grid-template-columns: 30% 1fr;
+            grid-gap: 0px;
+            // border: $borderSettings;
+
+            // IMG 2
+            #exp_img2{
+                grid-area: exp_img2;
+                @include expBoxImg();
+                // border: $borderSettings;
+            }
+        
+            // TEXT 2
+            #exp_text2{
+                grid-area: exp_text2;
+                @include expBoxText();
+                // border: $borderSettings;
+            }
+        }
+
+        // EXPERIENCE BOX 3
+        #exp_box_3{
+            margin-top: 40px;
+            height: 180px;
+            display: grid;
+            grid-template-areas: 'exp_img3 exp_text3'
+            ;
+            grid-template-columns: 30% 1fr;
+            grid-gap: 0px;
+            // border: $borderSettings;
+
+            // IMG 3
+            #exp_img3{
+                grid-area: exp_img3;
+                // border: $borderSettings;
+                img{
+                    margin-left: 0px;
+                    height: 60px;
+                    width: 100%;
+                }
+            }
+        
+            // TEXT 3
+            #exp_text3{
+                grid-area: exp_text3;
+                @include expBoxText();
+                // border: $borderSettings;
+            }
+        }
+
+        // JOB TITLE
+        .exp_title{
+            font-size: 1.2em;
+            margin-top: 0px;
+        }
+    }
+
+    // ############## EDUCATION SECTION ##############
+    #educ_section{
+        grid-area: educ_section;
+        margin-top: 50px;
+        height: 630px;
+        // border: $borderSettings;
+
+        // EDUCATION HEADER
+        #educ_header{
+            @include sectionHeader();
+        }
+
+        // EDUCATION MAIN CONTENT
+        #educ_main{
+            margin-top: 30px;
+            display: grid;
+            grid-template-areas: 'educ_box1'
+            'educ_box2'
+            ;
+            grid-template-columns: 1fr;
+            grid-gap: 20px;
+            height: 520px;
+            margin-left: 0px;
+            margin-right: 0px;
+
+            // EDUCATION BOX 1
+            #educ_box1{
+                grid-area: educ_box1;
+                // CONTENT BOX
+                #educ_box1_content{
+                    @include educBoxContent();
+                }
+            }
+
+            // EDUCATION BOX 2
+            #educ_box2{
+                grid-area: educ_box2;
+                // CONTENT BOX
+                #educ_box2_content{
+                    @include educBoxContent();
+                }
+            }
+        }
+    }
+
+    // ############## PROJECTS SECTION ##############
+    #projects_section{
+        grid-area: projects_section;
+        margin-top: 30px;
+        height: 650px;
+        // border: $borderSettings;
+
+        // PROJECTS HEADER
+        #project_header{
+            @include sectionHeader();
+        }
+
+        // PROJECTS DESCRIPTION
+        #project_description{
+            margin-top: 30px;
+            p{
+                font-size: 1.2em;
+            }
+        }
+        // PROJECTS MAIN SECTION
+        #project_main{
+            // border: $borderSettings;
+            margin-top: 20px;
+            display: grid;
+            grid-template-areas: 'project_box1 project_box2'
+            'project_box3 project_box4'
+            ;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+            height: 500px;
+
+            .proj_box{
+                border-radius: 6px;
+                height: 250px;
+
+                .over-text{
+                    position: absolute;
+                    background: rgba(0, 0, 0, 0.696);
+                    height: 100%;
+                    width: 100%;
+                    top: -100%;
+
+                    .text_head{
+                        font-size: 1.2em;
+                        letter-spacing: 0.8px;
+                    }
+
+                    p{
+                        line-height: 30px;
+                        margin-top: 40px;
+                    }
+                }
+
+                img{
+                    height: 250px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    // ######################## ABOUT SECTION ########################
+    #about_sect{
+        grid-area: about_sect;
+        margin-top: 50px;
+        height: 580px;
+        // border: 1px solid white;
+
+        // ABOUT MAIN SECT
+        #about_main{
+            display: grid;
+            grid-template-areas: 'about_img'
+            'about_info'
+            ;
+            grid-template-columns: 1fr;
+            grid-gap: 10px;
+            margin-top: 20px;
+            // border: 1px solid white;
+
+            // ABOUT IMAGE
+            #about_img{
+                grid-area: about_img;
+                height: 170px;
+                // border: 1px solid white;
+                position: relative;
+        
+                img{
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(-50%);
+                    border-radius: 50%;
+                    height: 170px;
+                    width: 170px;
+                }
+            }
+
+            // ABOUT INFO
+            #about_info{
+                height: 430px;   
+                grid-area: about_info;
+                // border: 1px solid white;
+
+                h3{
+                    font-size: 1.3em;
+                    letter-spacing: 1px;
+                }
+                .about_contact{
+                    margin-top: 30px;
+                }
+                p{
+                    margin-top: 10px;
+                    line-height: 30px;
+                    font-size: 1.1em;
+                }
+            }
+        }
+    }
+
+    // ######################## FOOTER ########################
+    #footer_main{
+        grid-area: footer_main;
+        height: 400px;
+        position: relative;
+
+        // FOOTER TOP SECTION
+        #footer_top{
+            height: 300px;
+
+            h2{
+                font-size: 2em;
+                letter-spacing: 1px;
+                word-spacing: 3px;
+                margin-top: 50px;
+            }
+            h3{
+                font-size: 1em;
+                margin-top: 20px;
+                line-height: 30px;
+            }
+            // FOOTER SOCIAL MEDIA
+            #footer_social{
+                height: 50px;
+                width: 300px;
+                position: absolute;
+                left: 50%;
+                top: 60%;
+                transform: translate(-50%,-50%);
+
+                i{
+                    width: 30px;
+                    height: 30px;
+                    padding: 8px;
+                    margin-right: 10px;
+                    font-size: 1.8em;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        // FOOTER BOTTOM
+        #footer_bottom{
+            height: 100px;
+
+            h3{
+                font-size: 1.1em;
+                margin-top: 35px;
+            }
+
+            // FOOTER SLOGAN
+            .footer_slogan{
+                font-size: 1em;
+            }
+        }
+    }
+
+}
+
+@media (min-width: 1150px)
+and (max-width: 1279px){
+
+    .margin-wrapper{
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+}
+
+@media (min-width: 1440px)
+and (max-width: 1600px){
+    // SECTION HEADER
+    // @mixin sectionHeader{
+    //     h2{
+    //         text-align: center;
+    //         color: $textColor;
+    //         font-size: 2.2em;
+    //     }
+    // }
+
+    // // EXPERIENCE BOX IMG
+    // @mixin expBoxImg {
+    //     // border: $borderSettings;
+    //     img{
+    //         margin-left: 0px;
+    //         height: 50px;
+    //         width: 60%;
+    //     }
+    // }
+    // // EXPERIENCE BOX TEXT
+    // @mixin expBoxText{
+    //     // border: $borderSettings;
+    //     p{
+    //         margin-top: 10px;
+    //         margin-left: 20px;
+    //         font-size: 1em;
+    //     }
+    // }
+    // @mixin educBoxContent {
+    //     // border: $borderSettings;
+    //     h3{
+    //         margin-top: 10px;
+    //         font-size: 1.3em;
+    //     }
+    //     p{
+    //         margin-left: 0px;
+    //         font-size: 1em;
+    //         margin-top: 3px;
+    //         line-height: 30px;
+    //         word-spacing: 2px;
+    //     }
+    // }
+
+    // MARGIN WRAPPER
+    .margin-wrapper{
+        margin-left: 170px;
+        margin-right: 170px;
+    }
+
+    // ############## HOME SECTION ##############
+    #home-section {
+        grid-area: home-section;
+        height: 550px;
+        position: relative;
+        overflow: hidden;
+
+        img{
+            z-index: -10;
+            position: absolute;
+            height: 550px;
+            width: 100%;
+        }
+        
+        // ############## NAVBAR ##############
+        #navbar{
+            position: fixed;
+            z-index: 10000;
+            height: 60px;
+            width: 100%;
+            transition: all 0.2s;
+           
+
+            // ############## NAVBAR LOGO ##############
+            #navbar_logo{
+                float: left;
+                width: 30%;
+                margin-top: 14px;
+
+                h3{
+                    font-size: 1.3em;
+                    letter-spacing: 1px;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                }
+                i{
+                    margin-left: 10px;
+                }
+            }
+            // ############## NAVBAR LINKS ##############
+            #navbar_links{
+                float: right;
+                width: 65%;
+                margin-top: 14px;
+                text-align: right;
+
+                #hamburger_menu{
+                    display: none;
+                }
+
+                a{
+                    font-size: 1.3em;
+                }
+            }
+        }
+
+        // ############## HOME SECTION TITLE ##############
+        #home-section-title{
+            position: relative;
+            transition: all 1s;
+            z-index: 1000;
+            margin-top: 160px;
+
+            h1{
+                font-size: 3em;
+            }
+
+            p{
+                margin-top: 30px;
+                font-size: 1.4em;
+            }
+
+            // CONTACT BUTTON
+            button{
+                padding: 8px 16px;
+                margin-top: 40px;
+                font-size: 1em;
+                border-radius: 3px;
+
+                i{
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    // ############## SKILLS SECTION ##############
+    #skills_section{
+        grid-area: skills_section;
+        height: 450px;
+        margin-top: 30px;
+        // border: $borderSettings;
+
+        // SKILLS SECTION HEADER
+        #skills_header{
+            @include sectionHeader();
+        }
+
+        // SKILLS SECTION DESCRIPTION
+        #skills_description{
+            margin-top: 30px;
+            p{
+                font-size: 1.1em;
+            }
+        }
+
+        // SKILLS SECTION BOXES
+        #skills_boxes{
+            margin-top: 20px;
+            display: grid;
+            grid-template-areas: 'html_box css_box sass_box js_box'
+            'responsive_box node_box git_box python_box'
+            ;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 20px;
+
+            // SKILLS CARD
+            .skill_card{
+                border-radius: 6px;
+                height: 130px;
+
+                img{
+                    position: absolute;
+                    left: 50%;
+                    top: 40%;
+                    transform: translate(-50%,-50%);
+                    height: 50px;
+                    width: 50px;
+                }
+                p{
+                    position: absolute;
+                    left: 50%;
+                    top: 75%;
+                    transform: translate(-50%,-50%);
+                    color: $textColor;
+                    font-size: 1em;
+                    text-align: center;
+                }
+            }
         }
     }
 }

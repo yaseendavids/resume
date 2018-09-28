@@ -1,437 +1,732 @@
-// This is the sass stylesheet
+// SASS STYLESHEET
+
 *{
     margin: 0;
 }
 
-// *********************** This is the VARIABLES used ***********************
-// This is the header color for sections
-$headerColor: #54ba4e;
-// This is the text color
-$textColor:#343b42;
-// This is the border settings
-$borderSettings: none;
+// @import url('../assets/css/all.css');
 
-// *********************** This is the MIXINS used ***********************
-// This is the default button settings
-@mixin defaultBtn {
-    font-family: 'Montserrat', sans-serif;
-    border: none;
-    outline: none;
+// ############################## VARIABLES ##############################
+$borderSettings: 1px solid black;
+// $borderSettings: none;
+$textColor:#393d47;
+
+// FONTS
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url('../fonts/Nunito-Regular.ttf');
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins regular.ttf');
 }
 
-// This is the text for the content
-@mixin contentText {
+
+// ############################## MIXINS ##############################
+// SECTION HEADER
+@mixin sectionHeader{
+    font-family: 'Nunito Sans', sans-serif;
+    border: 1px solid transparent;
     h2{
-        margin-top: 10px;
-        color:$headerColor;
-        letter-spacing: 1px;
         text-align: center;
-        font-weight: bolder;
+        color: $textColor;
+        font-size: 2.2em;
+    }
+
+    .underline_sect{
+        border-bottom: 4px solid #57EEA1;
+    }
+}
+
+// EXPERIENCE BOX IMG
+@mixin expBoxImg {
+    img{
+        margin-left: 50px;
+        height: 60px;
+        width: 140px;
+    }
+}
+// EXPERIENCE BOX TEXT
+@mixin expBoxText{
+    color: $textColor;
+    p{
+        margin-top: 10px;
+        margin-left: 20px;
+        font-size: 1em;
+    }
+}
+@mixin educBoxContent {
+    h3{
+        margin-top: 10px;
+        font-size: 1.2em;
     }
     p{
         margin-left: 30px;
-        margin-right: 30px;
-        margin-top: 30px;
-        word-spacing: 1px;
         font-size: 1em;
+        margin-top: 10px;
         line-height: 25px;
-        color:#3b4249;
+        word-spacing: 2px;
     }
 }
 
-// *********************** This is the STYLING ***********************
-// This is the main grid container
+// ############################## THE MAGIC ##############################
+// GRID CONTAINER
 #grid-container{
     display: grid;
-    grid-template-areas: 'introSection'
-    'content-section'
-    'footer'
+    grid-template-areas: 'home-section'
+    'skills_section'
+    'exp_section'
+    'educ_section'
+    'projects_section'
+    'about_sect'
+    'footer_main'
     ;
     grid-template-columns: 1fr;
-    background: #DAE3E7;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
-// This is the wrapper that positions the margin
+// TITLE TEXT COLOR
+#title_text{
+    color: #57EEA1;
+}
+
+// MARGIN WRAPPER
 .margin-wrapper{
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
 }
 
-// This is the intro section
-#introSection{
-    grid-area: introSection;
-    margin-top: 20px;
-    height: 250px;
-    background: rgba(255, 255, 255, 0.932);
-    border: $borderSettings;
-    font-family: 'Montserrat', sans-serif;
+// ############################## HOME SECTION ##############################
+#home-section {
+    grid-area: home-section;
+    height: 550px;
+    background: linear-gradient(to bottom right, rgba(41, 44, 51, 0.6), #393d47ad);
+    position: relative;
+    overflow: hidden;
 
-    #intro-main{
-        padding: 10px;
-        display: grid;
-        grid-template-areas: 'myImg myIntro myContact';
-        grid-template-columns: 1fr 50% 15%;
-        grid-gap: 30px;
+    img{
+        z-index: -10;
+        position: absolute;
+        height: 550px;
+        width: 100%;
+    }
+    
+    // ############################## NAVBAR ##############################
+    #navbar{
+        position: fixed;
+        z-index: 10000;
+        height: 60px;
+        background: transparent;
+        width: 100%;
+        transition: all 0.2s;
 
-        #myImg{
-            grid-area: myImg;
-            border: $borderSettings;
-            height: 230px;
-            position: relative;
+        // ############################## NAVBAR LOGO ##############################
+        #navbar_logo{
+            float: left;
+            width: 25%;
+            margin-top: 14px;
 
-            img{
-                height: 100%;
-                width: 60%;
-                border-radius: 50%;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%,-50%);
+            a{
+                text-decoration: none;
+            }
+
+            h3{
+                font-family: 'Nunito Sans', sans-serif;
+                color: #D2D5DD;
+                font-size: 1.3em;
+                letter-spacing: 1px;
+                cursor: pointer;
+                transition: all 0.3s;
+
+                &:hover{
+                    color: #45bafc;
+                }
+            }
+            i{
+                margin-left: 10px;
             }
         }
-        
-        #myIntro{
-            grid-area: myIntro;
-            border: $borderSettings;
-            height: 230px;
+        // ############################## NAVBAR LINKS ##############################
+        #navbar_links{
+            float: right;
+            width: 70%;
+            margin-top: 15px;
+            text-align: right;
 
-            h1{
-                margin-top: 50px;
-                color:#49525c;
+            #hamburger_menu{
+                display: none;
             }
-            h2{
-                margin-top: 10px;
-                color:#778492;
-            }
-            #social-links{
-                margin-top: 20px;
 
-                .fab{
-                    color: white;
-                    padding: 8px;
-                    font-size: 1.5em;
-                    background: #b0b7bf;
-                    border-radius: 50%;
-                    margin-right: 10px;
-                    transition: all 1s;
+            a{
+                font-family: 'Poppins', sans-serif;
+                font-size: 1.1em;
+                color: #B9C1D0;
+                text-decoration: none;
+                margin-left: 20px;
+                transition: all 0.3s;
 
-                    &:hover{
-                        background: #586069;
-                    }
+                &:hover{
+                    color: #E8EBE4;
                 }
+            }
+            .position{
+                color: #57EEA1;
+            }
+        }
+    }
+
+    // ############################## HOME SECTION TITLE ##############################
+    #home-section-title{
+        transform: scale(0);
+        position: relative;
+        transition: all 1s;
+        z-index: 1000;
+        margin-top: 160px;
+
+        h1{
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 3em;
+            font-weight: 800;
+            color: #45bafc;
+        }
+
+        p{
+            margin-top: 30px;
+            text-align: center;
+            color: #B9C1D0;
+            font-size: 1.2em;
+        }
+
+        // CONTACT BUTTON
+        button{
+            cursor: pointer;
+            padding: 8px 16px;
+            margin-top: 40px;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1em;
+            border: 1px solid rgb(211, 199, 199);
+            background: transparent;
+            color: rgb(211, 199, 199);
+            border-radius: 3px;
+            transition: all 0.3s;
+
+            &:hover{
+                // color: white;
+                border-color: white;
+                background: white;
+                color: black;
+            }
+            i{
+                margin-right: 10px;
+            }
+        }
+    }
+    h4{
+        cursor: pointer;
+        position: absolute;
+        left: 50%;
+        bottom: 0px;
+        transform: translate(-50%,0%);
+        text-align: center;
+        font-size: 4em;
+        color: #B9C1D0;
+        animation: arrowBounce 1s infinite;
+        transition: all 0.2s;
+
+        &:hover{
+            color: white;
+        }
+
+        @keyframes arrowBounce {
+            0%{
+                bottom: 0px;
+            }
+            50%{
+                bottom: 5px;
+            }
+        }
+    }
+}
+
+// ############################## SKILLS SECTION ##############################
+#skills_section{
+    grid-area: skills_section;
+    height: 700px;
+    margin-top: 30px;
+    font-family: 'Nunito Sans', sans-serif;
+
+    // SKILLS SECTION HEADER
+    #skills_header{
+        @include sectionHeader();
+    }
+
+    // SKILLS SECTION DESCRIPTION
+    #skills_description{
+        margin-top: 30px;
+        p{
+            text-align: center;
+            color: $textColor;
+            font-size: 1.1em;
+        }
+    }
+
+    // SKILLS SECTION BOXES
+    #skills_boxes{
+        margin-top: 80px;
+        display: grid;
+        grid-template-areas: 'html_box css_box sass_box js_box'
+        'responsive_box node_box git_box python_box'
+        ;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 20px;
+
+        // SKILLS CARD
+        .skill_card{
+            box-sizing: border-box;
+            position: relative;
+            background: #fff;
+            border: 1px solid #dbdbdb;
+            background: #fff;
+            border-radius: 6px;
+            height: 200px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            transition: all 200ms ease;
+
+            &:hover{
+                box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            img{
+                position: absolute;
+                left: 50%;
+                top: 40%;
+                transform: translate(-50%,-50%);
+                height: 50px;
+                width: 50px;
+            }
+            p{
+                position: absolute;
+                left: 50%;
+                top: 75%;
+                transform: translate(-50%,-50%);
+                color: $textColor;
+                font-size: 1em;
+                text-align: center;
+            }
+        }
+
+        // HTML BOX
+        #html_box{
+            grid-area: html_box;
+        }
+        // CSS BOX
+        #css_box{
+            grid-area: css_box;
+        }
+        // SASS BOX
+        #sass_box{
+            grid-area: sass_box;
+        }
+        // JAVASCRIPT BOX
+        #js_box{
+            grid-area: js_box;
+        }
+        // RESPONSIVE BOX
+        #responsive_box{
+            grid-area: responsive_box;
+        }
+        // NODE BOX
+        #node_box{
+            grid-area: node_box;
+        }
+        // GIT BOX
+        #git_box{
+            grid-area: git_box;
+        }
+        // PYTHON BOX
+        #python_box{
+            grid-area: python_box;
+        }
+    }
+}
+
+// ############################## EXPERIENCE ##############################
+#exp_section{
+    grid-area: exp_section;
+    margin-top: 20px;
+    height: 680px;
+    font-family: 'Poppins', sans-serif;
+
+    // EXPERIENCE HEADER
+    #exp_header{
+        @include sectionHeader();
+    }
+
+    // EXPERIENCE BOX 1
+    #exp_box_1{
+        margin-top: 40px;
+        height: 150px;
+        display: grid;
+        grid-template-areas: 'exp_img1 exp_text1'
+        ;
+        grid-template-columns: 30% 1fr;
+        grid-gap: 20px;
+        border-bottom: 1px solid #e6e6e6;
+
+        // IMG 1
+        #exp_img1{
+            grid-area: exp_img1;
+            @include expBoxImg();
+        }
+    
+        // TEXT 1
+        #exp_text1{
+            grid-area: exp_text1;
+            @include expBoxText();
+        }
+    }    
+
+    // EXPERIENCE BOX 2
+    #exp_box_2{
+        margin-top: 40px;
+        height: 200px;
+        display: grid;
+        grid-template-areas: 'exp_img2 exp_text2'
+        ;
+        grid-template-columns: 30% 1fr;
+        grid-gap: 20px;
+        border-bottom: 1px solid #e6e6e6;
+
+        // IMG 2
+        #exp_img2{
+            grid-area: exp_img2;
+            @include expBoxImg();
+        }
+    
+        // TEXT 2
+        #exp_text2{
+            grid-area: exp_text2;
+            @include expBoxText();
+        }
+    }
+
+    // EXPERIENCE BOX 3
+    #exp_box_3{
+        margin-top: 40px;
+        height: 150px;
+        display: grid;
+        grid-template-areas: 'exp_img3 exp_text3'
+        ;
+        grid-template-columns: 30% 1fr;
+        grid-gap: 20px;
+        border-bottom: 1px solid #e6e6e6;
+
+        // IMG 3
+        #exp_img3{
+            grid-area: exp_img3;
+            img{
+                height: 100px;
+                width: 100%;
             }
         }
     
-        #myContact{
-            grid-area: myContact;
-            border: $borderSettings;
-            height: 230px;
-
-            .contact-me{
-                @include defaultBtn();
-                background: #54ba4e;
-                border: 1px solid #54ba4e;
-                color: #fff;
-                padding: 10px;
-                font-size: 1.1em;
-                margin-top: 70px;
-                border-radius: 5px;
-                transition: all 0.5s;
-                cursor: pointer;
-
-                .fas{
-                    color: rgb(255, 255, 255);
-                    margin-right: 10px;
-                }
-
-                &:hover{
-                    background: #268021;
-                }
-            }
+        // TEXT 3
+        #exp_text3{
+            grid-area: exp_text3;
+            @include expBoxText();
         }
+    }
+
+    // JOB TITLE
+    .exp_title{
+        font-size: 1.2em;
+        margin-top: 0px;
     }
 }
 
-#content-section{
-    grid-area: content-section;
+// ############################## EDUCATION SECTION ##############################
+#educ_section{
+    grid-area: educ_section;
     margin-top: 50px;
-    margin-bottom: 50px;
-    font-family: 'Montserrat', sans-serif;
+    height: 620px;
 
-    #content-main{
+    // EDUCATION HEADER
+    #educ_header{
+        @include sectionHeader();
+    }
+
+    // EDUCATION MAIN CONTENT
+    #educ_main{
+        margin-top: 30px;
         display: grid;
-        grid-template-areas: 'about-section contact-section'
-        'experience other-projects'
-        'education skills'
-        'latest-projects hobbies'
+        grid-template-areas: 'educ_box1'
+        'educ_box2'
         ;
-        grid-template-columns: 1fr 30%;
-        grid-gap: 30px;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        height: 520px;
+        font-family: 'Poppins', sans-serif;
+        color: $textColor;
+        margin-left: 50px;
+        margin-right: 50px;
 
-        #about-section{
-            grid-area: about-section;
-            height: 280px;
-            border: $borderSettings;
-            background: rgba(255, 255, 255, 0.932);
-            @include contentText();
-
-        }
-
-        #contact-section{
-            grid-area: contact-section;
-            height: 200px;
-            border: $borderSettings;
-            background: rgba(255, 255, 255, 0.932);
-
-            p{
-                margin-left: 25px;
-                margin-right: 25px;
-                margin-top: 30px;
-                font-size: 1em;
-                color: #49515a;
-
-                .fas{
-                    margin-right: 10px;
-                    font-size: 1em;
-                    color: #ccd1d6;
-                }
+        // EDUCATION BOX 1
+        #educ_box1{
+            grid-area: educ_box1;
+            border-bottom: 1px solid #e6e6e6;
+            // CONTENT BOX
+            #educ_box1_content{
+                @include educBoxContent();
             }
         }
 
-        #latest-projects{
-            grid-area: latest-projects;
-            background: rgba(255, 255, 255, 0.932);
-            height: 600px;
-            @include contentText();
-
-            #projects-main{
-                margin-top: 20px;
-                display: grid;
-                grid-template-areas: 'tech-talk stance-nation'
-                'code4ct outdoor-adventures'
-                ;
-                grid-area: 1fr 1fr;
-                grid-gap: 10px;
-                padding: 10px;
-                height: 500px;
-                font-family: 'Montserrat', sans-serif;
-
-                img{
-                    height: 100%;
-                    width: 100%;
-                }
-
-                .overlay-tech{
-                    height: 100%;
-                    width: 100%;
-                    position: absolute;
-                    z-index: 1;
-                    top: 250px;
-                    transition: 0.7s;
-                    background: rgba(32, 32, 32, 0.9);
-                    text-align: center;
-
-                    h4{
-                        margin-top: 50px;
-                        color: white;
-                    }
-                    p{
-                        color: white;
-                    }
-                }
-
-                #tech-talk{
-                    grid-area: tech-talk;
-                    overflow: hidden;
-                    box-shadow: 0px 0px 10px grey;
-                    cursor: pointer;
-                    overflow: hidden;
-                    position: relative;
-
-                    #tech-img{
-                        height: 100%;
-                    }
-
-                    &:hover{
-                        .overlay-tech{
-                            top: 0%;
-                        }
-                    }
-                }
-
-                #stance-nation{
-                    grid-area: stance-nation;
-                    box-shadow: 0px 0px 10px grey;
-                    cursor: pointer;
-                    overflow: hidden;
-                    position: relative;
-
-                    #stance-img{
-                        height: 100%;
-                    }
-
-                    &:hover{
-                        .overlay-tech{
-                            top: 0%;
-                        }
-                    }
-                }
-
-                #code4ct{
-                    grid-area: code4ct;
-                    box-shadow: 0px 0px 10px grey;
-                    cursor: pointer;
-                    overflow: hidden;
-                    position: relative;
-
-                    #code-img{
-                        height: 100%;
-                    }
-
-                    &:hover{
-                        .overlay-tech{
-                            top: 0%;
-                        }
-                    }
-                }
-
-                #outdoor-adventures{
-                    grid-area: outdoor-adventures;
-                    box-shadow: 0px 0px 10px grey;
-                    cursor: pointer;
-                    overflow: hidden;
-                    position: relative;
-
-                    #outdoor-img{
-                        height: 100%;
-                    }
-
-                    &:hover{
-                        .overlay-tech{
-                            top: 0%;
-                        }
-                    }
-                }
-
-            }
-        }
-
-        #other-projects{
-            grid-area: other-projects;
-            background: rgba(255, 255, 255, 0.932);
-            height: 240px;
-            margin-top: -80px;
-            @include contentText();
-            h2{
-                margin-bottom: 30px;
-            }
-            p{
-                font-weight: bolder;
-                margin-top: 10px;
-            }
-            a{
-                &:hover{
-                    text-decoration: none;
-                }
-            }
-        }
-
-        #education{
-            grid-area: education;
-            background: rgba(255, 255, 255, 0.932);
-            height: 600px;
-            @include contentText();
-            h3{
-                margin-left: 30px;
-                margin-bottom: 10px;
-                margin-top: 20px;
-                word-spacing: 1px;
-                color: $headerColor;
-                font-weight: bolder;
-            }
-            p{
-                margin-top: 10px;
-            }
-            .tertiary-edu{
-                margin-top: 30px;
-            }
-            .pro-lang{
-                font-weight: bolder;
-            }
-        }
-
-        #skills{
-            grid-area: skills;
-            background: rgba(255, 255, 255, 0.932);
-            margin-top: -560px;
-            height: 460px;
-            @include contentText();
-            h2{
-                margin-bottom: 30px;
-            }
-            p{
-                margin-top: 20px;
-            }
-        }
-
-        #experience{
-            grid-area: experience;
-            background: rgba(255, 255, 255, 0.932);
-            height: 720px;
-            @include contentText();
-            h2{
-                margin-bottom: 30px;
-            }
-            h3{
-                margin-left: 30px;
-                margin-top: 10px;
-                margin-bottom: 20px;
-                word-spacing: 1px;
-                font-size: 1.2em;
-                color: $headerColor;
-                font-weight: bolder;
-            }
-            h4{
-                margin-left: 30px;
-                margin-top: 40px;
-                margin-bottom: 0px;
-                word-spacing: 1px;
-                color: $headerColor;
-                font-weight: bolder;
-            }
-            p{
-                margin-top: 10px;
-            }
-        }
-
-        #hobbies{
-            grid-area: hobbies;
-            background: rgba(255, 255, 255, 0.932);
-            margin-top: -700px;
-            height: 500px;
-            @include contentText();
-            h2{
-                margin-bottom: 30px;
-            }
-            p{
-                margin-top: 20px;
+        // EDUCATION BOX 2
+        #educ_box2{
+            grid-area: educ_box2;
+            border-bottom: 1px solid #e6e6e6;
+            // CONTENT BOX
+            #educ_box2_content{
+                @include educBoxContent();
             }
         }
     }
 }
 
-#footer{
-    grid-area: footer;
-    background: rgba(255, 255, 255, 0.932);
-    padding: 15px;
-    font-family: 'Montserrat', sans-serif;
-    color: #49515a;
-    font-size: 1.1em;
+// ############################## PROJECTS SECTION ##############################
+#projects_section{
+    grid-area: projects_section;
+    margin-top: 30px;
+    height: 750px;
+    font-family: 'Nunito Sans', sans-serif;
+    border-bottom: 1px solid #e6e6e6;
+    // border: $borderSettings;
 
-    .slogan{
-        color: #268021;
-        font-weight: lighter;
-        font-size: 0.8em;
+    // PROJECTS HEADER
+    #project_header{
+        @include sectionHeader();
+    }
+
+    // PROJECTS DESCRIPTION
+    #project_description{
+        margin-top: 30px;
+        p{
+            text-align: center;
+            color: $textColor;
+            font-size: 1.1em;
+        }
+    }
+    // PROJECTS MAIN SECTION
+    #project_main{
+        margin-top: 50px;
+        display: grid;
+        grid-template-areas: 'project_box1 project_box2'
+        'project_box3 project_box4'
+        ;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+        height: 550px;
+        font-family: 'Poppins', sans-serif;
+
+        .proj_box{
+            cursor: pointer;
+            overflow: hidden;
+            box-sizing: border-box;
+            position: relative;
+            background: #fff;
+            border: 1px solid #dbdbdb;
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            transition: all 200ms ease;
+
+            &:hover{
+                box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+                .over-text{
+                    top: 0%;
+                }
+            }
+
+            .over-text{
+                position: absolute;
+                background: rgba(0, 0, 0, 0.696);
+                height: 100%;
+                width: 100%;
+                top: -100%;
+                transition: all 1s;
+
+                .text_head{
+                    font-size: 1.2em;
+                    letter-spacing: 0.8px;
+                    color: white;
+                }
+
+                p{
+                    color: #efefef;
+                    line-height: 30px;
+                    margin-top: 40px;
+                    text-align: center;
+                }
+            }
+
+            img{
+                height: 100%;
+                width: 100%;
+            }
+        }
+        // PROJECT BOX 1
+        #project_box1{
+            grid-area: project_box1;
+        }
+        // PROJECT BOX 2
+        #project_box2{
+            grid-area: project_box2;
+        }
+        // PROJECT BOX 3
+        #project_box3{
+            grid-area: project_box3;
+        }
+        // PROJECT BOX 4
+        #project_box4{
+            grid-area: project_box4;
+        }
+    }
+}
+
+// ######################## ABOUT SECTION ########################
+#about_sect{
+    grid-area: about_sect;
+    margin-top: 50px;
+    height: 450px;
+    border: 1px solid transparent;
+    background: #2b2b2b;
+
+    // ABOUT MAIN SECT
+    #about_main{
+        display: grid;
+        grid-template-areas: 'about_img about_info'
+        ;
+        grid-template-columns: 20% 1fr;
+        grid-gap: 10px;
+        margin-top: 40px;
+
+        // ABOUT IMAGE
+        #about_img{
+            grid-area: about_img;
+            height: 430px;
+    
+            img{
+                border-radius: 50%;
+                height: 150px;
+                width: 150px;
+            }
+        }
+
+        // ABOUT INFO
+        #about_info{
+            height: 430px;   
+            grid-area: about_info;
+            font-family: 'Nunito Sans', sans-serif;
+
+            h3{
+                font-size: 1.4em;
+                letter-spacing: 1px;
+                color: white;
+            }
+            .about_contact{
+                margin-top: 30px;
+            }
+            p{
+                margin-top: 10px;
+                line-height: 30px;
+                font-weight: lighter;
+                font-size: 1.1em;
+                color: #7a7a7a;
+            }
+        }
+    }
+}
+
+// ######################## FOOTER ########################
+#footer_main{
+    grid-area: footer_main;
+    height: 400px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+
+    // FOOTER TOP SECTION
+    #footer_top{
+        height: 300px;
+        background: #292c33;
+        color: #bec6d5;
+        border: 1px solid transparent;
+        text-align: center;
+
+        h2{
+            font-size: 2em;
+            letter-spacing: 1px;
+            word-spacing: 3px;
+            margin-top: 50px;
+            color: #45bafc;
+        }
+        #title_text{
+            color: #57EEA1;
+        }
+        h3{
+            font-weight: lighter;
+            font-size: 1.1em;
+            margin-top: 20px;
+            line-height: 30px;
+        }
+        // FOOTER SOCIAL MEDIA
+        #footer_social{
+            height: 50px;
+            width: 350px;
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%,-50%);
+
+            i{
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+                padding: 8px;
+                margin-right: 10px;
+                font-size: 1.8em;
+                background: black;
+                border-radius: 50%;
+                transition: all 0.2s;
+                &:hover{
+                    background: rgb(255, 255, 255);
+                    color: black;
+                }
+            }
+        }
+    }
+
+    // FOOTER BOTTOM
+    #footer_bottom{
+        height: 100px;
+        background: #1d1e25;
+        color: #909db7;
+        border: 1px solid transparent;
+
+        h3{
+            font-size: 1em;
+            font-weight: lighter;
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        // FOOTER SLOGAN
+        .footer_slogan{
+            font-size: 0.9em;
+            font-style: italic;
+            color: #45bafc;
+        }
     }
 }
 
