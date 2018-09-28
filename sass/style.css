@@ -15,7 +15,13 @@
 #grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'home-section' 'skills_section' 'exp_section' 'educ_section' 'projects_section' 'about_sect' 'footer_main';
+      grid-template-areas: 'home-section'
+ 'skills_section'
+ 'exp_section'
+ 'educ_section'
+ 'projects_section'
+ 'about_sect'
+ 'footer_main';
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   font-family: 'Nunito Sans', sans-serif;
@@ -242,7 +248,8 @@
   margin-top: 80px;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'html_box css_box sass_box js_box' 'responsive_box node_box git_box python_box';
+      grid-template-areas: 'html_box css_box sass_box js_box'
+ 'responsive_box node_box git_box python_box';
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
@@ -503,7 +510,8 @@
   margin-top: 30px;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'educ_box1' 'educ_box2';
+      grid-template-areas: 'educ_box1'
+ 'educ_box2';
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   grid-gap: 20px;
@@ -593,7 +601,8 @@
   margin-top: 50px;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'project_box1 project_box2' 'project_box3 project_box4';
+      grid-template-areas: 'project_box1 project_box2'
+ 'project_box3 project_box4';
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
@@ -784,6 +793,7 @@
 }
 
 #footer_main #footer_top #footer_social i {
+  color: white;
   cursor: pointer;
   width: 30px;
   height: 30px;
@@ -977,7 +987,10 @@
     margin-top: 20px;
     display: -ms-grid;
     display: grid;
-        grid-template-areas: 'html_box css_box' 'sass_box js_box' 'responsive_box node_box' 'git_box python_box';
+        grid-template-areas: 'html_box css_box'
+ 'sass_box js_box'
+ 'responsive_box node_box'
+ 'git_box python_box';
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
@@ -1017,7 +1030,8 @@
     height: 250px;
     display: -ms-grid;
     display: grid;
-        grid-template-areas: 'exp_img1' 'exp_text1';
+        grid-template-areas: 'exp_img1'
+ 'exp_text1';
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     grid-gap: 0px;
@@ -1047,7 +1061,8 @@
     height: 250px;
     display: -ms-grid;
     display: grid;
-        grid-template-areas: 'exp_img2' 'exp_text2';
+        grid-template-areas: 'exp_img2'
+ 'exp_text2';
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     grid-gap: 0px;
@@ -1077,7 +1092,8 @@
     height: 250px;
     display: -ms-grid;
     display: grid;
-        grid-template-areas: 'exp_img3' 'exp_text3';
+        grid-template-areas: 'exp_img3'
+ 'exp_text3';
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     grid-gap: 0px;
@@ -1122,7 +1138,8 @@
     margin-top: 30px;
     display: -ms-grid;
     display: grid;
-        grid-template-areas: 'educ_box1' 'educ_box2';
+        grid-template-areas: 'educ_box1'
+ 'educ_box2';
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     grid-gap: 20px;
@@ -1184,7 +1201,10 @@
     margin-top: 20px;
     display: -ms-grid;
     display: grid;
-        grid-template-areas: 'project_box1' 'project_box2' 'project_box3' 'project_box4';
+        grid-template-areas: 'project_box1'
+ 'project_box2'
+ 'project_box3'
+ 'project_box4';
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     grid-gap: 10px;
@@ -1223,7 +1243,8 @@
   #about_sect #about_main {
     display: -ms-grid;
     display: grid;
-        grid-template-areas: 'about_img' 'about_info';
+        grid-template-areas: 'about_img'
+ 'about_info';
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     grid-gap: 10px;
@@ -1727,7 +1748,8 @@
     margin-top: 20px;
     display: -ms-grid;
     display: grid;
-        grid-template-areas: 'project_box1 project_box2' 'project_box3 project_box4';
+        grid-template-areas: 'project_box1 project_box2'
+ 'project_box3 project_box4';
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
@@ -1855,7 +1877,8 @@
     margin-top: 20px;
     display: -ms-grid;
     display: grid;
-        grid-template-areas: 'html_box css_box sass_box js_box' 'responsive_box node_box git_box python_box';
+        grid-template-areas: 'html_box css_box sass_box js_box'
+ 'responsive_box node_box git_box python_box';
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
@@ -2000,7 +2023,8 @@
     margin-top: 30px;
     display: -ms-grid;
     display: grid;
-        grid-template-areas: 'educ_box1' 'educ_box2';
+        grid-template-areas: 'educ_box1'
+ 'educ_box2';
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     grid-gap: 20px;
@@ -2062,7 +2086,8 @@
     margin-top: 20px;
     display: -ms-grid;
     display: grid;
-        grid-template-areas: 'project_box1 project_box2' 'project_box3 project_box4';
+        grid-template-areas: 'project_box1 project_box2'
+ 'project_box3 project_box4';
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
@@ -2101,7 +2126,8 @@
   #about_sect #about_main {
     display: -ms-grid;
     display: grid;
-        grid-template-areas: 'about_img' 'about_info';
+        grid-template-areas: 'about_img'
+ 'about_info';
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     grid-gap: 10px;
@@ -2304,7 +2330,8 @@
     margin-top: 20px;
     display: -ms-grid;
     display: grid;
-        grid-template-areas: 'html_box css_box sass_box js_box' 'responsive_box node_box git_box python_box';
+        grid-template-areas: 'html_box css_box sass_box js_box'
+ 'responsive_box node_box git_box python_box';
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
