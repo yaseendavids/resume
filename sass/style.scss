@@ -74,7 +74,7 @@ $textColor:#393d47;
 }
 
 // TITLE TEXT COLOR
-#title_text{
+.title_text{
     color: #57EEA1;
 }
 
@@ -100,7 +100,7 @@ $textColor:#393d47;
     }
     
     // ############################## NAVBAR ##############################
-    #navbar{
+    .navbar{
         position: fixed;
         z-index: 10000;
         height: 60px;
@@ -109,7 +109,7 @@ $textColor:#393d47;
         transition: all 0.2s;
 
         // ############################## NAVBAR LOGO ##############################
-        #navbar_logo{
+        .navbar_logo{
             float: left;
             width: 25%;
             margin-top: 14px;
@@ -135,13 +135,13 @@ $textColor:#393d47;
             }
         }
         // ############################## NAVBAR LINKS ##############################
-        #navbar_links{
+        .navbar_links{
             float: right;
             width: 70%;
             margin-top: 15px;
             text-align: right;
 
-            #hamburger_menu{
+            .hamburger_menu{
                 display: none;
             }
 
@@ -164,7 +164,7 @@ $textColor:#393d47;
     }
 
     // ############################## HOME SECTION TITLE ##############################
-    #home-section-title{
+    .home-section-title{
         transform: scale(0);
         position: relative;
         transition: all 1s;
@@ -247,12 +247,12 @@ $textColor:#393d47;
     font-family: 'Nunito Sans', sans-serif;
 
     // SKILLS SECTION HEADER
-    #skills_header{
+    .skills_header{
         @include sectionHeader();
     }
 
     // SKILLS SECTION DESCRIPTION
-    #skills_description{
+    .skills_description{
         margin-top: 30px;
         p{
             text-align: center;
@@ -262,7 +262,7 @@ $textColor:#393d47;
     }
 
     // SKILLS SECTION BOXES
-    #skills_boxes{
+    .skills_boxes{
         margin-top: 80px;
         display: grid;
         grid-template-areas: 'html_box css_box sass_box js_box'
@@ -349,12 +349,12 @@ $textColor:#393d47;
     font-family: 'Poppins', sans-serif;
 
     // EXPERIENCE HEADER
-    #exp_header{
+    .exp_header{
         @include sectionHeader();
     }
 
     // EXPERIENCE BOX 1
-    #exp_box_1{
+    .exp_box_1{
         margin-top: 40px;
         height: 150px;
         display: grid;
@@ -365,20 +365,20 @@ $textColor:#393d47;
         border-bottom: 1px solid #e6e6e6;
 
         // IMG 1
-        #exp_img1{
+        .exp_img1{
             grid-area: exp_img1;
             @include expBoxImg();
         }
     
         // TEXT 1
-        #exp_text1{
+        .exp_text1{
             grid-area: exp_text1;
             @include expBoxText();
         }
     }    
 
     // EXPERIENCE BOX 2
-    #exp_box_2{
+    .exp_box_2{
         margin-top: 40px;
         height: 200px;
         display: grid;
@@ -389,20 +389,20 @@ $textColor:#393d47;
         border-bottom: 1px solid #e6e6e6;
 
         // IMG 2
-        #exp_img2{
+        .exp_img2{
             grid-area: exp_img2;
             @include expBoxImg();
         }
     
         // TEXT 2
-        #exp_text2{
+        .exp_text2{
             grid-area: exp_text2;
             @include expBoxText();
         }
     }
 
     // EXPERIENCE BOX 3
-    #exp_box_3{
+    .exp_box_3{
         margin-top: 40px;
         height: 150px;
         display: grid;
@@ -413,7 +413,7 @@ $textColor:#393d47;
         border-bottom: 1px solid #e6e6e6;
 
         // IMG 3
-        #exp_img3{
+        .exp_img3{
             grid-area: exp_img3;
             img{
                 height: 100px;
@@ -422,7 +422,7 @@ $textColor:#393d47;
         }
     
         // TEXT 3
-        #exp_text3{
+        .exp_text3{
             grid-area: exp_text3;
             @include expBoxText();
         }
@@ -442,12 +442,12 @@ $textColor:#393d47;
     height: 620px;
 
     // EDUCATION HEADER
-    #educ_header{
+    .educ_header{
         @include sectionHeader();
     }
 
     // EDUCATION MAIN CONTENT
-    #educ_main{
+    .educ_main{
         margin-top: 30px;
         display: grid;
         grid-template-areas: 'educ_box1'
@@ -462,21 +462,21 @@ $textColor:#393d47;
         margin-right: 50px;
 
         // EDUCATION BOX 1
-        #educ_box1{
+        .educ_box1{
             grid-area: educ_box1;
             border-bottom: 1px solid #e6e6e6;
             // CONTENT BOX
-            #educ_box1_content{
+            .educ_box1_content{
                 @include educBoxContent();
             }
         }
 
         // EDUCATION BOX 2
-        #educ_box2{
+        .educ_box2{
             grid-area: educ_box2;
             border-bottom: 1px solid #e6e6e6;
             // CONTENT BOX
-            #educ_box2_content{
+            .educ_box2_content{
                 @include educBoxContent();
             }
         }
@@ -493,12 +493,12 @@ $textColor:#393d47;
     // border: $borderSettings;
 
     // PROJECTS HEADER
-    #project_header{
+    .project_header{
         @include sectionHeader();
     }
 
     // PROJECTS DESCRIPTION
-    #project_description{
+    .project_description{
         margin-top: 30px;
         p{
             text-align: center;
@@ -507,7 +507,7 @@ $textColor:#393d47;
         }
     }
     // PROJECTS MAIN SECTION
-    #project_main{
+    .project_main{
         margin-top: 50px;
         display: grid;
         grid-template-areas: 'project_box1 project_box2'
@@ -673,18 +673,16 @@ $textColor:#393d47;
     height: 450px;
     border: 1px solid transparent;
     background: #2b2b2b;
-
     // ABOUT MAIN SECT
-    #about_main{
+    .about_main{
         display: grid;
         grid-template-areas: 'about_img about_info'
         ;
         grid-template-columns: 20% 1fr;
         grid-gap: 10px;
         margin-top: 40px;
-
         // ABOUT IMAGE
-        #about_img{
+        .about_img{
             grid-area: about_img;
             height: 430px;
     
@@ -694,13 +692,11 @@ $textColor:#393d47;
                 width: 150px;
             }
         }
-
         // ABOUT INFO
-        #about_info{
+        .about_info{
             height: 430px;   
             grid-area: about_info;
             font-family: 'Nunito Sans', sans-serif;
-
             h3{
                 font-size: 1.4em;
                 letter-spacing: 1px;
@@ -726,15 +722,13 @@ $textColor:#393d47;
     height: 400px;
     font-family: 'Poppins', sans-serif;
     position: relative;
-
     // FOOTER TOP SECTION
-    #footer_top{
+    .footer_top{
         height: 300px;
         background: #292c33;
         color: #bec6d5;
         border: 1px solid transparent;
         text-align: center;
-
         h2{
             font-size: 2em;
             letter-spacing: 1px;
@@ -742,7 +736,7 @@ $textColor:#393d47;
             margin-top: 50px;
             color: #45bafc;
         }
-        #title_text{
+        .title_text{
             color: #57EEA1;
         }
         h3{
@@ -752,14 +746,13 @@ $textColor:#393d47;
             line-height: 30px;
         }
         // FOOTER SOCIAL MEDIA
-        #footer_social{
+        .footer_social{
             height: 50px;
             width: 350px;
             position: absolute;
             left: 50%;
             top: 60%;
             transform: translate(-50%,-50%);
-
             i{
                 cursor: pointer;
                 width: 30px;
@@ -777,21 +770,18 @@ $textColor:#393d47;
             }
         }
     }
-
     // FOOTER BOTTOM
-    #footer_bottom{
+    .footer_bottom{
         height: 100px;
         background: #1d1e25;
         color: #909db7;
         border: 1px solid transparent;
-
         h3{
             font-size: 1em;
             font-weight: lighter;
             margin-top: 35px;
             text-align: center;
         }
-
         // FOOTER SLOGAN
         .footer_slogan{
             font-size: 0.9em;
