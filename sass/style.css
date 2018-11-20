@@ -1083,6 +1083,7 @@
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: exp_img_peach;
+    height: 80px;
   }
   .exp_section .exp_box_peach .exp_img_peach img {
     margin-left: 0px;

@@ -266,6 +266,7 @@ and (max-width:900px){
             .exp_img_peach{
                 grid-area: exp_img_peach;
                 @include expBoxImg();
+                height: 80px;
                 img{
                     width: 180px;
                 }
