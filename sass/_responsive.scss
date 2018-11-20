@@ -52,7 +52,7 @@ and (max-width:900px){
     }
 
     // ############## HOME SECTION ##############
-    #home-section {
+    .home-section {
         grid-area: home-section;
         height: 550px;
         position: relative;
@@ -66,7 +66,7 @@ and (max-width:900px){
         }
         
         // ############## NAVBAR ##############
-        #navbar{
+        .navbar{
             position: fixed;
             z-index: 10000;
             height: 60px;
@@ -74,7 +74,7 @@ and (max-width:900px){
             transition: all 0.2s;
 
             // ############## NAVBAR LOGO ##############
-            #navbar_logo{
+            .navbar_logo{
                 float: left;
                 width: 70%;
                 margin-top: 14px;
@@ -90,13 +90,13 @@ and (max-width:900px){
                 }
             }
             // ############## NAVBAR LINKS ##############
-            #navbar_links{
+            .navbar_links{
                 float: right;
                 width: 25%;
                 margin-top: 16px;
                 text-align: right;
 
-                #hamburger_menu{
+                .hamburger_menu{
                     display: block;
 
                     i{
@@ -132,7 +132,7 @@ and (max-width:900px){
         .show_navlinks{
             height: 400px;
             background: rgb(23, 25, 29);
-            #navbar_links{
+            .navbar_links{
                 a{
                     display: block;
                 }
@@ -140,7 +140,7 @@ and (max-width:900px){
         }
 
         // ############## HOME SECTION TITLE ##############
-        #home-section-title{
+        .home-section-title{
             position: relative;
             transition: all 1s;
             z-index: 1000;
@@ -187,19 +187,19 @@ and (max-width:900px){
     }
 
     // ############## SKILLS SECTION ##############
-    #skills_section{
+    .skills_section{
         grid-area: skills_section;
         height: 750px;
         margin-top: 30px;
         // border: $borderSettings;
 
         // SKILLS SECTION HEADER
-        #skills_header{
+        .skills_header{
             @include sectionHeader();
         }
 
         // SKILLS SECTION DESCRIPTION
-        #skills_description{
+        .skills_description{
             margin-top: 30px;
             p{
                 font-size: 0.9em;
@@ -207,7 +207,7 @@ and (max-width:900px){
         }
 
         // SKILLS SECTION BOXES
-        #skills_boxes{
+        .skills_boxes{
             margin-top: 20px;
             display: grid;
             grid-template-areas: 'html_box css_box'
@@ -245,14 +245,39 @@ and (max-width:900px){
     }
 
     // ############## EXPERIENCE ##############
-    #exp_section{
+    .exp_section{
         grid-area: exp_section;
         margin-top: 20px;
-        height: 950px;
+        height: 100%;
         // border: $borderSettings;
 
         // EXPERIENCE BOX 1
-        #exp_box_1{
+        .exp_box_peach{
+            margin-top: 40px;
+            height: 100%;
+            display: grid;
+            grid-template-areas: 'exp_img_peach'
+            'exp_text_peach'
+            ;
+            grid-template-columns: 1fr;
+            grid-gap: 0px;
+
+            // IMG 1
+            .exp_img_peach{
+                grid-area: exp_img_peach;
+                @include expBoxImg();
+                img{
+                    width: 180px;
+                }
+            }
+        
+            // TEXT 1
+            .exp_text_peach{
+                grid-area: exp_text_peach;
+                @include expBoxText();
+            }
+        }    
+        .exp_box_1{
             margin-top: 40px;
             height: 250px;
             display: grid;
@@ -263,20 +288,20 @@ and (max-width:900px){
             grid-gap: 0px;
 
             // IMG 1
-            #exp_img1{
+            .exp_img1{
                 grid-area: exp_img1;
                 @include expBoxImg();
             }
         
             // TEXT 1
-            #exp_text1{
+            .exp_text1{
                 grid-area: exp_text1;
                 @include expBoxText();
             }
         }    
 
         // EXPERIENCE BOX 2
-        #exp_box_2{
+        .exp_box_2{
             margin-top: 40px;
             height: 250px;
             display: grid;
@@ -287,20 +312,20 @@ and (max-width:900px){
             grid-gap: 0px;
 
             // IMG 2
-            #exp_img2{
+            .exp_img2{
                 grid-area: exp_img2;
                 @include expBoxImg();
             }
         
             // TEXT 2
-            #exp_text2{
+            .exp_text2{
                 grid-area: exp_text2;
                 @include expBoxText();
             }
         }
 
         // EXPERIENCE BOX 3
-        #exp_box_3{
+        .exp_box_3{
             margin-top: 40px;
             height: 250px;
             display: grid;
@@ -311,7 +336,7 @@ and (max-width:900px){
             grid-gap: 0px;
 
             // IMG 3
-            #exp_img3{
+            .exp_img3{
                 grid-area: exp_img3;
                 img{
                     margin-left: 0px;
@@ -321,7 +346,7 @@ and (max-width:900px){
             }
         
             // TEXT 3
-            #exp_text3{
+            .exp_text3{
                 grid-area: exp_text3;
                 @include expBoxText();
             }
@@ -335,19 +360,19 @@ and (max-width:900px){
     }
 
     // ############## EDUCATION SECTION ##############
-    #educ_section{
+    .educ_section{
         grid-area: educ_section;
         margin-top: 50px;
-        height: 830px;
+        height: 100%;
         // border: $borderSettings;
 
         // EDUCATION HEADER
-        #educ_header{
+        .educ_header{
             @include sectionHeader();
         }
 
         // EDUCATION MAIN CONTENT
-        #educ_main{
+        .educ_main{
             margin-top: 30px;
             display: grid;
             grid-template-areas: 'educ_box1'
@@ -355,24 +380,24 @@ and (max-width:900px){
             ;
             grid-template-columns: 1fr;
             grid-gap: 20px;
-            height: 520px;
+            height: 100%;
             margin-left: 0px;
             margin-right: 0px;
 
             // EDUCATION BOX 1
-            #educ_box1{
+            .educ_box1{
                 grid-area: educ_box1;
                 // CONTENT BOX
-                #educ_box1_content{
+                .educ_box1_content{
                     @include educBoxContent();
                 }
             }
 
             // EDUCATION BOX 2
-            #educ_box2{
+            .educ_box2{
                 grid-area: educ_box2;
                 // CONTENT BOX
-                #educ_box2_content{
+                .educ_box2_content{
                     @include educBoxContent();
                 }
             }
@@ -380,26 +405,26 @@ and (max-width:900px){
     }
 
     // ############## PROJECTS SECTION ##############
-    #projects_section{
+    .projects_section{
         grid-area: projects_section;
         margin-top: 30px;
-        height: 1180px;
+        height: 100%;
         // border: $borderSettings;
 
         // PROJECTS HEADER
-        #project_header{
+        .project_header{
             @include sectionHeader();
         }
 
         // PROJECTS DESCRIPTION
-        #project_description{
+        .project_description{
             margin-top: 30px;
             p{
                 font-size: 0.9em;
             }
         }
         // PROJECTS MAIN SECTION
-        #project_main{
+        .project_main{
             // border: $borderSettings;
             margin-top: 20px;
             display: grid;
@@ -443,14 +468,14 @@ and (max-width:900px){
     }
 
     // ######################## ABOUT SECTION ########################
-    #about_sect{
+    .about_sect{
         grid-area: about_sect;
         margin-top: 50px;
-        height: 580px;
+        height: 100%;
         // border: 1px solid white;
 
         // ABOUT MAIN SECT
-        #about_main{
+        .about_main{
             display: grid;
             grid-template-areas: 'about_img'
             'about_info'
@@ -461,7 +486,7 @@ and (max-width:900px){
             // border: 1px solid white;
 
             // ABOUT IMAGE
-            #about_img{
+            .about_img{
                 grid-area: about_img;
                 height: 100px;
                 // border: 1px solid white;
@@ -478,8 +503,8 @@ and (max-width:900px){
             }
 
             // ABOUT INFO
-            #about_info{
-                height: 430px;   
+            .about_info{
+                height: 100%;   
                 grid-area: about_info;
                 // border: 1px solid white;
 
@@ -500,13 +525,13 @@ and (max-width:900px){
     }
 
     // ######################## FOOTER ########################
-    #footer_main{
+    .footer_main{
         grid-area: footer_main;
         height: 400px;
         position: relative;
 
         // FOOTER TOP SECTION
-        #footer_top{
+        .footer_top{
             height: 300px;
 
             h2{
@@ -521,7 +546,7 @@ and (max-width:900px){
                 line-height: 30px;
             }
             // FOOTER SOCIAL MEDIA
-            #footer_social{
+            .footer_social{
                 height: 50px;
                 width: 300px;
                 position: absolute;
@@ -541,7 +566,7 @@ and (max-width:900px){
         }
 
         // FOOTER BOTTOM
-        #footer_bottom{
+        .footer_bottom{
             height: 100px;
 
             h3{
@@ -558,70 +583,6 @@ and (max-width:900px){
 
 }
 
-// ############################ MOBILE DEVICES ############################
-@media (min-width:350px)
-and (max-width: 375px){
-
-    // ########### EDUCATION SECTION ###########
-    #educ_section{
-        height: 780px;
-    }
-
-    // ########### ABOUT SECTION ###########
-    #about_sect{
-        height: 540px;
-    }
-
-}
-
-// ############################ MOBILE DEVICES ############################
-@media (min-width:376px)
-and (max-width: 400px){
-
-    // ########### EDUCATION SECTION ###########
-    #educ_section{
-        height: 750px;
-    }
-
-    // ########### ABOUT SECTION ###########
-    #about_sect{
-        height: 530px;
-    }
-
-}
-
-// ############################ MOBILE DEVICES ############################
-@media (min-width:401px)
-and (max-width: 430px){
-
-    // ########### EDUCATION SECTION ###########
-    #educ_section{
-        height: 750px;
-    }
-
-    // ########### ABOUT SECTION ###########
-    #about_sect{
-        height: 520px;
-    }
-
-}
-
-// ############################ MOBILE DEVICES ############################
-@media (min-width: 431px)
-and (max-width: 500px){
-
-    // ########### EDUCATION SECTION ###########
-    #educ_section{
-        height: 700px;
-    }
-
-    // ########### ABOUT SECTION ###########
-    #about_sect{
-        height: 500px;
-    }
-
-}
-
 @media (min-width: 501px)
 and (max-width: 600px){
 
@@ -632,13 +593,13 @@ and (max-width: 600px){
     }
 
     // ########### EDUCATION SECTION ###########
-     #educ_section{
-        height: 700px;
+    .educ_section{
+        height: 100%;
     }
 
     // ########### ABOUT SECTION ###########
-    #about_sect{
-        height: 500px;
+    .about_sect{
+        height: 100%;
     }
     
 }
@@ -662,24 +623,24 @@ and (max-width: 600px){
     }
 
     // ########### EDUCATION SECTION ###########
-     #educ_section{
-        height: 700px;
+    .educ_section{
+        height: 100%;
         margin-top: 0;
 
         // EDUCATION MAIN CONTENT
-        #educ_main{
+        .educ_main{
             // EDUCATION BOX 1
-            #educ_box1{
+            .educ_box1{
                 // CONTENT BOX
-                #educ_box1_content{
+                .educ_box1_content{
                     @include educBoxContent();
                 }
             }
 
             // EDUCATION BOX 2
-            #educ_box2{
+            .educ_box2{
                 // CONTENT BOX
-                #educ_box2_content{
+                .educ_box2_content{
                     @include educBoxContent();
                 }
             }
@@ -687,13 +648,13 @@ and (max-width: 600px){
     }
 
     // ########### ABOUT SECTION ###########
-    #about_sect{
-        height: 500px;
+    .about_sect{
+        height: 100%;
         // ABOUT MAIN SECT
-        #about_main{
+        .about_main{
 
             // ABOUT IMAGE
-            #about_img{
+            .about_img{
                 img{
                     height: 120px;
                     width: 120px;
@@ -701,7 +662,7 @@ and (max-width: 600px){
             }
 
             // ABOUT INFO
-            #about_info{
+            .about_info{
 
                 p{
                     font-size: 1em;
@@ -715,10 +676,10 @@ and (max-width: 600px){
 and (max-width: 700px){
 
     // ############## HOME SECTION ##############
-    #home-section {
+    .home-section {
 
         // ############## HOME SECTION TITLE ##############
-        #home-section-title{
+        .home-section-title{
             position: relative;
             transition: all 1s;
             z-index: 1000;
@@ -759,9 +720,9 @@ and (max-width: 700px){
     }
 
     // ############## SKILLS SECTION ##############
-    #skills_section{
+    .skills_section{
         // SKILLS SECTION DESCRIPTION
-        #skills_description{
+        .skills_description{
             p{
                 font-size: 1.1em;
             }
@@ -769,30 +730,30 @@ and (max-width: 700px){
     }
 
     // ############## EXPERIENCE ##############
-     #exp_section{
-        height: 950px;
+     .exp_section{
+        height: 100%;
 
         // EXPERIENCE BOX 1
-        #exp_box_1{
+        .exp_box_1{
             // TEXT 1
-            #exp_text1{
+            .exp_text1{
                 grid-area: exp_text1;
                 @include expBoxText();
             }
         }    
         // EXPERIENCE BOX 2
-        #exp_box_2{
+        .exp_box_2{
             // TEXT 2
-            #exp_text2{
+            .exp_text2{
                 grid-area: exp_text2;
                 @include expBoxText();
             }
         }
         // EXPERIENCE BOX 3
-        #exp_box_3{
+        .exp_box_3{
         
             // TEXT 3
-            #exp_text3{
+            .exp_text3{
                 grid-area: exp_text3;
                 @include expBoxText();
             }
@@ -812,35 +773,35 @@ and (max-width: 700px){
     }
 
     /// ############## EDUCATION SECTION ##############
-    #educ_section{
-        height: 800px;
+    .educ_section{
+        height: 100%;
 
         // EDUCATION MAIN CONTENT
-        #educ_main{
+        .educ_main{
 
             // EDUCATION BOX 1
-            #educ_box1{
+            .educ_box1{
                 grid-area: educ_box1;
                 // CONTENT BOX
-                #educ_box1_content{
+                .educ_box1_content{
                     @include educBoxContent();
                 }
             }
 
             // EDUCATION BOX 2
-            #educ_box2{
+            .educ_box2{
                 grid-area: educ_box2;
                 // CONTENT BOX
-                #educ_box2_content{
+                .educ_box2_content{
                     @include educBoxContent();
                 }
             }
         }
     }
     // ############## PROJECTS SECTION ##############
-    #projects_section{
+    .projects_section{
         // PROJECTS DESCRIPTION
-        #project_description{
+        .project_description{
             margin-top: 30px;
             p{
                 font-size: 1.1em;
@@ -849,13 +810,13 @@ and (max-width: 700px){
     }
 
     // ########### ABOUT SECTION ###########
-    #about_sect{
-        height: 500px;
+    .about_sect{
+        height: 100%;
         // ABOUT MAIN SECT
-        #about_main{
+        .about_main{
 
             // ABOUT IMAGE
-            #about_img{
+            .about_img{
                 img{
                     height: 120px;
                     width: 120px;
@@ -863,7 +824,7 @@ and (max-width: 700px){
             }
 
             // ABOUT INFO
-            #about_info{
+            .about_info{
 
                 p{
                     font-size: 1.1em;
@@ -871,24 +832,6 @@ and (max-width: 700px){
             }
         }
     }   
-}
-
-@media (min-width: 670px)
-and (max-width: 700px){
-
-    /// ############## EDUCATION SECTION ##############
-    #educ_section{
-        height: 780px;
-    }
-}
-
-@media (min-width: 680px)
-and (max-width: 700px){
-
-    /// ############## EDUCATION SECTION ##############
-    #educ_section{
-        height: 740px;
-    }
 }
 
 // ############################ TABLET VIEW ############################
@@ -927,7 +870,7 @@ and (max-width: 800px){
     }
 
     // ############## HOME SECTION ##############
-    #home-section {
+    .home-section {
         grid-area: home-section;
         height: 550px;
         position: relative;
@@ -941,7 +884,7 @@ and (max-width: 800px){
         }
         
         // ############## NAVBAR ##############
-        #navbar{
+        .navbar{
             position: fixed;
             z-index: 10000;
             height: 60px;
@@ -949,7 +892,7 @@ and (max-width: 800px){
             transition: all 0.2s;
 
             // ############## NAVBAR LOGO ##############
-            #navbar_logo{
+            .navbar_logo{
                 float: left;
                 width: 70%;
                 margin-top: 14px;
@@ -965,7 +908,7 @@ and (max-width: 800px){
                 }
             }
             // ############## NAVBAR LINKS ##############
-            #navbar_links{
+            .navbar_links{
                 float: right;
                 width: 25%;
                 margin-top: 16px;
@@ -996,7 +939,7 @@ and (max-width: 800px){
         }
 
         // ############## HOME SECTION TITLE ##############
-        #home-section-title{
+        .home-section-title{
             position: relative;
             transition: all 1s;
             z-index: 1000;
@@ -1021,9 +964,9 @@ and (max-width: 800px){
     }
 
     // ############## SKILLS SECTION ##############
-    #skills_section{
+    .skills_section{
         // SKILLS SECTION DESCRIPTION
-        #skills_description{
+        .skills_description{
             p{
                 font-size: 1.2em;
             }
@@ -1031,30 +974,30 @@ and (max-width: 800px){
     }
 
     // ############## EXPERIENCE ##############
-    #exp_section{
-        height: 950px;
+    .exp_section{
+        height: 100%;
 
         // EXPERIENCE BOX 1
-        #exp_box_1{
+        .exp_box_1{
             // TEXT 1
-            #exp_text1{
+            .exp_text1{
                 grid-area: exp_text1;
                 @include expBoxText();
             }
         }    
         // EXPERIENCE BOX 2
-        #exp_box_2{
+        .exp_box_2{
             // TEXT 2
-            #exp_text2{
+            .exp_text2{
                 grid-area: exp_text2;
                 @include expBoxText();
             }
         }
         // EXPERIENCE BOX 3
-        #exp_box_3{
+        .exp_box_3{
         
             // TEXT 3
-            #exp_text3{
+            .exp_text3{
                 grid-area: exp_text3;
                 @include expBoxText();
             }
@@ -1068,26 +1011,26 @@ and (max-width: 800px){
     }
 
     /// ############## EDUCATION SECTION ##############
-    #educ_section{
-        height: 720px;
+    .educ_section{
+        height: 100%;
 
         // EDUCATION MAIN CONTENT
-        #educ_main{
+        .educ_main{
 
             // EDUCATION BOX 1
-            #educ_box1{
+            .educ_box1{
                 grid-area: educ_box1;
                 // CONTENT BOX
-                #educ_box1_content{
+                .educ_box1_content{
                     @include educBoxContent();
                 }
             }
 
             // EDUCATION BOX 2
-            #educ_box2{
+            .educ_box2{
                 grid-area: educ_box2;
                 // CONTENT BOX
-                #educ_box2_content{
+                .educ_box2_content{
                     @include educBoxContent();
                 }
             }
@@ -1095,26 +1038,26 @@ and (max-width: 800px){
     }
 
     // ############## PROJECTS SECTION ##############
-    #projects_section{
+    .projects_section{
         grid-area: projects_section;
         margin-top: 0px;
-        height: 650px;
+        height: 100%;
         // border: $borderSettings;
 
         // PROJECTS HEADER
-        #project_header{
+        .project_header{
             @include sectionHeader();
         }
 
         // PROJECTS DESCRIPTION
-        #project_description{
+        .project_description{
             margin-top: 30px;
             p{
                 font-size: 1em;
             }
         }
         // PROJECTS MAIN SECTION
-        #project_main{
+        .project_main{
             // border: $borderSettings;
             margin-top: 20px;
             display: grid;
@@ -1123,7 +1066,7 @@ and (max-width: 800px){
             ;
             grid-template-columns: 1fr 1fr;
             grid-gap: 10px;
-            height: 500px;
+            height: 100%;
 
             .proj_box{
                 border-radius: 6px;
@@ -1138,12 +1081,12 @@ and (max-width: 800px){
     }
 
     // ########### ABOUT SECTION ###########
-    #about_sect{
-        height: 500px;
+    .about_sect{
+        height: 100%;
         // ABOUT MAIN SECT
-        #about_main{
+        .about_main{
             // ABOUT IMAGE
-            #about_img{
+            .about_img{
                 img{
                     height: 130px;
                     width: 130px;
@@ -1151,7 +1094,7 @@ and (max-width: 800px){
             }
 
             // ABOUT INFO
-            #about_info{
+            .about_info{
                 margin-top: 40px;
                 p{
                     font-size: 1.1em;
@@ -1214,7 +1157,7 @@ and (max-width: 1279px){
     }
 
     // ############## HOME SECTION ##############
-    #home-section {
+    .home-section {
         grid-area: home-section;
         height: 550px;
         position: relative;
@@ -1228,7 +1171,7 @@ and (max-width: 1279px){
         }
         
         // ############## NAVBAR ##############
-        #navbar{
+        .navbar{
             position: fixed;
             z-index: 10000;
             height: 60px;
@@ -1237,7 +1180,7 @@ and (max-width: 1279px){
            
 
             // ############## NAVBAR LOGO ##############
-            #navbar_logo{
+            .navbar_logo{
                 float: left;
                 width: 30%;
                 margin-top: 14px;
@@ -1253,13 +1196,13 @@ and (max-width: 1279px){
                 }
             }
             // ############## NAVBAR LINKS ##############
-            #navbar_links{
+            .navbar_links{
                 float: right;
                 width: 65%;
                 margin-top: 14px;
                 text-align: right;
 
-                #hamburger_menu{
+                .hamburger_menu{
                     display: none;
                 }
 
@@ -1270,7 +1213,7 @@ and (max-width: 1279px){
         }
 
         // ############## HOME SECTION TITLE ##############
-        #home-section-title{
+        .home-section-title{
             position: relative;
             transition: all 1s;
             z-index: 1000;
@@ -1300,19 +1243,19 @@ and (max-width: 1279px){
     }
 
     // ############## SKILLS SECTION ##############
-    #skills_section{
+    .skills_section{
         grid-area: skills_section;
         height: 450px;
         margin-top: 30px;
         // border: $borderSettings;
 
         // SKILLS SECTION HEADER
-        #skills_header{
+        .skills_header{
             @include sectionHeader();
         }
 
         // SKILLS SECTION DESCRIPTION
-        #skills_description{
+        .skills_description{
             margin-top: 30px;
             p{
                 font-size: 1.1em;
@@ -1320,7 +1263,7 @@ and (max-width: 1279px){
         }
 
         // SKILLS SECTION BOXES
-        #skills_boxes{
+        .skills_boxes{
             margin-top: 20px;
             display: grid;
             grid-template-areas: 'html_box css_box sass_box js_box'
@@ -1356,14 +1299,14 @@ and (max-width: 1279px){
     }
 
     // ############## EXPERIENCE ##############
-    #exp_section{
+    .exp_section{
         grid-area: exp_section;
         margin-top: 20px;
         height: 750px;
         // border: $borderSettings;
 
         // EXPERIENCE BOX 1
-        #exp_box_1{
+        .exp_box_1{
             margin-top: 40px;
             height: 180px;
             display: grid;
@@ -1374,14 +1317,14 @@ and (max-width: 1279px){
             // border: $borderSettings;
 
             // IMG 1
-            #exp_img1{
+            .exp_img1{
                 grid-area: exp_img1;
                 @include expBoxImg();
                 // border: $borderSettings;
             }
         
             // TEXT 1
-            #exp_text1{
+            .exp_text1{
                 grid-area: exp_text1;
                 @include expBoxText();
                 // border: $borderSettings;
@@ -1389,7 +1332,7 @@ and (max-width: 1279px){
         }    
 
         // EXPERIENCE BOX 2
-        #exp_box_2{
+        .exp_box_2{
             margin-top: 40px;
             height: 210px;
             display: grid;
@@ -1400,14 +1343,14 @@ and (max-width: 1279px){
             // border: $borderSettings;
 
             // IMG 2
-            #exp_img2{
+            .exp_img2{
                 grid-area: exp_img2;
                 @include expBoxImg();
                 // border: $borderSettings;
             }
         
             // TEXT 2
-            #exp_text2{
+            .exp_text2{
                 grid-area: exp_text2;
                 @include expBoxText();
                 // border: $borderSettings;
@@ -1415,7 +1358,7 @@ and (max-width: 1279px){
         }
 
         // EXPERIENCE BOX 3
-        #exp_box_3{
+        .exp_box_3{
             margin-top: 40px;
             height: 180px;
             display: grid;
@@ -1426,7 +1369,7 @@ and (max-width: 1279px){
             // border: $borderSettings;
 
             // IMG 3
-            #exp_img3{
+            .exp_img3{
                 grid-area: exp_img3;
                 // border: $borderSettings;
                 img{
@@ -1437,7 +1380,7 @@ and (max-width: 1279px){
             }
         
             // TEXT 3
-            #exp_text3{
+            .exp_text3{
                 grid-area: exp_text3;
                 @include expBoxText();
                 // border: $borderSettings;
@@ -1452,19 +1395,19 @@ and (max-width: 1279px){
     }
 
     // ############## EDUCATION SECTION ##############
-    #educ_section{
+    .educ_section{
         grid-area: educ_section;
         margin-top: 50px;
         height: 630px;
         // border: $borderSettings;
 
         // EDUCATION HEADER
-        #educ_header{
+        .educ_header{
             @include sectionHeader();
         }
 
         // EDUCATION MAIN CONTENT
-        #educ_main{
+        .educ_main{
             margin-top: 30px;
             display: grid;
             grid-template-areas: 'educ_box1'
@@ -1477,19 +1420,19 @@ and (max-width: 1279px){
             margin-right: 0px;
 
             // EDUCATION BOX 1
-            #educ_box1{
+            .educ_box1{
                 grid-area: educ_box1;
                 // CONTENT BOX
-                #educ_box1_content{
+                .educ_box1_content{
                     @include educBoxContent();
                 }
             }
 
             // EDUCATION BOX 2
-            #educ_box2{
+            .educ_box2{
                 grid-area: educ_box2;
                 // CONTENT BOX
-                #educ_box2_content{
+                .educ_box2_content{
                     @include educBoxContent();
                 }
             }
@@ -1497,26 +1440,26 @@ and (max-width: 1279px){
     }
 
     // ############## PROJECTS SECTION ##############
-    #projects_section{
+    .projects_section{
         grid-area: projects_section;
         margin-top: 30px;
         height: 650px;
         // border: $borderSettings;
 
         // PROJECTS HEADER
-        #project_header{
+        .project_header{
             @include sectionHeader();
         }
 
         // PROJECTS DESCRIPTION
-        #project_description{
+        .project_description{
             margin-top: 30px;
             p{
                 font-size: 1.2em;
             }
         }
         // PROJECTS MAIN SECTION
-        #project_main{
+        .project_main{
             // border: $borderSettings;
             margin-top: 20px;
             display: grid;
@@ -1558,14 +1501,14 @@ and (max-width: 1279px){
     }
 
     // ######################## ABOUT SECTION ########################
-    #about_sect{
+    .about_sect{
         grid-area: about_sect;
         margin-top: 50px;
         height: 580px;
         // border: 1px solid white;
 
         // ABOUT MAIN SECT
-        #about_main{
+        .about_main{
             display: grid;
             grid-template-areas: 'about_img'
             'about_info'
@@ -1576,7 +1519,7 @@ and (max-width: 1279px){
             // border: 1px solid white;
 
             // ABOUT IMAGE
-            #about_img{
+            .about_img{
                 grid-area: about_img;
                 height: 170px;
                 // border: 1px solid white;
@@ -1593,7 +1536,7 @@ and (max-width: 1279px){
             }
 
             // ABOUT INFO
-            #about_info{
+            .about_info{
                 height: 430px;   
                 grid-area: about_info;
                 // border: 1px solid white;
@@ -1615,13 +1558,13 @@ and (max-width: 1279px){
     }
 
     // ######################## FOOTER ########################
-    #footer_main{
+    .footer_main{
         grid-area: footer_main;
         height: 400px;
         position: relative;
 
         // FOOTER TOP SECTION
-        #footer_top{
+        .footer_top{
             height: 300px;
 
             h2{
@@ -1636,7 +1579,7 @@ and (max-width: 1279px){
                 line-height: 30px;
             }
             // FOOTER SOCIAL MEDIA
-            #footer_social{
+            .footer_social{
                 height: 50px;
                 width: 300px;
                 position: absolute;
@@ -1656,7 +1599,7 @@ and (max-width: 1279px){
         }
 
         // FOOTER BOTTOM
-        #footer_bottom{
+        .footer_bottom{
             height: 100px;
 
             h3{
@@ -1685,47 +1628,6 @@ and (max-width: 1279px){
 
 @media (min-width: 1440px)
 and (max-width: 1600px){
-    // SECTION HEADER
-    // @mixin sectionHeader{
-    //     h2{
-    //         text-align: center;
-    //         color: $textColor;
-    //         font-size: 2.2em;
-    //     }
-    // }
-
-    // // EXPERIENCE BOX IMG
-    // @mixin expBoxImg {
-    //     // border: $borderSettings;
-    //     img{
-    //         margin-left: 0px;
-    //         height: 50px;
-    //         width: 60%;
-    //     }
-    // }
-    // // EXPERIENCE BOX TEXT
-    // @mixin expBoxText{
-    //     // border: $borderSettings;
-    //     p{
-    //         margin-top: 10px;
-    //         margin-left: 20px;
-    //         font-size: 1em;
-    //     }
-    // }
-    // @mixin educBoxContent {
-    //     // border: $borderSettings;
-    //     h3{
-    //         margin-top: 10px;
-    //         font-size: 1.3em;
-    //     }
-    //     p{
-    //         margin-left: 0px;
-    //         font-size: 1em;
-    //         margin-top: 3px;
-    //         line-height: 30px;
-    //         word-spacing: 2px;
-    //     }
-    // }
 
     // MARGIN WRAPPER
     .margin-wrapper{
@@ -1734,7 +1636,7 @@ and (max-width: 1600px){
     }
 
     // ############## HOME SECTION ##############
-    #home-section {
+    .home-section {
         grid-area: home-section;
         height: 550px;
         position: relative;
@@ -1748,7 +1650,7 @@ and (max-width: 1600px){
         }
         
         // ############## NAVBAR ##############
-        #navbar{
+        .navbar{
             position: fixed;
             z-index: 10000;
             height: 60px;
@@ -1757,7 +1659,7 @@ and (max-width: 1600px){
            
 
             // ############## NAVBAR LOGO ##############
-            #navbar_logo{
+            .navbar_logo{
                 float: left;
                 width: 30%;
                 margin-top: 14px;
@@ -1773,13 +1675,13 @@ and (max-width: 1600px){
                 }
             }
             // ############## NAVBAR LINKS ##############
-            #navbar_links{
+            .navbar_links{
                 float: right;
                 width: 65%;
                 margin-top: 14px;
                 text-align: right;
 
-                #hamburger_menu{
+                .hamburger_menu{
                     display: none;
                 }
 
@@ -1790,7 +1692,7 @@ and (max-width: 1600px){
         }
 
         // ############## HOME SECTION TITLE ##############
-        #home-section-title{
+        .home-section-title{
             position: relative;
             transition: all 1s;
             z-index: 1000;
@@ -1820,19 +1722,19 @@ and (max-width: 1600px){
     }
 
     // ############## SKILLS SECTION ##############
-    #skills_section{
+    .skills_section{
         grid-area: skills_section;
         height: 450px;
         margin-top: 30px;
         // border: $borderSettings;
 
         // SKILLS SECTION HEADER
-        #skills_header{
+        .skills_header{
             @include sectionHeader();
         }
 
         // SKILLS SECTION DESCRIPTION
-        #skills_description{
+        .skills_description{
             margin-top: 30px;
             p{
                 font-size: 1.1em;
@@ -1840,7 +1742,7 @@ and (max-width: 1600px){
         }
 
         // SKILLS SECTION BOXES
-        #skills_boxes{
+        .skills_boxes{
             margin-top: 20px;
             display: grid;
             grid-template-areas: 'html_box css_box sass_box js_box'

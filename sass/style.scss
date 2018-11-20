@@ -54,6 +54,10 @@ $textColor:#393d47;
         margin-left: 20px;
         font-size: 1em;
     }
+    .job_title{
+        color: #45bafc;
+        // font-weight: lighter;
+    }
 }
 @mixin educBoxContent {
     h3{
@@ -71,7 +75,7 @@ $textColor:#393d47;
 
 // ############################## THE MAGIC ##############################
 // GRID CONTAINER
-#grid-container{
+.grid-container{
     display: grid;
     grid-template-areas: 'home-section'
     'skills_section'
@@ -86,7 +90,7 @@ $textColor:#393d47;
 }
 
 // TITLE TEXT COLOR
-#title_text{
+.title_text{
     color: #57EEA1;
 }
 
@@ -97,7 +101,7 @@ $textColor:#393d47;
 }
 
 // ############################## HOME SECTION ##############################
-#home-section {
+.home-section {
     grid-area: home-section;
     height: 550px;
     background: linear-gradient(to bottom right, rgba(41, 44, 51, 0.6), #393d47ad);
@@ -112,7 +116,7 @@ $textColor:#393d47;
     }
     
     // ############################## NAVBAR ##############################
-    #navbar{
+    .navbar{
         position: fixed;
         z-index: 10000;
         height: 60px;
@@ -121,7 +125,7 @@ $textColor:#393d47;
         transition: all 0.2s;
 
         // ############################## NAVBAR LOGO ##############################
-        #navbar_logo{
+        .navbar_logo{
             float: left;
             width: 25%;
             margin-top: 14px;
@@ -147,13 +151,13 @@ $textColor:#393d47;
             }
         }
         // ############################## NAVBAR LINKS ##############################
-        #navbar_links{
+        .navbar_links{
             float: right;
             width: 70%;
             margin-top: 15px;
             text-align: right;
 
-            #hamburger_menu{
+            .hamburger_menu{
                 display: none;
             }
 
@@ -176,7 +180,7 @@ $textColor:#393d47;
     }
 
     // ############################## HOME SECTION TITLE ##############################
-    #home-section-title{
+    .home-section-title{
         transform: scale(0);
         position: relative;
         transition: all 1s;
@@ -252,19 +256,19 @@ $textColor:#393d47;
 }
 
 // ############################## SKILLS SECTION ##############################
-#skills_section{
+.skills_section{
     grid-area: skills_section;
     height: 700px;
     margin-top: 30px;
     font-family: 'Nunito Sans', sans-serif;
 
     // SKILLS SECTION HEADER
-    #skills_header{
+    .skills_header{
         @include sectionHeader();
     }
 
     // SKILLS SECTION DESCRIPTION
-    #skills_description{
+    .skills_description{
         margin-top: 30px;
         p{
             text-align: center;
@@ -274,7 +278,7 @@ $textColor:#393d47;
     }
 
     // SKILLS SECTION BOXES
-    #skills_boxes{
+    .skills_boxes{
         margin-top: 80px;
         display: grid;
         grid-template-areas: 'html_box css_box sass_box js_box'
@@ -319,54 +323,82 @@ $textColor:#393d47;
         }
 
         // HTML BOX
-        #html_box{
+        .html_box{
             grid-area: html_box;
         }
         // CSS BOX
-        #css_box{
+        .css_box{
             grid-area: css_box;
         }
         // SASS BOX
-        #sass_box{
+        .sass_box{
             grid-area: sass_box;
         }
         // JAVASCRIPT BOX
-        #js_box{
+        .js_box{
             grid-area: js_box;
         }
         // RESPONSIVE BOX
-        #responsive_box{
+        .responsive_box{
             grid-area: responsive_box;
         }
         // NODE BOX
-        #node_box{
+        .node_box{
             grid-area: node_box;
         }
         // GIT BOX
-        #git_box{
+        .git_box{
             grid-area: git_box;
         }
         // PYTHON BOX
-        #python_box{
+        .python_box{
             grid-area: python_box;
         }
     }
 }
 
 // ############################## EXPERIENCE ##############################
-#exp_section{
+.exp_section{
     grid-area: exp_section;
     margin-top: 20px;
-    height: 680px;
+    height: 100%;
     font-family: 'Poppins', sans-serif;
 
     // EXPERIENCE HEADER
-    #exp_header{
+    .exp_header{
         @include sectionHeader();
     }
 
+    // EXPERIENCE BOX - PEACH PAYMENTS
+    .exp_box_peach{
+        margin-top: 40px;
+        height: 200px;
+        display: grid;
+        grid-template-areas: 'exp_img_peach exp_text_peach'
+        ;
+        grid-template-columns: 30% 1fr;
+        grid-gap: 20px;
+        border-bottom: 1px solid #e6e6e6;
+
+        // IMG 1
+        .exp_img_peach{
+            grid-area: exp_img_peach;
+            img{
+                margin-left: 50px;
+                height: 60px;
+                width: 200px;
+            }
+        }
+    
+        // TEXT 1
+        .exp_text_peach{
+            grid-area: exp_text_peach;
+            @include expBoxText();
+        }
+    }
+
     // EXPERIENCE BOX 1
-    #exp_box_1{
+    .exp_box_1{
         margin-top: 40px;
         height: 150px;
         display: grid;
@@ -377,20 +409,20 @@ $textColor:#393d47;
         border-bottom: 1px solid #e6e6e6;
 
         // IMG 1
-        #exp_img1{
+        .exp_img1{
             grid-area: exp_img1;
             @include expBoxImg();
         }
     
         // TEXT 1
-        #exp_text1{
+        .exp_text1{
             grid-area: exp_text1;
             @include expBoxText();
         }
     }    
 
     // EXPERIENCE BOX 2
-    #exp_box_2{
+    .exp_box_2{
         margin-top: 40px;
         height: 200px;
         display: grid;
@@ -401,20 +433,20 @@ $textColor:#393d47;
         border-bottom: 1px solid #e6e6e6;
 
         // IMG 2
-        #exp_img2{
+        .exp_img2{
             grid-area: exp_img2;
             @include expBoxImg();
         }
     
         // TEXT 2
-        #exp_text2{
+        .exp_text2{
             grid-area: exp_text2;
             @include expBoxText();
         }
     }
 
     // EXPERIENCE BOX 3
-    #exp_box_3{
+    .exp_box_3{
         margin-top: 40px;
         height: 150px;
         display: grid;
@@ -425,7 +457,7 @@ $textColor:#393d47;
         border-bottom: 1px solid #e6e6e6;
 
         // IMG 3
-        #exp_img3{
+        .exp_img3{
             grid-area: exp_img3;
             img{
                 height: 100px;
@@ -434,7 +466,7 @@ $textColor:#393d47;
         }
     
         // TEXT 3
-        #exp_text3{
+        .exp_text3{
             grid-area: exp_text3;
             @include expBoxText();
         }
@@ -448,18 +480,18 @@ $textColor:#393d47;
 }
 
 // ############################## EDUCATION SECTION ##############################
-#educ_section{
+.educ_section{
     grid-area: educ_section;
     margin-top: 50px;
     height: 620px;
 
     // EDUCATION HEADER
-    #educ_header{
+    .educ_header{
         @include sectionHeader();
     }
 
     // EDUCATION MAIN CONTENT
-    #educ_main{
+    .educ_main{
         margin-top: 30px;
         display: grid;
         grid-template-areas: 'educ_box1'
@@ -474,21 +506,21 @@ $textColor:#393d47;
         margin-right: 50px;
 
         // EDUCATION BOX 1
-        #educ_box1{
+        .educ_box1{
             grid-area: educ_box1;
             border-bottom: 1px solid #e6e6e6;
             // CONTENT BOX
-            #educ_box1_content{
+            .educ_box1_content{
                 @include educBoxContent();
             }
         }
 
         // EDUCATION BOX 2
-        #educ_box2{
+        .educ_box2{
             grid-area: educ_box2;
             border-bottom: 1px solid #e6e6e6;
             // CONTENT BOX
-            #educ_box2_content{
+            .educ_box2_content{
                 @include educBoxContent();
             }
         }
@@ -496,7 +528,7 @@ $textColor:#393d47;
 }
 
 // ############################## PROJECTS SECTION ##############################
-#projects_section{
+.projects_section{
     grid-area: projects_section;
     margin-top: 30px;
     height: 750px;
@@ -505,12 +537,12 @@ $textColor:#393d47;
     // border: $borderSettings;
 
     // PROJECTS HEADER
-    #project_header{
+    .project_header{
         @include sectionHeader();
     }
 
     // PROJECTS DESCRIPTION
-    #project_description{
+    .project_description{
         margin-top: 30px;
         p{
             text-align: center;
@@ -519,7 +551,7 @@ $textColor:#393d47;
         }
     }
     // PROJECTS MAIN SECTION
-    #project_main{
+    .project_main{
         margin-top: 50px;
         display: grid;
         grid-template-areas: 'project_box1 project_box2'
@@ -577,26 +609,26 @@ $textColor:#393d47;
             }
         }
         // PROJECT BOX 1
-        #project_box1{
+        .project_box1{
             grid-area: project_box1;
         }
         // PROJECT BOX 2
-        #project_box2{
+        .project_box2{
             grid-area: project_box2;
         }
         // PROJECT BOX 3
-        #project_box3{
+        .project_box3{
             grid-area: project_box3;
         }
         // PROJECT BOX 4
-        #project_box4{
+        .project_box4{
             grid-area: project_box4;
         }
     }
 }
 
 // ######################## ABOUT SECTION ########################
-#about_sect{
+.about_sect{
     grid-area: about_sect;
     margin-top: 50px;
     height: 450px;
@@ -604,7 +636,7 @@ $textColor:#393d47;
     background: #2b2b2b;
 
     // ABOUT MAIN SECT
-    #about_main{
+    .about_main{
         display: grid;
         grid-template-areas: 'about_img about_info'
         ;
@@ -613,7 +645,7 @@ $textColor:#393d47;
         margin-top: 40px;
 
         // ABOUT IMAGE
-        #about_img{
+        .about_img{
             grid-area: about_img;
             height: 430px;
     
@@ -625,7 +657,7 @@ $textColor:#393d47;
         }
 
         // ABOUT INFO
-        #about_info{
+        .about_info{
             height: 430px;   
             grid-area: about_info;
             font-family: 'Nunito Sans', sans-serif;
@@ -650,14 +682,14 @@ $textColor:#393d47;
 }
 
 // ######################## FOOTER ########################
-#footer_main{
+.footer_main{
     grid-area: footer_main;
     height: 400px;
     font-family: 'Poppins', sans-serif;
     position: relative;
 
     // FOOTER TOP SECTION
-    #footer_top{
+    .footer_top{
         height: 300px;
         background: #292c33;
         color: #bec6d5;
@@ -671,7 +703,7 @@ $textColor:#393d47;
             margin-top: 50px;
             color: #45bafc;
         }
-        #title_text{
+        .title_text{
             color: #57EEA1;
         }
         h3{
@@ -681,13 +713,17 @@ $textColor:#393d47;
             line-height: 30px;
         }
         // FOOTER SOCIAL MEDIA
-        #footer_social{
+        .footer_social{
             height: 50px;
             width: 350px;
             position: absolute;
             left: 50%;
             top: 60%;
             transform: translate(-50%,-50%);
+
+            a{
+                color: #cecece;
+            }
 
             i{
                 cursor: pointer;
@@ -708,7 +744,7 @@ $textColor:#393d47;
     }
 
     // FOOTER BOTTOM
-    #footer_bottom{
+    .footer_bottom{
         height: 100px;
         background: #1d1e25;
         color: #909db7;
